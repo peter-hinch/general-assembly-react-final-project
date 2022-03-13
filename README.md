@@ -7,7 +7,7 @@
 #### Satisfy all of the following
 
 - [ ] Utilise both nested components and state
-- [ ] Use React Router and include a nav bar
+- [x] Use React Router and include a nav bar
 - [ ] Use ES6 syntax - don't forget about functional components.
 
 #### Choose at least one of the following
