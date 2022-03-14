@@ -5,7 +5,8 @@ import {
   getDocs,
   addDoc,
   updateDoc,
-  GeoPoint
+  GeoPoint,
+  deleteDoc
 } from 'firebase/firestore';
 import { db } from './../firebase/firebase-config';
 
@@ -24,7 +25,7 @@ function Home() {
   const createLocation = async () => {
     await addDoc(locationsCollectionRef, {
       name: inputName,
-      location: new GeoPoint(inputLat, inputLong)
+      coords: new GeoPoint(inputLat, inputLong)
     });
     setInputName('');
     setInputLat('');
@@ -42,9 +43,14 @@ function Home() {
     const locationDoc = doc(db, 'locations', hiddenId);
     const newLocation = {
       name: inputName,
-      location: new GeoPoint(inputLat, inputLong)
+      coords: new GeoPoint(inputLat, inputLong)
     };
     await updateDoc(locationDoc, newLocation);
+  };
+
+  const deleteLocation = async (id) => {
+    const locationDoc = doc(db, 'locations', id);
+    await deleteDoc(locationDoc);
   };
 
   useEffect(() => {
@@ -54,7 +60,7 @@ function Home() {
     };
 
     getLocations();
-  }, [locationsCollectionRef]);
+  }, []);
 
   return (
     <div>
@@ -83,19 +89,20 @@ function Home() {
       <ul>
         {locations.map((loc) => (
           <li key={loc.id}>
-            {loc.name} {loc.location._lat}, {loc.location._long}
+            {loc.name} {loc.coords._lat}, {loc.coords._long}
             <button
               onClick={() =>
                 editLocation(
                   loc.id,
                   loc.name,
-                  loc.location._lat,
-                  loc.location._long
+                  loc.coords._lat,
+                  loc.coords._long
                 )
               }
             >
               Edit
             </button>
+            <button onClick={() => deleteLocation(loc.id)}>Delete</button>
           </li>
         ))}
       </ul>
