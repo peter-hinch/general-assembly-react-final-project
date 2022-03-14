@@ -4,6 +4,8 @@
 
 ### Requirements
 
+Full requirements for the final project are outlined ![here](https://git.generalassemb.ly/rctr02anz/classwork/blob/master/slides/week4/06-final-project-prompt.md).
+
 #### Satisfy all of the following
 
 - [ ] Utilise both nested components and state
