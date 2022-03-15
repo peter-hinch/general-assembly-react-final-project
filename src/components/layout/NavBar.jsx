@@ -5,7 +5,7 @@ function NavBar() {
     <div>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/page1">Page1</NavLink>
-      <NavLink to="/page2">Page2</NavLink>
+      <NavLink to="/firestore">Firestore Example</NavLink>
     </div>
   );
 }

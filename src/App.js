@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/layout/NavBar';
+import FirestoreEx from './pages/FirestoreEx';
 import Home from './pages/Home';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/page1" exact element={<>Page 1</>} />
-          <Route path="/page2" exact element={<>Page 2</>} />
+          <Route path="/firestore" exact element={<FirestoreEx />} />
         </Routes>
       </Router>
     </>
