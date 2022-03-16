@@ -35,7 +35,12 @@ function Map({
   React.useEffect(() => {
     const map = new window.google.maps.Map(ref.current, {
       center,
-      zoom
+      zoom,
+      // Map controls can be turned on and off.
+      // Reference: https://developers.google.com/maps/documentation/javascript/controls#DisablingDefaults
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false
     });
 
     // Load the venues GeoJSON onto the map
@@ -47,7 +52,10 @@ function Map({
     map.data.addListener('click', (event: any) => {
       const name = event.feature.getProperty('name');
       const rating = event.feature.getProperty('rating');
-      const content = `<h3>${name}</h3><div>${rating} stars</div>`;
+      const content = `
+        <h3><a href='#'>${name}</a></h3>
+        <div>${rating} stars</div>
+      `;
       const position = event.feature.getGeometry().get();
       infoWindow.setContent(content);
       infoWindow.setPosition(position);
