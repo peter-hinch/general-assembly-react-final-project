@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-37.810338, 144.964169]
+      },
+      "type": "Feature",
+      "properties": {
+        "category": "library",
+        "hours": "10am - 6pm",
+        "description": "Victorian landmark, opened in 1856, consisting of 23 classical buildings, with a grand reading room.",
+        "name": "State Library Victoria",
+        "phone": "(03) 8664 7000",
+        "venueid": "01"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-37.8538957, 144.9909157]
+      },
+      "type": "Feature",
+      "properties": {
+        "category": "cafe",
+        "hours": "",
+        "description": "Mexican meals and pub grub in a retro diner with flowers hanging from the ceiling and bird cages.",
+        "name": "Yellow Bird Cafe",
+        "phone": "(03) 9533 8983",
+        "venueid": "02"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-37.7999139, 144.9761613]
+      },
+      "type": "Feature",
+      "properties": {
+        "category": "bar",
+        "hours": "2pm - 12am",
+        "description": "Stalwart bar with comfy sofas, bright windows and pavement beer garden, featuring local art and DJs.",
+        "name": "Blackcat Fitzroy",
+        "phone": "(03) 9414 6230",
+        "venueid": "03"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-37.8483423, 144.9925166]
+      },
+      "type": "Feature",
+      "properties": {
+        "category": "park",
+        "hours": "8:30am - 5am",
+        "description": "",
+        "name": "Prahran Square",
+        "phone": "",
+        "venueid": "04"
+      }
+    }
+  ]
+}

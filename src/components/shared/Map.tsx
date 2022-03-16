@@ -16,24 +16,32 @@ import * as React from 'react';
  * limitations under the License.
  */
 
-// This component is based on the example for the package @googlemaps/react-wrapper
+// Based on the example for the package @googlemaps/react-wrapper and the Google
+// CodeLab 'Build a simple store locator with Google Maps Platform (JavaScript)'
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
+// Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
 
 function Map({
   center,
-  zoom
+  zoom,
+  venues
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
+  venues: string;
 }) {
   const ref = React.useRef();
 
   React.useEffect(() => {
-    new window.google.maps.Map(ref.current, {
+    const map = new window.google.maps.Map(ref.current, {
       center,
       zoom
     });
-  });
+
+    // Load the venues GeoJSON onto the map
+    console.log(typeof venues, venues);
+    map.data.loadGeoJson(venues, { idPropertyName: 'venueid' });
+  }, []);
 
   return <div ref={ref} id="map" />;
 }

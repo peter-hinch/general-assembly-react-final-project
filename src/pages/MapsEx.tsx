@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
 import Map from './../components/shared/Map';
 
+const venues = require('../venues');
+
 /**
  * Copyright 2021 Google LLC
  *
@@ -18,8 +20,10 @@ import Map from './../components/shared/Map';
  * limitations under the License.
  */
 
-// This component is based on the example for the package @googlemaps/react-wrapper
+// Based on the example for the package @googlemaps/react-wrapper and the Google
+// CodeLab 'Build a simple store locator with Google Maps Platform (JavaScript)'
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
+// Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
 
 const render = (status: Status): React.ReactElement => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -28,11 +32,11 @@ const render = (status: Status): React.ReactElement => {
 
 function MapsEx() {
   const center = { lat: -37.840935, lng: 144.946457 };
-  const zoom = 4;
+  const zoom = 12;
 
   return (
     <Wrapper apiKey={process.env.REACT_APP_MAPS_JS_API_KEY} render={render}>
-      <Map center={center} zoom={zoom} />
+      <Map center={center} zoom={zoom} venues={venues} />
     </Wrapper>
   );
 }
