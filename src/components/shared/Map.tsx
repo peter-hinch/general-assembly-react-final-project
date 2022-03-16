@@ -39,10 +39,19 @@ function Map({
     });
 
     // Load the venues GeoJSON onto the map
-    console.log(typeof venues, venues);
     // Use 'addGeoJson()' for local data and 'loadGeoJson()' for remote data.
     // Reference: https://stackoverflow.com/questions/25334931/loading-a-local-geojson-file-and-using-it-with-the-google-maps-javascript-api-v3
     map.data.addGeoJson(venues, { idPropertyName: 'venueid' });
+    // Add a listener for map pins
+    const infoWindow = new google.maps.InfoWindow();
+    map.data.addListener('click', (event: any) => {
+      const content = event.feature.getProperty('venueid');
+      const position = event.feature.getGeometry().get();
+      infoWindow.setContent(content);
+      infoWindow.setPosition(position);
+      infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
+      infoWindow.open(map);
+    });
   }, []);
 
   return <div ref={ref} id="map" />;
