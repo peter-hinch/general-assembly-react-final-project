@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
 import Map from './../components/shared/Map';
 
-const venues = require('../venues');
+const venues = require('../venues.json');
 
 /**
  * Copyright 2021 Google LLC
