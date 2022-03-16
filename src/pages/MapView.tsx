@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
-import Map from './../components/shared/Map';
+import Map from '../components/shared/Map';
+import DetailsPane from '../components/shared/DetailsPane';
 
+// Load the example dataset from local file.
 const venues = require('../venues.json');
 
 /**
@@ -30,15 +32,18 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-function MapsEx() {
+function MapView() {
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
   return (
-    <Wrapper apiKey={process.env.REACT_APP_MAPS_JS_API_KEY} render={render}>
-      <Map center={center} zoom={zoom} venues={venues} />
-    </Wrapper>
+    <>
+      <Wrapper apiKey={process.env.REACT_APP_MAPS_JS_API_KEY} render={render}>
+        <Map center={center} zoom={zoom} venues={venues} />
+      </Wrapper>
+      <DetailsPane />
+    </>
   );
 }
 
-export default MapsEx;
+export default MapView;
