@@ -28,7 +28,7 @@ function Map({
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
-  venues: string;
+  venues: object;
 }) {
   const ref = React.useRef();
 
@@ -40,7 +40,9 @@ function Map({
 
     // Load the venues GeoJSON onto the map
     console.log(typeof venues, venues);
-    map.data.loadGeoJson(venues, { idPropertyName: 'venueid' });
+    // Use 'addGeoJson()' for local data and 'loadGeoJson()' for remote data.
+    // Reference: https://stackoverflow.com/questions/25334931/loading-a-local-geojson-file-and-using-it-with-the-google-maps-javascript-api-v3
+    map.data.addGeoJson(venues, { idPropertyName: 'venueid' });
   }, []);
 
   return <div ref={ref} id="map" />;
