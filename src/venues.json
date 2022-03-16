@@ -4,7 +4,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-37.810338, 144.964169]
+        "coordinates": [144.964169, -37.810338]
       },
       "type": "Feature",
       "properties": {
@@ -19,7 +19,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-37.8538957, 144.9909157]
+        "coordinates": [144.9909157, -37.8538957]
       },
       "type": "Feature",
       "properties": {
@@ -34,7 +34,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-37.7999139, 144.9761613]
+        "coordinates": [144.9761613, -37.7999139]
       },
       "type": "Feature",
       "properties": {
@@ -49,13 +49,13 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-37.8483423, 144.9925166]
+        "coordinates": [144.9925166, -37.8483423]
       },
       "type": "Feature",
       "properties": {
         "category": "park",
         "hours": "8:30am - 5am",
-        "description": "",
+        "description": "Prahran Square is a 10,000 square metre urban parkland and is the City of Stonnington's transformation of the old Cato Street car park into a dynamic and inviting public space. Prahran Square celebrates community, arts and culture, playing host to an array of events, live performances and showcasing works by local artists.",
         "name": "Prahran Square",
         "phone": "",
         "venueid": "04"
