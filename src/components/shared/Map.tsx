@@ -45,7 +45,9 @@ function Map({
     // Add a listener for map pins
     const infoWindow = new google.maps.InfoWindow();
     map.data.addListener('click', (event: any) => {
-      const content = event.feature.getProperty('venueid');
+      const name = event.feature.getProperty('name');
+      const rating = event.feature.getProperty('rating');
+      const content = `<h3>${name}</h3><div>${rating} stars</div>`;
       const position = event.feature.getGeometry().get();
       infoWindow.setContent(content);
       infoWindow.setPosition(position);
