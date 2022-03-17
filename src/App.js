@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <main>
+      <main className="container">
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/mapview" exact element={<MapView />} />
