@@ -82,8 +82,10 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  color: var(--neutral-10);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--secondary-90);
 }
 
 #root {
@@ -111,8 +113,15 @@ footer {
   flex-shrink: 0;
 }
 
+.container {
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: var(--neutral-99);
+}
+
 header {
-  height: 4.5rem;
+  min-height: 4rem;
   background: var(--primary-40);
 }
 
@@ -135,7 +144,7 @@ main {
 }
 
 footer {
-  height: 4.5rem;
+  min-height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
