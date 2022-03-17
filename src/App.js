@@ -3,6 +3,7 @@ import NavBar from './components/layout/NavBar';
 import Home from './pages/Home';
 import FirestoreEx from './pages/FirestoreEx';
 import MapView from './pages/MapView';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/mapview" exact element={<MapView />} />
           <Route path="/firestore" exact element={<FirestoreEx />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
