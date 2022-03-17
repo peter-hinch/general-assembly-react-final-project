@@ -114,7 +114,12 @@ footer {
   flex-shrink: 0;
 }
 
-.container {
+header .container {
+  /* Add rules to govern width */
+}
+
+main.container {
+  /* Add rules to govern width */
   margin: 1rem;
   padding: 1.5rem;
   border-radius: 1.5rem;
@@ -122,11 +127,15 @@ footer {
   box-shadow: var(--shadow-on-secondary);
 }
 
+footer.container {
+  /* Add rules to govern width */
+}
+
 header {
   box-sizing: border-box;
   padding: 1rem 1.75rem;
   min-height: 4rem;
-  background: var(--color-primary-40);
+  background: var(--color-tertiary-40);
   box-shadow: var(--shadow-on-secondary);
 }
 
