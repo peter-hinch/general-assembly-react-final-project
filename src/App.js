@@ -7,17 +7,15 @@ import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/mapview" exact element={<MapView />} />
-          <Route path="/firestore" exact element={<FirestoreEx />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/mapview" exact element={<MapView />} />
+        <Route path="/firestore" exact element={<FirestoreEx />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
