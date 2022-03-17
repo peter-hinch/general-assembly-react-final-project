@@ -2,7 +2,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer className="container">
       <small>&copy;{year} Peter Hinch, All rights reserved.</small>
     </footer>
   );
