@@ -3,9 +3,6 @@ import { Status, Wrapper } from '@googlemaps/react-wrapper';
 import Map from '../components/shared/Map';
 import DetailsPane from '../components/shared/DetailsPane';
 
-// Load the example dataset from local file.
-const venues = require('../venues.json');
-
 /**
  * Copyright 2021 Google LLC
  *
@@ -26,6 +23,11 @@ const venues = require('../venues.json');
 // CodeLab 'Build a simple store locator with Google Maps Platform (JavaScript)'
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
 // Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
+
+// Load the example dataset from local file.
+const venues = require('../venues.json');
+
+// const [] = React.useState;
 
 const render = (status: Status): React.ReactElement => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
