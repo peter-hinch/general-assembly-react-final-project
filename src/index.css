@@ -71,6 +71,7 @@
   --color-error-95: #ffedea;
   --color-error-99: #fffbfb;
   --shadow-on-secondary: 0px 4px 4px #b3c8da, 0px 4px 16px #b3c8da;
+  --inset-on-secondary: inset 0px 4px 4px #8daec7, inset 0px 4px 16px #8daec7;
 }
 
 html,
@@ -102,6 +103,10 @@ h4,
 h5,
 h6 {
   font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
 }
 
 a {
@@ -140,6 +145,9 @@ footer.container {
 
 header {
   box-sizing: border-box;
+  position: sticky;
+  z-index: 1;
+  top: 0;
   padding: 1rem 1.75rem;
   min-height: 4rem;
   background: var(--color-tertiary-40);
@@ -169,23 +177,48 @@ header nav .nav-link a h1 {
 }
 
 main {
+  min-height: calc(100vh - 6rem);
   flex-grow: 1;
 }
 
 footer {
   box-sizing: border-box;
-  margin: 0 1rem;
+  position: relative;
+  z-index: -2;
+  margin: 0 1rem 6rem;
   padding: 1.5rem;
-  min-height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-neutral-variant-95);
-  background: var(--color-neutral-variant-50);
-  border-radius: 1.5rem 1.5rem 0 0;
+  min-height: 11.75rem;
+  color: var(--color-secondary-10);
+  background: var(--color-secondary-80);
+  border-radius: 1.5rem 1.5rem 3.75rem 3.75rem;
+  box-shadow: var(--inset-on-secondary);
+}
+
+footer::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 0.75rem;
+  left: 0.75rem;
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 1.5rem);
+  background: var(--color-secondary-90);
+  border-radius: 0.75rem 0.75rem 3rem 3rem;
+  box-shadow: var(--shadow-on-secondary);
+}
+
+footer .acknowledge-country {
+  box-sizing: border-box;
+  margin: -0.75rem -0.75rem 1.5rem;
+  padding: 0.75rem;
+  min-height: 5rem;
+  color: var(--color-neutral-variant-80);
+  background: var(--color-neutral-variant-30);
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 #map {
+  z-index: 0;
   width: 30rem;
   height: 30rem;
 }
