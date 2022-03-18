@@ -115,20 +115,27 @@ footer {
 }
 
 header .container {
-  /* Add rules to govern width */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: 60rem; /* Add rules to govern width */
 }
 
 main.container {
-  /* Add rules to govern width */
+  box-sizing: border-box;
+  align-self: center;
   margin: 1rem;
   padding: 1.5rem;
+  width: 60rem; /* Add rules to govern width */
   border-radius: 1.5rem;
   background: var(--color-neutral-99);
   box-shadow: var(--shadow-on-secondary);
 }
 
 footer.container {
-  /* Add rules to govern width */
+  box-sizing: border-box;
+  align-self: center;
+  width: 60rem; /* Add rules to govern width */
 }
 
 header {
@@ -152,6 +159,13 @@ header nav .nav-link {
 
 header nav .nav-link a {
   color: var(--color-white);
+}
+
+header nav .nav-link a h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
 }
 
 main {
