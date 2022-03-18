@@ -241,12 +241,34 @@ footer::after {
 
 footer .acknowledge-country {
   box-sizing: border-box;
-  margin: -0.75rem -0.75rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: -0.75rem -0.75rem 0;
   padding: 0.75rem;
   min-height: 5rem;
   color: var(--color-neutral-variant-80);
   background: var(--color-neutral-variant-30);
   border-radius: 0.75rem 0.75rem 0 0;
+}
+
+footer .acknowledge-country .flag {
+  min-width: 5.81625rem;
+  min-height: 3.5rem;
+  margin-right: 1rem;
+  background: url(./assets/australian-aboriginal-flag.svg);
+}
+
+footer .acknowledge-country p {
+  margin: 0;
+}
+
+footer .copyright-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  min-height: 3.75rem;
 }
 
 #map {
