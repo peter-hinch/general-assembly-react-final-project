@@ -7,7 +7,9 @@ function NavBar() {
         <nav>
           <ul className="nav-links">
             <li className="nav-link">
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">
+                <h1>RemoteSpot</h1>
+              </NavLink>
             </li>
             <li className="nav-link">
               <NavLink to="/mapview">Venues Map</NavLink>
