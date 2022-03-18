@@ -218,8 +218,7 @@ footer {
   position: relative;
   z-index: -2;
   margin: 0 1rem 6rem;
-  padding: 1.5rem;
-  min-height: 11.75rem;
+  padding: 1.5rem 1.5rem 0.75rem;
   color: var(--color-secondary-10);
   background: var(--color-secondary-80);
   border-radius: 1.5rem 1.5rem 3.75rem 3.75rem;
@@ -244,17 +243,17 @@ footer .acknowledge-country {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: -0.75rem -0.75rem 0;
-  padding: 0.75rem;
+  margin: 0 -0.75rem 0;
+  padding: 0.75rem 3rem;
   min-height: 5rem;
   color: var(--color-neutral-variant-80);
   background: var(--color-neutral-variant-30);
-  border-radius: 0.75rem 0.75rem 0 0;
+  border-radius: 0 0 3rem 3rem;
 }
 
 footer .acknowledge-country .flag {
-  min-width: 5.81625rem;
-  min-height: 3.5rem;
+  min-width: 2.5rem;
+  min-height: 1.5rem;
   margin-right: 1rem;
   background: url(./assets/australian-aboriginal-flag.svg);
 }
@@ -267,7 +266,7 @@ footer .copyright-info {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   min-height: 3.75rem;
 }
 
