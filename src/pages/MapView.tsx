@@ -40,7 +40,10 @@ function MapView() {
 
   return (
     <>
-      <Wrapper apiKey={process.env.REACT_APP_MAPS_JS_API_KEY} render={render}>
+      <Wrapper
+        apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
+        render={render}
+      >
         <Map center={center} zoom={zoom} venues={venues} />
       </Wrapper>
       <DetailsPane />
