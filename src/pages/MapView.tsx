@@ -48,7 +48,7 @@ function MapView({ venueData }: { venueData: FeatureCollection }) {
       place_id: '',
       name: '',
       description: '',
-      rating: 0
+      rating: null
     },
     type: ''
   });
