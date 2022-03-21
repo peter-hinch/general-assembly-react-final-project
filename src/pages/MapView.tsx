@@ -33,16 +33,40 @@ const pageVariants = {
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
 // Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
 
-// const [] = React.useState;
-
 const render = (status: Status): React.ReactElement => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-function MapView({ venueData }: { venueData: object }) {
+// Declare the nested structure of the venueData FeatureCollection.
+interface FeatureCollection {
+  type: string;
+  features: Array<Feature>;
+}
+interface Feature {
+  geometry: object;
+  properties: FeatureProperties;
+  type: string;
+}
+interface FeatureProperties {
+  place_id: string;
+  name: string;
+  rating: number;
+}
+
+function MapView({ venueData }: { venueData: FeatureCollection }) {
+  const [currentPlace, setCurrentPlace] = React.useState({});
+
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
+
+  const handleSelection = (placeId: string) => {
+    let currentPlace = venueData.features.filter(
+      (feature: Feature) => feature.properties.place_id === placeId
+    )[0];
+    console.log('currentPlace', currentPlace);
+    setCurrentPlace(currentPlace);
+  };
 
   return (
     <motion.div
@@ -57,9 +81,14 @@ function MapView({ venueData }: { venueData: object }) {
         apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
         render={render}
       >
-        <Map center={center} zoom={zoom} venueData={venueData} />
+        <Map
+          center={center}
+          zoom={zoom}
+          venueData={venueData}
+          handleSelection={handleSelection}
+        />
       </Wrapper>
-      <DetailsPane />
+      <DetailsPane currentPlace={currentPlace} />
     </motion.div>
   );
 }
