@@ -1,12 +1,5 @@
 import { motion } from 'framer-motion';
-
-const transition = { duration: 0.3, type: 'easeInOut' };
-
-const pageVariants = {
-  initial: { opacity: 0 },
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
-};
+import { transition, pageVariants } from './../theme/GlobalVariants';
 
 function Home() {
   return (

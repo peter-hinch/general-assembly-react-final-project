@@ -1,14 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import { motion } from 'framer-motion';
-
-const transition = { duration: 0.3, type: 'easeInOut' };
-
-const pageVariants = {
-  initial: { opacity: 0 },
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
-};
+import { transition, pageVariants } from './../theme/GlobalVariants';
 
 // Using the Google Places Autocomplete API from the following example.
 // Reference: https://betterprogramming.pub/the-best-practice-with-google-place-autocomplete-api-on-react-939211e8b4ce
