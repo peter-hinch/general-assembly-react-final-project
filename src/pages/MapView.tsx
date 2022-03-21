@@ -40,7 +40,10 @@ const render = (status: Status): React.ReactElement => {
 
 function MapView({ venueData }: { venueData: FeatureCollection }) {
   const [currentPlace, setCurrentPlace] = React.useState({
-    geometry: {},
+    geometry: {
+      type: '',
+      coordinates: [0, 0]
+    },
     properties: {
       place_id: '',
       name: '',

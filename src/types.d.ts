@@ -6,9 +6,14 @@ interface FeatureCollection {
 }
 
 interface Feature {
-  geometry: object;
+  geometry: FeatureGeometry;
   properties: FeatureProperties;
   type: string;
+}
+
+interface FeatureGeometry {
+  type: string;
+  coordinates: Array<number>;
 }
 
 interface FeatureProperties {
