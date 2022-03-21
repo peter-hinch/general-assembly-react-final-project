@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   collection,
   doc,
@@ -9,6 +10,14 @@ import {
   deleteDoc
 } from 'firebase/firestore';
 import { db } from './../firebase/firebase-config';
+
+const transition = { duration: 0.3, type: 'easeInOut' };
+
+const pageVariants = {
+  initial: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+};
 
 // Basic Firebase CRUD functionality implemented using the following tutorial:
 // CRUD Tutorial Using React + Firebase | Firebase 9 and Firestore Tutorial
@@ -63,7 +72,14 @@ function FirestoreEx() {
   }, []);
 
   return (
-    <div>
+    <motion.div
+      variants={pageVariants}
+      key="home"
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      transition={transition}
+    >
       Name:
       <input
         type="text"
@@ -106,7 +122,7 @@ function FirestoreEx() {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 

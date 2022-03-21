@@ -1,7 +1,16 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
 import Map from '../components/shared/Map';
 import DetailsPane from '../components/shared/DetailsPane';
+
+const transition = { duration: 0.3, type: 'easeInOut' };
+
+const pageVariants = {
+  initial: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+};
 
 /**
  * Copyright 2021 Google LLC
@@ -39,7 +48,14 @@ function MapView() {
   const zoom = 12;
 
   return (
-    <>
+    <motion.div
+      variants={pageVariants}
+      key="home"
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      transition={transition}
+    >
       <Wrapper
         apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
         render={render}
@@ -47,7 +63,7 @@ function MapView() {
         <Map center={center} zoom={zoom} venues={venues} />
       </Wrapper>
       <DetailsPane />
-    </>
+    </motion.div>
   );
 }
 

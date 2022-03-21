@@ -1,4 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+
+const transition = { duration: 0.3, type: 'easeInOut' };
+
+const pageVariants = {
+  initial: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+};
 
 // Using the Google Places Autocomplete API from the following example.
 // Reference: https://betterprogramming.pub/the-best-practice-with-google-place-autocomplete-api-on-react-939211e8b4ce
@@ -86,7 +95,14 @@ function PlacesEx() {
   };
 
   return (
-    <div>
+    <motion.div
+      variants={pageVariants}
+      key="home"
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      transition={transition}
+    >
       <div className="search-location-input">
         <input
           ref={autoCompleteRef}
@@ -150,7 +166,7 @@ function PlacesEx() {
       ) : (
         <></>
       )}
-    </div>
+    </motion.div>
   );
 }
 
