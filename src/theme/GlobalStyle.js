@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import imgAboriginalFlag from './../assets/aboriginal-flag.svg';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
@@ -258,7 +259,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 2.5rem;
     min-height: 1.5rem;
     margin-right: 1rem;
-    background: url(./assets/australian-aboriginal-flag.svg);
+    background: url(${imgAboriginalFlag});
   }
 
   footer .acknowledge-country p {
