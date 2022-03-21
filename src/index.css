@@ -155,7 +155,7 @@ header .container {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0 0.75rem;
-  width: 58rem;
+  width: 57rem;
 }
 
 main.container {
@@ -163,7 +163,7 @@ main.container {
   align-self: center;
   margin: 1rem;
   padding: 1.5rem;
-  width: 58rem;
+  width: 57rem;
   border-radius: 1.5rem;
   background: var(--color-neutral-99);
   box-shadow: var(--shadow-on-secondary);
@@ -172,7 +172,7 @@ main.container {
 footer.container {
   box-sizing: border-box;
   align-self: center;
-  width: 58rem;
+  width: 57rem;
 }
 
 header {
