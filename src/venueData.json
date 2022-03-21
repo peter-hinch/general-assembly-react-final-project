@@ -8,6 +8,7 @@
       },
       "type": "Feature",
       "properties": {
+        "place_id": "ChIJ6RxLlctC1moReA6DqUtnh_E",
         "category": "library",
         "hours": "10am - 6pm",
         "description": "Victorian landmark, opened in 1856, consisting of 23 classical buildings, with a grand reading room.",
@@ -24,6 +25,7 @@
       },
       "type": "Feature",
       "properties": {
+        "place_id": "ChIJMWQmaTpo1moRImVSbVM5cUE",
         "category": "cafe",
         "hours": "",
         "description": "Mexican meals and pub grub in a retro diner with flowers hanging from the ceiling and bird cages.",
@@ -40,6 +42,7 @@
       },
       "type": "Feature",
       "properties": {
+        "place_id": "ChIJW1fHRd9C1moRBzTQktK3f_U",
         "category": "bar",
         "hours": "2pm - 12am",
         "description": "Stalwart bar with comfy sofas, bright windows and pavement beer garden, featuring local art and DJs.",
@@ -56,6 +59,7 @@
       },
       "type": "Feature",
       "properties": {
+        "place_id": "ChIJv1vMr6Np1moR4sPYRio1eAs",
         "category": "park",
         "hours": "8:30am - 5am",
         "description": "Prahran Square is a 10,000 square metre urban parkland and is the City of Stonnington's transformation of the old Cato Street car park into a dynamic and inviting public space. Prahran Square celebrates community, arts and culture, playing host to an array of events, live performances and showcasing works by local artists.",
