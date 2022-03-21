@@ -89,8 +89,7 @@ function PlacesEx() {
       // Return a link in JSX format.
       return <a href={components[1]}>Image: {components[2]}</a>;
     } else {
-      // If there were no attributions present, return an empty React fragment.
-      return <></>;
+      return;
     }
   };
 
@@ -115,15 +114,15 @@ function PlacesEx() {
           }}
         />
       </div>
-      {Object.keys(currentInfo).length !== 0 ? (
+      {Object.keys(currentInfo).length !== 0 && (
         <div>
           <h2>{currentInfo.name}</h2>
           <p>
             <a href={currentInfo.website}>Website</a>
           </p>
-          {currentInfo.hasOwnProperty('photos') ? (
-            /* When using images returned by the Places API, if an attribution */
-            /* exists for that image it must be displayed with the result. */
+          {currentInfo.hasOwnProperty('photos') && (
+            /* When using images returned by the Places API, if an attribution
+            exists for that image it must be displayed with the result. */
             <>
               <div>
                 <img
@@ -138,12 +137,10 @@ function PlacesEx() {
                 </em>
               </small>
             </>
-          ) : (
-            <></>
           )}
           <p>{currentInfo.formatted_address}</p>
           <p>{currentInfo.formatted_phone_number}</p>
-          {currentInfo.hasOwnProperty('opening_hours') ? (
+          {currentInfo.hasOwnProperty('opening_hours') && (
             <>
               <p>{currentInfo.opening_hours.isOpen ? 'Open Now' : 'Closed'}</p>
               <ul>
@@ -152,19 +149,15 @@ function PlacesEx() {
                 ))}
               </ul>
             </>
-          ) : (
-            <></>
           )}
-          {/* Results returned by the Google Places API must have a link to the */}
-          {/* Google Business Profile for that result. */}
+          {/* Results returned by the Google Places API must have a link to the 
+          Google Business Profile for that result. */}
           <small>
             <a href={currentInfo.url}>
               Google Business Profile for {currentInfo.name}
             </a>
           </small>
         </div>
-      ) : (
-        <></>
       )}
     </motion.div>
   );
