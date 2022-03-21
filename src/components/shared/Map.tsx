@@ -24,11 +24,11 @@ import * as React from 'react';
 function Map({
   center,
   zoom,
-  venues
+  venueData
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
-  venues: object;
+  venueData: object;
 }) {
   const ref = React.useRef();
 
@@ -46,7 +46,7 @@ function Map({
     // Load the venues GeoJSON onto the map
     // Use 'addGeoJson()' for local data and 'loadGeoJson()' for remote data.
     // Reference: https://stackoverflow.com/questions/25334931/loading-a-local-geojson-file-and-using-it-with-the-google-maps-javascript-api-v3
-    map.data.addGeoJson(venues, { idPropertyName: 'venueid' });
+    map.data.addGeoJson(venueData, { idPropertyName: 'venueid' });
     // Add a listener for map pins
     const infoWindow = new google.maps.InfoWindow();
     map.data.addListener('click', (event: any) => {

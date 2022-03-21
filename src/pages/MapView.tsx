@@ -33,9 +33,6 @@ const pageVariants = {
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
 // Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
 
-// Load the example dataset from local file.
-const venues = require('../venues.json');
-
 // const [] = React.useState;
 
 const render = (status: Status): React.ReactElement => {
@@ -43,7 +40,7 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-function MapView() {
+function MapView({ venueData }: { venueData: object }) {
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
@@ -60,7 +57,7 @@ function MapView() {
         apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
         render={render}
       >
-        <Map center={center} zoom={zoom} venues={venues} />
+        <Map center={center} zoom={zoom} venueData={venueData} />
       </Wrapper>
       <DetailsPane />
     </motion.div>

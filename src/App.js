@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './components/layout/NavBar';
@@ -7,7 +8,12 @@ import MapView from './pages/MapView';
 import Footer from './components/layout/Footer';
 import PlacesEx from './pages/PlacesEx';
 
+// Load the example dataset from local file.
+const seedVenueData = require('./venueData.json');
+
 function App() {
+  const [venueData, setVenueData] = useState(seedVenueData);
+
   // useLocation allows the application to keep track of its current location.
   // in this case it provides the necessary information for framer-motion to
   // animate on a per route (page-by-page) basis.
@@ -26,7 +32,11 @@ function App() {
           of the useLocation() hook. */}
           <Routes location={location} key={location.key}>
             <Route path="/" exact element={<Home />} />
-            <Route path="/mapview" exact element={<MapView />} />
+            <Route
+              path="/mapview"
+              exact
+              element={<MapView venueData={venueData} />}
+            />
             <Route
               path="/places"
               exact
