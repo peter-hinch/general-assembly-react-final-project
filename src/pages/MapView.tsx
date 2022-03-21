@@ -51,21 +51,30 @@ interface Feature {
 interface FeatureProperties {
   place_id: string;
   name: string;
+  description: string;
   rating: number;
 }
 
 function MapView({ venueData }: { venueData: FeatureCollection }) {
-  const [currentPlace, setCurrentPlace] = React.useState({});
+  const [currentPlace, setCurrentPlace] = React.useState({
+    geometry: {},
+    properties: {
+      place_id: '',
+      name: '',
+      description: '',
+      rating: 0
+    },
+    type: ''
+  });
 
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
   const handleSelection = (placeId: string) => {
-    let currentPlace = venueData.features.filter(
+    let currentPlaceInfo = venueData.features.filter(
       (feature: Feature) => feature.properties.place_id === placeId
     )[0];
-    console.log('currentPlace', currentPlace);
-    setCurrentPlace(currentPlace);
+    setCurrentPlace(currentPlaceInfo);
   };
 
   return (
