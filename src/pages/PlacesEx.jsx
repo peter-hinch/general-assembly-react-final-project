@@ -69,7 +69,7 @@ function PlacesEx() {
 
   async function handlePlaceSelect(updateQuery) {
     const addressObject = autoComplete.getPlace();
-    const query = addressObject.formatted_address;
+    const query = `${addressObject.name}, ${addressObject.formatted_address}`;
     updateQuery(query);
     console.log(addressObject);
     setCurrentInfo(addressObject);
