@@ -14,12 +14,6 @@ function NavBar() {
             <li className="nav-link">
               <NavLink to="/map">Map</NavLink>
             </li>
-            <li className="nav-link">
-              <NavLink to="/places">Places Example</NavLink>
-            </li>
-            <li className="nav-link">
-              <NavLink to="/firestore">Firestore Example</NavLink>
-            </li>
           </ul>
         </nav>
       </div>
