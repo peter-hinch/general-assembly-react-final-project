@@ -33,7 +33,7 @@ function App() {
           <Routes location={location} key={location.key}>
             <Route path="/" exact element={<Home />} />
             <Route
-              path="/mapview"
+              path="/map"
               exact
               element={<MapView venueData={venueData} />}
             />

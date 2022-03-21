@@ -12,7 +12,7 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-link">
-              <NavLink to="/mapview">Venues Map</NavLink>
+              <NavLink to="/map">Map</NavLink>
             </li>
             <li className="nav-link">
               <NavLink to="/places">Places Example</NavLink>
