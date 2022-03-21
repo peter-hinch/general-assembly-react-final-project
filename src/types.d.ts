@@ -20,5 +20,5 @@ interface FeatureProperties {
   place_id: string;
   name: string;
   description: string;
-  rating: number;
+  rating: number | null;
 }
