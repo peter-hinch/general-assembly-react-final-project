@@ -15,6 +15,9 @@ function NavBar() {
               <NavLink to="/mapview">Venues Map</NavLink>
             </li>
             <li className="nav-link">
+              <NavLink to="/places">Places Example</NavLink>
+            </li>
+            <li className="nav-link">
               <NavLink to="/firestore">Firestore Example</NavLink>
             </li>
           </ul>
