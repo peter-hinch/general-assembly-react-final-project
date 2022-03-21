@@ -15,7 +15,7 @@ Full requirements for the final project are outlined ![here](https://git.general
 #### Choose at least one of the following
 
 - [ ] Apply React styling (e.g. Styled components, Material UI)
-- [ ] Apply React animations (e.g. Framer Motion)
+- [x] Apply React animations (e.g. Framer Motion)
 - [x] Incorporate static type checking (e.g. Flow, TypeScript)
 
 ### Deployment
