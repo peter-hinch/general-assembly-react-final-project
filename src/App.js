@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import GlobalStyle from './theme/GlobalStyle';
 import NavBar from './components/layout/NavBar';
 import Home from './pages/Home';
 import FirestoreEx from './pages/FirestoreEx';
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyle />
       <NavBar />
       <main className="container">
         {/* The exitBeforeEnter prop prevents loading a new page before the last
