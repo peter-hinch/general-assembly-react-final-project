@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { v4 as uuid } from 'uuid';
 import { motion } from 'framer-motion';
 
 const transition = { duration: 0.3, type: 'easeInOut' };
@@ -88,8 +89,6 @@ function PlacesEx() {
       let components = string.match(regex);
       // Return a link in JSX format.
       return <a href={components[1]}>Image: {components[2]}</a>;
-    } else {
-      return;
     }
   };
 
@@ -145,7 +144,7 @@ function PlacesEx() {
               <p>{currentInfo.opening_hours.isOpen ? 'Open Now' : 'Closed'}</p>
               <ul>
                 {currentInfo.opening_hours.weekday_text.map((weekday) => (
-                  <li>{weekday}</li>
+                  <li key={uuid()}>{weekday}</li>
                 ))}
               </ul>
             </>
