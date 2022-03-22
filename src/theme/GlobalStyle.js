@@ -196,16 +196,18 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
 
+  header nav .nav-links a {
+    color: var(--color-white);
+  }
+
+  header nav .nav-home,
+  header nav .nav-search,
   header nav .nav-link {
     display: inline-block;
     padding-right: 1rem;
   }
 
-  header nav .nav-link a {
-    color: var(--color-white);
-  }
-
-  header nav .nav-link a h1 {
+  header nav .nav-home h1 {
     margin: 0;
     padding: 0;
     font-size: 1.75rem;
@@ -256,7 +258,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   footer nav .footer-link a {
-    color: var(--color-secondary-10);
+    color: var(--color-secondary-40);
+  }
+
+  footer nav .footer-link a:hover {
+    text-decoration: underline;
+    color: var(--color-secondary-30);
+  }
+
+  footer nav .footer-link a.active {
+    color: var(--color-secondary-20);
   }
 
   footer .copyright-info {
