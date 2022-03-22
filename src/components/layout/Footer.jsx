@@ -19,6 +19,9 @@ function Footer() {
           <li className="footer-link">
             <NavLink to="/firestore">Firestore Example</NavLink>
           </li>
+          <li className="footer-link">
+            <NavLink to="/styling">Styling Example</NavLink>
+          </li>
         </ul>
       </nav>
       <div className="copyright-info">
