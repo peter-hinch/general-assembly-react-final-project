@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PlaceSearch from './PlaceSearch';
 
 function NavBar() {
   return (
@@ -6,10 +7,13 @@ function NavBar() {
       <div className="container">
         <nav>
           <ul className="nav-links">
-            <li className="nav-link">
+            <li className="nav-home">
               <NavLink to="/">
                 <h1>RemoteSpot</h1>
               </NavLink>
+            </li>
+            <li className="nav-search">
+              <PlaceSearch />
             </li>
             <li className="nav-link">
               <NavLink to="/map">Map</NavLink>
