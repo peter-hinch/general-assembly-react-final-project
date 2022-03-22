@@ -7,6 +7,7 @@ import FirestoreEx from './pages/FirestoreEx';
 import MapView from './pages/MapView';
 import Footer from './components/layout/Footer';
 import PlacesEx from './pages/PlacesEx';
+import StylingEx from './pages/StylingEx';
 
 // Load the example dataset from local file.
 const seedVenueData = require('./venueData.json');
@@ -43,6 +44,7 @@ function App() {
               element={<PlacesEx onChange={() => null} />}
             />
             <Route path="/firestore" exact element={<FirestoreEx />} />
+            <Route path="/styling" exact element={<StylingEx />} />
           </Routes>
         </AnimatePresence>
       </main>
