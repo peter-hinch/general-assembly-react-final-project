@@ -12,6 +12,7 @@ function Home() {
       transition={transition}
     >
       <h1>Welcome to RemoteSpot</h1>
+      <h2>Find your new favourite remote work space.</h2>
     </motion.div>
   );
 }
