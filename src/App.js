@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import NavBar from './components/layout/NavBar';
+import Header from './components/layout/Header';
 import Home from './pages/Home';
+import Footer from './components/layout/Footer';
 import FirestoreEx from './pages/FirestoreEx';
 import MapView from './pages/MapView';
-import Footer from './components/layout/Footer';
 import PlacesEx from './pages/PlacesEx';
 import StylingEx from './pages/StylingEx';
 import TermsOfService from './pages/TermsOfService';
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <main className="container">
         {/* The exitBeforeEnter prop prevents loading a new page before the last
         page has fully exited. */}
