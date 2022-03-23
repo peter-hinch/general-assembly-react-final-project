@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import PlaceSearch from './PlaceSearch';
 
-function NavBar() {
+function Header({ query }) {
   return (
     <header>
       <div className="container">
@@ -13,7 +13,7 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-search">
-              <PlaceSearch />
+              <PlaceSearch query={query} />
             </li>
             <li className="nav-link">
               <NavLink to="/map">Map</NavLink>
@@ -25,4 +25,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;
