@@ -12,10 +12,11 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Load the example dataset from local file.
-const seedVenueData = require('./venueData.json');
+const seedPlacesData = require('./venueData.json');
 
 function App() {
-  const [venueData, setVenueData] = useState(seedVenueData);
+  const [placesData, setPlacesData] = useState(seedPlacesData);
+  const [currentPlace, setCurrentPlace] = useState({});
 
   // useLocation allows the application to keep track of its current location.
   // in this case it provides the necessary information for framer-motion to
@@ -38,7 +39,7 @@ function App() {
             <Route
               path="/map"
               exact
-              element={<MapView venueData={venueData} />}
+              element={<MapView venueData={placesData} />}
             />
             <Route
               path="/places"
