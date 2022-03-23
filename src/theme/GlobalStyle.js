@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import imgAboriginalFlag from './../assets/aboriginal-flag.svg';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+  /* This import is made directly in index.html due to styled-components reccomendation. */
+  /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap'); */
 
   /* Define CSS variables for theme colours */
   :root {
@@ -111,38 +112,38 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-size: 2.25em;
-    line-height: 2.25rem;
+    line-height: 3.375rem;
   }
 
   h2 {
     font-size: 2em;
-    line-height: 2rem;
+    line-height: 3rem;
     font-weight: 400;
   }
 
   h3 {
     font-size: 1.75em;
-    line-height: 1.75rem;
+    line-height: 2.625rem;
   }
 
   h4 {
     font-size: 1.5em;
-    line-height: 1.5rem;
+    line-height: 2.25rem;
   }
 
   h5 {
     font-size: 1.125em;
-    line-height: 1.125rem;
+    line-height: 1.687rem;
   }
 
   h6 {
     font-size: 0.875em;
-    line-height: 0.875rem;
+    line-height: 1.316rem;
   }
 
   p {
     font-size: 1em;
-    line-height: 1rem;
+    line-height: 1.5rem;
   }
 
   a {
@@ -264,6 +265,7 @@ const GlobalStyle = createGlobalStyle`
     column-gap: 1.5rem;
     margin-top: 0;
     padding-left: 0;
+    height: 3rem;
     list-style-type: none;
   }
 
