@@ -14,6 +14,12 @@ function Footer() {
             <NavLink to="/map">Map</NavLink>
           </li>
           <li className="footer-link">
+            <NavLink to="/terms">Terms of Service</NavLink>
+          </li>
+          <li className="footer-link">
+            <NavLink to="/privacy">Privacy Policy</NavLink>
+          </li>
+          <li className="footer-link">
             <NavLink to="/places">Places Example</NavLink>
           </li>
           <li className="footer-link">

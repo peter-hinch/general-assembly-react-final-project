@@ -8,6 +8,8 @@ import MapView from './pages/MapView';
 import Footer from './components/layout/Footer';
 import PlacesEx from './pages/PlacesEx';
 import StylingEx from './pages/StylingEx';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Load the example dataset from local file.
 const seedVenueData = require('./venueData.json');
@@ -43,6 +45,8 @@ function App() {
               exact
               element={<PlacesEx onChange={() => null} />}
             />
+            <Route path="/terms" exact element={<TermsOfService />} />
+            <Route path="/privacy" exact element={<PrivacyPolicy />} />
             <Route path="/firestore" exact element={<FirestoreEx />} />
             <Route path="/styling" exact element={<StylingEx />} />
           </Routes>
