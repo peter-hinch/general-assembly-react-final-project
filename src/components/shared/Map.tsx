@@ -21,7 +21,7 @@ import * as React from 'react';
 // Reference: https://github.com/googlemaps/react-wrapper/blob/main/examples/basic.tsx
 // Reference: https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator
 
-function Map({
+const Map = ({
   center,
   zoom,
   venueData,
@@ -31,7 +31,7 @@ function Map({
   zoom: number;
   venueData: object;
   handleSelection: Function;
-}) {
+}) => {
   const ref = React.useRef();
 
   React.useEffect(() => {
@@ -69,6 +69,6 @@ function Map({
   }, []);
 
   return <div ref={ref} id="map" />;
-}
+};
 
 export default Map;

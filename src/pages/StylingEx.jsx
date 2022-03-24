@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { transition, pageVariants } from './../theme/GlobalVariants';
 
-function StylingEx() {
+const StylingEx = () => {
   return (
     <motion.div
       variants={pageVariants}
@@ -20,6 +20,6 @@ function StylingEx() {
       <p>Paragraph - 16px Regular Roboto</p>
     </motion.div>
   );
-}
+};
 
 export default StylingEx;

@@ -31,7 +31,7 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-function MapView({ venueData }: { venueData: FeatureCollection }) {
+const MapView = ({ venueData }: { venueData: FeatureCollection }) => {
   const [currentPlace, setCurrentPlace] = React.useState({
     geometry: {
       type: '',
@@ -79,6 +79,6 @@ function MapView({ venueData }: { venueData: FeatureCollection }) {
       <DetailsPane currentPlace={currentPlace} />
     </motion.div>
   );
-}
+};
 
 export default MapView;

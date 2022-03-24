@@ -16,7 +16,7 @@ import { transition, pageVariants } from './../theme/GlobalVariants';
 // CRUD Tutorial Using React + Firebase | Firebase 9 and Firestore Tutorial
 // Reference: https://www.youtube.com/watch?v=jCY6DH8F4oc
 
-function FirestoreEx() {
+const FirestoreEx = () => {
   const [hiddenId, setHiddenId] = useState('');
   const [inputName, setInputName] = useState('');
   const [inputLat, setInputLat] = useState(0);
@@ -117,6 +117,6 @@ function FirestoreEx() {
       </ul>
     </motion.div>
   );
-}
+};
 
 export default FirestoreEx;

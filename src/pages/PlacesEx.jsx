@@ -27,7 +27,7 @@ const loadScript = (url, callback) => {
   document.getElementsByTagName('head')[0].appendChild(script);
 };
 
-function PlacesEx() {
+const PlacesEx = () => {
   const [query, setQuery] = useState('');
   const [currentInfo, setCurrentInfo] = useState({});
   const autoCompleteRef = useRef(null);
@@ -153,6 +153,6 @@ function PlacesEx() {
       )}
     </motion.div>
   );
-}
+};
 
 export default PlacesEx;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TermsOfService() {
+const TermsOfService = () => {
   return (
     <div>
       <h1>Terms of Service</h1>
@@ -18,6 +18,6 @@ function TermsOfService() {
       </p>
     </div>
   );
-}
+};
 
 export default TermsOfService;

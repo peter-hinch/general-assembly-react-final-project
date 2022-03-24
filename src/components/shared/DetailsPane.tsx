@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function DetailsPane({ currentPlace }: { currentPlace: Feature }) {
+const DetailsPane = ({ currentPlace }: { currentPlace: Feature }) => {
   return (
     <div className="details-pane">
       <h2>{currentPlace.properties.name}</h2>
@@ -11,6 +11,6 @@ function DetailsPane({ currentPlace }: { currentPlace: Feature }) {
       <small>{currentPlace.properties.place_id}</small>
     </div>
   );
-}
+};
 
 export default DetailsPane;

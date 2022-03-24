@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { transition, pageVariants } from './../theme/GlobalVariants';
 
-function Home() {
+const Home = () => {
   return (
     <motion.div
       variants={pageVariants}
@@ -15,6 +15,6 @@ function Home() {
       <h2>Find your new favourite remote work space.</h2>
     </motion.div>
   );
-}
+};
 
 export default Home;

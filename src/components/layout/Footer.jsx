@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-function Footer() {
+const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -43,6 +43,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
