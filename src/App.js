@@ -14,7 +14,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 // Load the example dataset from local file.
 const seedPlacesData = require('./venueData.json');
 
-function App() {
+const App = () => {
   const [placesData, setPlacesData] = useState(seedPlacesData);
   const [currentPlace, setCurrentPlace] = useState({});
 
@@ -25,9 +25,16 @@ function App() {
   // a higher level component (in this case index.js).
   const location = useLocation();
 
+  const handleCurrentPlace = (addressObject) => {
+    setCurrentPlace(addressObject);
+  };
+
   return (
     <>
-      <Header />
+      <Header
+        currentPlace={currentPlace}
+        handleCurrentPlace={handleCurrentPlace}
+      />
       <main className="container">
         {/* The exitBeforeEnter prop prevents loading a new page before the last
         page has fully exited. */}
@@ -56,6 +63,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

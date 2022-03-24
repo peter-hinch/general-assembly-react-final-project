@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import PlaceSearch from './PlaceSearch';
 
-function Header({ query }) {
+const Header = ({ currentPlace, handleCurrentPlace }) => {
   return (
     <header>
       <div className="container">
@@ -13,7 +13,10 @@ function Header({ query }) {
               </NavLink>
             </li>
             <li className="nav-search">
-              <PlaceSearch query={query} />
+              <PlaceSearch
+                currentPlace={currentPlace}
+                handleCurrentPlace={handleCurrentPlace}
+              />
             </li>
             <li className="nav-link">
               <NavLink to="/map">Map</NavLink>
@@ -23,6 +26,6 @@ function Header({ query }) {
       </div>
     </header>
   );
-}
+};
 
 export default Header;
