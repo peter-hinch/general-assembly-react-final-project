@@ -2,9 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import imgAboriginalFlag from './../assets/aboriginal-flag.svg';
 
 const GlobalStyle = createGlobalStyle`
-  /* This import is made directly in index.html due to styled-components reccomendation. */
-  /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap'); */
-
   /* Define CSS variables for theme colours */
   :root {
     --color-black: #000000;
