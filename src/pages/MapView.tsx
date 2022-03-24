@@ -31,7 +31,7 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-const MapView = ({ venueData }: { venueData: FeatureCollection }) => {
+const MapView = ({ placesData }: { placesData: any }) => {
   const [currentPlace, setCurrentPlace] = React.useState({
     geometry: {
       type: '',
@@ -50,7 +50,7 @@ const MapView = ({ venueData }: { venueData: FeatureCollection }) => {
   const zoom = 12;
 
   const handleSelection = (placeId: string) => {
-    let currentPlaceInfo = venueData.features.filter(
+    let currentPlaceInfo = placesData.filter(
       (feature: Feature) => feature.properties.place_id === placeId
     )[0];
     setCurrentPlace(currentPlaceInfo);
@@ -72,7 +72,7 @@ const MapView = ({ venueData }: { venueData: FeatureCollection }) => {
         <Map
           center={center}
           zoom={zoom}
-          venueData={venueData}
+          placesData={placesData}
           handleSelection={handleSelection}
         />
       </Wrapper>

@@ -24,12 +24,12 @@ import * as React from 'react';
 const Map = ({
   center,
   zoom,
-  venueData,
+  placesData,
   handleSelection
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
-  venueData: object;
+  placesData: any;
   handleSelection: Function;
 }) => {
   const ref = React.useRef();
@@ -45,20 +45,41 @@ const Map = ({
       fullscreenControl: false
     });
 
+    const geocoder = new google.maps.Geocoder();
+    const examplePlaceId = 'ChIJ6RxLlctC1moReA6DqUtnh_E';
+    geocoder
+      .geocode({ placeId: examplePlaceId })
+      .then(({ results }) => {
+        if (results[0]) {
+          console.log('geocoder results', results);
+
+          const marker = new google.maps.Marker({
+            map,
+            position: results[0].geometry.location
+          });
+        } else {
+          console.log('no geocoder results returned.');
+        }
+      })
+      .catch((error) => console.log(`geocoder failed: ${error}`));
+
+    // Test adding to the maps data layer.
+    // map.data.add({
+    //   geometry: new google.maps.Data.Point(center)
+    // });
     // Load the venues GeoJSON onto the map
     // Use 'addGeoJson()' for local data and 'loadGeoJson()' for remote data.
     // Reference: https://stackoverflow.com/questions/25334931/loading-a-local-geojson-file-and-using-it-with-the-google-maps-javascript-api-v3
-    map.data.addGeoJson(venueData, { idPropertyName: 'place_id' });
+    // map.data.addGeoJson(venueData, { idPropertyName: 'place_id' });
     // Add a listener for map pins
     const infoWindow = new google.maps.InfoWindow();
     map.data.addListener('click', (event: any) => {
-      const placeId = event.feature.getProperty('place_id');
-      handleSelection(placeId);
-      const name = event.feature.getProperty('name');
-      const rating = event.feature.getProperty('rating');
+      // const placeId = event.feature.getProperty('place_id');
+      // handleSelection(placeId);
+      // const name = event.feature.getProperty('name');
+      // const rating = event.feature.getProperty('rating');
       const content = `
-        <h3><a href='#'>${name}</a></h3>
-        <div>${rating} stars</div>
+        HI!
       `;
       const position = event.feature.getGeometry().get();
       infoWindow.setContent(content);

@@ -12,7 +12,7 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Load the example dataset from local file.
-const seedPlacesData = require('./venueData.json');
+const seedPlacesData = require('./placesData.json');
 
 const App = () => {
   const [placesData, setPlacesData] = useState(seedPlacesData);
