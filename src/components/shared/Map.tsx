@@ -68,7 +68,8 @@ const Map = ({
             let marker;
             marker = new google.maps.Marker({
               map,
-              position: results[0].geometry.location
+              position: results[0].geometry.location,
+              animation: google.maps.Animation.DROP
             });
             addMarkerListener(index, marker, map, infoWindow);
             return marker;
