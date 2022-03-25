@@ -45,32 +45,26 @@ const Map = ({
       fullscreenControl: false
     });
 
-    const geocoder = new google.maps.Geocoder();
-    const examplePlaceId = 'ChIJ6RxLlctC1moReA6DqUtnh_E';
-    geocoder
-      .geocode({ placeId: examplePlaceId })
-      .then(({ results }) => {
-        if (results[0]) {
-          console.log('geocoder results', results);
+    generateMarkersArray(placesData, map);
 
-          const marker = new google.maps.Marker({
-            map,
-            position: results[0].geometry.location
-          });
-        } else {
-          console.log('no geocoder results returned.');
-        }
-      })
-      .catch((error) => console.log(`geocoder failed: ${error}`));
+    // const geocoder = new google.maps.Geocoder();
+    // const examplePlaceId = 'ChIJ6RxLlctC1moReA6DqUtnh_E';
+    // geocoder
+    //   .geocode({ placeId: examplePlaceId })
+    //   .then(({ results }) => {
+    //     if (results[0]) {
+    //       console.log('geocoder results', results);
 
-    // Test adding to the maps data layer.
-    // map.data.add({
-    //   geometry: new google.maps.Data.Point(center)
-    // });
-    // Load the venues GeoJSON onto the map
-    // Use 'addGeoJson()' for local data and 'loadGeoJson()' for remote data.
-    // Reference: https://stackoverflow.com/questions/25334931/loading-a-local-geojson-file-and-using-it-with-the-google-maps-javascript-api-v3
-    // map.data.addGeoJson(venueData, { idPropertyName: 'place_id' });
+    //       const marker = new google.maps.Marker({
+    //         map,
+    //         position: results[0].geometry.location
+    //       });
+    //     } else {
+    //       console.log('no geocoder results returned.');
+    //     }
+    //   })
+    //   .catch((error) => console.log(`geocoder failed: ${error}`));
+
     // Add a listener for map pins
     const infoWindow = new google.maps.InfoWindow();
     map.data.addListener('click', (event: any) => {
@@ -88,6 +82,34 @@ const Map = ({
       infoWindow.open(map);
     });
   }, []);
+
+  const generateMarkersArray = (
+    placesData: Array<Place>,
+    map: google.maps.Map
+  ) => {
+    const geocoder = new google.maps.Geocoder();
+
+    placesData.map((place: Place, index: number) => {
+      geocoder
+        .geocode({ placeId: place.placeId })
+        .then(({ results }) => {
+          if (results[0]) {
+            return new google.maps.Marker({
+              map,
+              position: results[0].geometry.location
+            });
+          } else {
+            console.log(`no geocoder results returned at index ${index}.`);
+            return undefined;
+          }
+        })
+        .catch((error) => {
+          console.log(`geocoder failed: ${error} at index ${index}`);
+          return undefined;
+        });
+      return undefined;
+    });
+  };
 
   return <div ref={ref} id="map" />;
 };
