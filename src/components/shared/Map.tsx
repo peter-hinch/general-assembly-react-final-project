@@ -46,44 +46,31 @@ const Map = ({
     });
 
     // Generate an array of markers from the placesData array and populate the map.
-    generateMarkersArray(placesData, map);
-
-    // Add a listener for map pins
-    const infoWindow = new google.maps.InfoWindow();
-    map.data.addListener('click', (event: any) => {
-      // const placeId = event.feature.getProperty('place_id');
-      // handleSelection(placeId);
-      // const name = event.feature.getProperty('name');
-      // const rating = event.feature.getProperty('rating');
-      const content = `
-        HI!
-      `;
-      const position = event.feature.getGeometry().get();
-      infoWindow.setContent(content);
-      infoWindow.setPosition(position);
-      infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
-      infoWindow.open(map);
-    });
+    generateMarkerArray(placesData, map);
   }, []);
 
   // Google maps API only allows storage of place_id information so the
   // geocoder API is used to find marker locations from the place_id saved
   // alongside the application's ratings information.
-  const generateMarkersArray = (
+  const generateMarkerArray = (
     placesData: Array<Place>,
     map: google.maps.Map
   ) => {
     const geocoder = new google.maps.Geocoder();
+    const infoWindow = new google.maps.InfoWindow();
 
     placesData.map((place: Place, index: number) => {
       geocoder
         .geocode({ placeId: place.placeId })
         .then(({ results }) => {
           if (results[0]) {
-            return new google.maps.Marker({
+            let marker;
+            marker = new google.maps.Marker({
               map,
               position: results[0].geometry.location
             });
+            addMarkerListener(index, marker, map, infoWindow);
+            return marker;
           } else {
             console.log(`no geocoder results returned at index ${index}.`);
             return undefined;
@@ -94,6 +81,28 @@ const Map = ({
           return undefined;
         });
       return undefined;
+    });
+  };
+
+  // Function to add a listener to markers on the map as they are generated in
+  // the generateMarkerArray function.
+  const addMarkerListener = (
+    index: number,
+    marker: google.maps.Marker,
+    map: google.maps.Map,
+    infoWindow: google.maps.InfoWindow
+  ) => {
+    google.maps.event.addListener(marker, 'click', (event: any) => {
+      const placeId = placesData[index].placeId;
+      handleSelection(placeId);
+      const content = `
+        ${placesData[index].placeId}
+      `;
+      const position = event.latLng;
+      infoWindow.setContent(content);
+      infoWindow.setPosition(position);
+      infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
+      infoWindow.open(map);
     });
   };
 
