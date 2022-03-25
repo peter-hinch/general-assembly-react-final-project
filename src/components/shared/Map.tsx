@@ -45,25 +45,8 @@ const Map = ({
       fullscreenControl: false
     });
 
+    // Generate an array of markers from the placesData array and populate the map.
     generateMarkersArray(placesData, map);
-
-    // const geocoder = new google.maps.Geocoder();
-    // const examplePlaceId = 'ChIJ6RxLlctC1moReA6DqUtnh_E';
-    // geocoder
-    //   .geocode({ placeId: examplePlaceId })
-    //   .then(({ results }) => {
-    //     if (results[0]) {
-    //       console.log('geocoder results', results);
-
-    //       const marker = new google.maps.Marker({
-    //         map,
-    //         position: results[0].geometry.location
-    //       });
-    //     } else {
-    //       console.log('no geocoder results returned.');
-    //     }
-    //   })
-    //   .catch((error) => console.log(`geocoder failed: ${error}`));
 
     // Add a listener for map pins
     const infoWindow = new google.maps.InfoWindow();
@@ -83,6 +66,9 @@ const Map = ({
     });
   }, []);
 
+  // Google maps API only allows storage of place_id information so the
+  // geocoder API is used to find marker locations from the place_id saved
+  // alongside the application's ratings information.
   const generateMarkersArray = (
     placesData: Array<Place>,
     map: google.maps.Map
