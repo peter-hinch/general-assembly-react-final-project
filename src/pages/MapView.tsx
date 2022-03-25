@@ -33,27 +33,17 @@ const render = (status: Status): React.ReactElement => {
 
 const MapView = ({ placesData }: { placesData: any }) => {
   const [currentPlace, setCurrentPlace] = React.useState({
-    geometry: {
-      type: '',
-      coordinates: [0, 0]
-    },
-    properties: {
-      place_id: '',
-      name: '',
-      description: '',
-      rating: null
-    },
-    type: ''
+    placeId: ''
   });
 
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
   const handleSelection = (placeId: string) => {
-    let currentPlaceInfo = placesData.filter(
-      (feature: Feature) => feature.properties.place_id === placeId
-    )[0];
-    setCurrentPlace(currentPlaceInfo);
+    // let currentPlaceInfo = placesData.filter(
+    //   (feature: Feature) => feature.properties.place_id === placeId
+    // )[0];
+    // setCurrentPlace(currentPlaceInfo);
   };
 
   return (
