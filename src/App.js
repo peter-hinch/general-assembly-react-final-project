@@ -12,10 +12,10 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Load the example dataset from local file.
-const seedPlacesData = require('./placesData.json');
+const seedRatingsData = require('./ratingsData.json');
 
 const App = () => {
-  const [placesData, setPlacesData] = useState(seedPlacesData);
+  const [ratingsData, setRatingsData] = useState(seedRatingsData);
   const [currentPlace, setCurrentPlace] = useState({});
 
   // useLocation allows the application to keep track of its current location.
@@ -46,7 +46,7 @@ const App = () => {
             <Route
               path="/map"
               exact
-              element={<MapView placesData={placesData} />}
+              element={<MapView ratingsData={ratingsData} />}
             />
             <Route
               path="/places"

@@ -31,7 +31,7 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-const MapView = ({ placesData }: { placesData: any }) => {
+const MapView = ({ ratingsData }: { ratingsData: any }) => {
   const [currentPlace, setCurrentPlace] = React.useState({
     placeId: ''
   });
@@ -40,7 +40,7 @@ const MapView = ({ placesData }: { placesData: any }) => {
   const zoom = 12;
 
   const handleSelection = (placeId: string) => {
-    let currentPlaceInfo = placesData.filter(
+    let currentPlaceInfo = ratingsData.filter(
       (place: Place) => place.placeId === placeId
     )[0];
     setCurrentPlace(currentPlaceInfo);
@@ -62,7 +62,7 @@ const MapView = ({ placesData }: { placesData: any }) => {
         <Map
           center={center}
           zoom={zoom}
-          placesData={placesData}
+          ratingsData={ratingsData}
           handleSelection={handleSelection}
         />
       </Wrapper>

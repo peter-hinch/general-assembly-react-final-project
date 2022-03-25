@@ -24,12 +24,12 @@ import * as React from 'react';
 const Map = ({
   center,
   zoom,
-  placesData,
+  ratingsData,
   handleSelection
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
-  placesData: any;
+  ratingsData: any;
   handleSelection: Function;
 }) => {
   const ref = React.useRef();
@@ -45,25 +45,26 @@ const Map = ({
       fullscreenControl: false
     });
 
-    // Generate an array of markers from the placesData array and populate the map.
-    generateMarkerArray(placesData, map);
+    // Generate an array of markers from the ratingsData array and populate the map.
+    generateMarkerArray(ratingsData, map);
   }, []);
 
   // Google maps API only allows storage of place_id information so the
   // geocoder API is used to find marker locations from the place_id saved
   // alongside the application's ratings information.
   const generateMarkerArray = (
-    placesData: Array<Place>,
+    ratingsData: Array<Place>,
     map: google.maps.Map
   ) => {
     const geocoder = new google.maps.Geocoder();
     const infoWindow = new google.maps.InfoWindow();
 
-    placesData.map((place: Place, index: number) => {
+    ratingsData.map((place: Place, index: number) => {
       geocoder
         .geocode({ placeId: place.placeId })
         .then(({ results }) => {
           if (results[0]) {
+            console.log(results[0]);
             let marker;
             marker = new google.maps.Marker({
               map,
@@ -93,10 +94,10 @@ const Map = ({
     infoWindow: google.maps.InfoWindow
   ) => {
     google.maps.event.addListener(marker, 'click', (event: any) => {
-      const placeId = placesData[index].placeId;
+      const placeId = ratingsData[index].placeId;
       handleSelection(placeId);
       const content = `
-        ${placesData[index].placeId}
+        ${ratingsData[index].placeId}
       `;
       const position = event.latLng;
       infoWindow.setContent(content);
