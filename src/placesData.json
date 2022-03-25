@@ -1,69 +1,18 @@
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [144.964169, -37.810338]
-      },
-      "type": "Feature",
-      "properties": {
-        "place_id": "ChIJ6RxLlctC1moReA6DqUtnh_E",
-        "category": "library",
-        "hours": "10am - 6pm",
-        "description": "Victorian landmark, opened in 1856, consisting of 23 classical buildings, with a grand reading room.",
-        "name": "State Library Victoria",
-        "phone": "(03) 8664 7000",
-        "rating": 5
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [144.9909157, -37.8538957]
-      },
-      "type": "Feature",
-      "properties": {
-        "place_id": "ChIJMWQmaTpo1moRImVSbVM5cUE",
-        "category": "cafe",
-        "hours": "",
-        "description": "Mexican meals and pub grub in a retro diner with flowers hanging from the ceiling and bird cages.",
-        "name": "Yellow Bird Cafe",
-        "phone": "(03) 9533 8983",
-        "rating": 4
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [144.9761613, -37.7999139]
-      },
-      "type": "Feature",
-      "properties": {
-        "place_id": "ChIJW1fHRd9C1moRBzTQktK3f_U",
-        "category": "bar",
-        "hours": "2pm - 12am",
-        "description": "Stalwart bar with comfy sofas, bright windows and pavement beer garden, featuring local art and DJs.",
-        "name": "Blackcat Fitzroy",
-        "phone": "(03) 9414 6230",
-        "rating": 5
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [144.9925166, -37.8483423]
-      },
-      "type": "Feature",
-      "properties": {
-        "place_id": "ChIJv1vMr6Np1moR4sPYRio1eAs",
-        "category": "park",
-        "hours": "8:30am - 5am",
-        "description": "Prahran Square is a 10,000 square metre urban parkland and is the City of Stonnington's transformation of the old Cato Street car park into a dynamic and inviting public space. Prahran Square celebrates community, arts and culture, playing host to an array of events, live performances and showcasing works by local artists.",
-        "name": "Prahran Square",
-        "phone": "",
-        "rating": 3
-      }
-    }
-  ]
-}
+[
+  {
+    "placeId": "ChIJ6RxLlctC1moReA6DqUtnh_E",
+    "ratings": {}
+  },
+  {
+    "placeId": "ChIJMWQmaTpo1moRImVSbVM5cUE",
+    "ratings": {}
+  },
+  {
+    "placeId": "ChIJW1fHRd9C1moRBzTQktK3f_U",
+    "ratings": {}
+  },
+  {
+    "placeId": "ChIJv1vMr6Np1moR4sPYRio1eAs",
+    "ratings": {}
+  }
+]
