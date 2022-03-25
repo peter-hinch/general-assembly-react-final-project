@@ -46,7 +46,7 @@ const App = () => {
             <Route
               path="/map"
               exact
-              element={<MapView venueData={placesData} />}
+              element={<MapView placesData={placesData} />}
             />
             <Route
               path="/places"
