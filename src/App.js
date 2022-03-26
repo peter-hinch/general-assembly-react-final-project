@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { v4 as uuid } from 'uuid';
 import placeIdLookup from './placeIdLookup';
 import Header from './components/layout/Header';
 import Home from './pages/Home';
@@ -28,15 +27,8 @@ const App = () => {
   const [ratingsData, setRatingsData] = useState(seedRatingsData);
   const [currentPlace, setCurrentPlace] = useState({});
 
-  // Create a session token for Google API requests. This is a v4 UUID and is
-  // used to group certain API requests together to minimise effect on billing.
-  const sessionToken = uuid();
-
   // Look up place information for a given place_id.
-  const placeIdLookupTest = placeIdLookup(
-    'ChIJ6RxLlctC1moReA6DqUtnh_E',
-    sessionToken
-  );
+  const placeIdLookupTest = placeIdLookup('ChIJ6RxLlctC1moReA6DqUtnh_E');
   console.log(placeIdLookupTest);
 
   // useLocation allows the application to keep track of its current location.
