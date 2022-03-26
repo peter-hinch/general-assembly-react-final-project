@@ -31,37 +31,39 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
               <a href={currentPlace.website}>Website</a>
             </span>
           </div>
-          {currentPlace.hasOwnProperty('photos') && (
-            /* When using images returned by the Places API, if an attribution
-            exists for that image it must be displayed with the result. */
-            <div className="place-images">
-              <img
-                src={currentPlace.photos[0].getUrl()}
-                alt={currentPlace.name}
-              />
-              <small className="img-attributes">
-                <em>
-                  {parseAttributes(currentPlace.photos[0].html_attributions)}
-                </em>
-              </small>
-            </div>
-          )}
-          <div className="opening-hours">
-            <h4>Opening Hours</h4>
-            {currentPlace.hasOwnProperty('opening_hours') && (
-              <>
-                <p>
-                  {currentPlace.opening_hours.isOpen ? 'Open Now' : 'Closed'}
-                </p>
-                <ul>
-                  {currentPlace.opening_hours.weekday_text.map(
-                    (weekday: any) => (
-                      <li>{weekday}</li>
-                    )
-                  )}
-                </ul>
-              </>
+          <div className="additional-info">
+            {currentPlace.hasOwnProperty('photos') && (
+              /* When using images returned by the Places API, if an attribution
+              exists for that image it must be displayed with the result. */
+              <div className="place-images">
+                <img
+                  src={currentPlace.photos[0].getUrl()}
+                  alt={currentPlace.name}
+                />
+                <small className="img-attributes">
+                  <em>
+                    {parseAttributes(currentPlace.photos[0].html_attributions)}
+                  </em>
+                </small>
+              </div>
             )}
+            <div className="opening-hours">
+              <h4>Opening Hours</h4>
+              {currentPlace.hasOwnProperty('opening_hours') && (
+                <>
+                  <p>
+                    {currentPlace.opening_hours.isOpen ? 'Open Now' : 'Closed'}
+                  </p>
+                  <ul>
+                    {currentPlace.opening_hours.weekday_text.map(
+                      (weekday: any) => (
+                        <li>{weekday}</li>
+                      )
+                    )}
+                  </ul>
+                </>
+              )}
+            </div>
           </div>
           {/* Results returned by the Google Places API must have a link to the 
           Google Business Profile for that result. */}
