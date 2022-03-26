@@ -1,8 +1,8 @@
-const placeIdLookup = (placeId, sessionToken) => {
+const placeIdLookup = (placeId) => {
   const url = 'https://maps.googleapis.com/maps/api/place/details/json';
   const key = process.env.REACT_APP_MAPS_PLACES_API_KEY;
 
-  fetch(`${url}?place_id=${placeId}&key=${key}&sessiontoken=${sessionToken}`, {
+  fetch(`${url}?place_id=${placeId}&key=${key}`, {
     method: 'POST'
   })
     .then((response) => response.json())
