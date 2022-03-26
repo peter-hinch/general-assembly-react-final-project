@@ -8,9 +8,9 @@ Full requirements for the final project are outlined ![here](https://git.general
 
 #### Satisfy all of the following
 
-- [ ] Utilise both nested components and state
+- [x] Utilise both nested components and state
 - [x] Use React Router and include a nav bar
-- [ ] Use ES6 syntax - don't forget about functional components.
+- [x] Use ES6 syntax - don't forget about functional components.
 
 #### Choose at least one of the following
 
