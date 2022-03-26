@@ -269,28 +269,52 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 2rem;
   }
 
-  main .details-pane .place-images {
-    width: 50%;
-  }
-
-  main .details-pane .place-images img {
-    display: block;
+  main .details-pane .additional-info {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    background: var(--color-neutral-variant-80);
     border-radius: 0.25rem;
   }
 
-  main .details-pane .opening-hours {
+  main .details-pane .additional-info .place-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
   }
 
-  main .details-pane .opening-hours ul {
+  main .details-pane .additional-info .place-images img {
+    display: block;
+    width: 100%;
+    border-radius: 0.25rem 0 1.5rem 0;
+  }
+
+  main .details-pane .additional-info .place-images small a {
+    color: var(--color-neutral-variant-30);
+  }
+
+  main .details-pane .additional-info .place-images small a:hover {
+    text-decoration: underline;
+  }
+
+  main .details-pane .additional-info .opening-hours {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 50%;
+  }
+
+  main .details-pane .additional-info .opening-hours ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
   }
 
   main .details-pane .google-attribution {
     display: flex;
     justify-content: space-between;
-    margin: 1rem -0.75rem -0.75rem;
+    margin: 0.75rem -0.75rem -0.75rem;
     padding: 0.5rem 0.75rem;
     width: calc(100% + 1.5rem);
     color: var(--color-neutral-variant-90);
@@ -300,6 +324,10 @@ const GlobalStyle = createGlobalStyle`
 
   main .details-pane .google-attribution a {
     color: var(--color-white);
+  }
+
+  main .details-pane .google-attribution a:hover {
+    text-decoration: underline;
   }
 
   main .details-pane .google-attribution img {
