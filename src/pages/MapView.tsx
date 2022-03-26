@@ -31,11 +31,13 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-const MapView = ({ ratingsData }: { ratingsData: any }) => {
-  const [currentPlace, setCurrentPlace] = React.useState({
-    placeId: ''
-  });
-
+const MapView = ({
+  ratingsData,
+  currentPlace
+}: {
+  ratingsData: any;
+  currentPlace: PlacesApiResponse;
+}) => {
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
@@ -43,7 +45,6 @@ const MapView = ({ ratingsData }: { ratingsData: any }) => {
     let currentPlaceInfo = ratingsData.filter(
       (place: Place) => place.placeId === placeId
     )[0];
-    setCurrentPlace(currentPlaceInfo);
   };
 
   return (
@@ -66,7 +67,7 @@ const MapView = ({ ratingsData }: { ratingsData: any }) => {
           handleSelection={handleSelection}
         />
       </Wrapper>
-      <DetailsPane currentPlace={currentPlace} />
+      {/* <DetailsPane currentPlace={currentPlace} /> */}
     </motion.div>
   );
 };

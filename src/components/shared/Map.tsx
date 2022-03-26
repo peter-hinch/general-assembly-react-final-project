@@ -96,7 +96,7 @@ const Map = ({
   ) => {
     google.maps.event.addListener(marker, 'click', (event: any) => {
       const placeId = ratingsData[index].placeId;
-      handleSelection(placeId);
+      // handleSelection(placeId);
       const content = `
         ${ratingsData[index].placeId}
       `;
