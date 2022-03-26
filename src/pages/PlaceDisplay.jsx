@@ -11,13 +11,19 @@ const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
 
   return (
     <div>
-      <div className="spot-rating">
-        <h4>Spot Rating</h4>
-        <StarRating />
-        <a href="#details">More about this spot</a>
+      <div className="rating-bar">
+        <div className="rating-lead">
+          <h4>Spot Rating</h4>
+          <StarRating rating={100} />
+        </div>
+        <a href="#rating-breakdown" className="rating-link">
+          More about this spot
+        </a>
       </div>
       <DetailsPane currentPlace={currentPlace} />
-      <h3 id="details">Spot details</h3>
+      <div id="rating-breakdown">
+        <h3>Spot details</h3>
+      </div>
       <pre style={{ textAlign: 'left' }}>
         {JSON.stringify(spotRatingDetails, null, 2)}
       </pre>
