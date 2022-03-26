@@ -1,18 +1,34 @@
 [
   {
     "placeId": "ChIJ6RxLlctC1moReA6DqUtnh_E",
-    "ratings": {}
+    "ratings": {
+      "quiet": 5,
+      "friendly": 5,
+      "wifi": 5
+    }
   },
   {
     "placeId": "ChIJMWQmaTpo1moRImVSbVM5cUE",
-    "ratings": {}
+    "ratings": {
+      "quiet": 4,
+      "friendly": 3,
+      "wifi": 2
+    }
   },
   {
     "placeId": "ChIJW1fHRd9C1moRBzTQktK3f_U",
-    "ratings": {}
+    "ratings": {
+      "quiet": 1,
+      "friendly": 2,
+      "wifi": 3
+    }
   },
   {
     "placeId": "ChIJv1vMr6Np1moR4sPYRio1eAs",
-    "ratings": {}
+    "ratings": {
+      "quiet": 2,
+      "friendly": 2,
+      "wifi": 2
+    }
   }
 ]
