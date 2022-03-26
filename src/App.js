@@ -28,8 +28,9 @@ const App = () => {
   const [currentPlace, setCurrentPlace] = useState({});
 
   // Look up place information for a given place_id.
-  const placeIdLookupTest = placeIdLookup('ChIJ6RxLlctC1moReA6DqUtnh_E');
-  console.log(placeIdLookupTest);
+  const placeIdLookup = (placeId) => {
+    placeIdLookup(placeId);
+  };
 
   // useLocation allows the application to keep track of its current location.
   // in this case it provides the necessary information for framer-motion to
