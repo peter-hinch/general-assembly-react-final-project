@@ -257,6 +257,10 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
   }  
 
+  main .rating-bar a.rating-link:hover {
+    text-decoration: underline;
+  } 
+
   main .details-pane {
     display: flex;
     flex-direction: row;
@@ -343,7 +347,8 @@ const GlobalStyle = createGlobalStyle`
     height: 1.125rem;
   }
 
-  main #rating-breakdown {
+  main #rating-details {
+    margin-top: 1rem;
     scroll-margin-top: calc(var(--header-min-height) + 1rem);
   }
 
@@ -432,7 +437,7 @@ const GlobalStyle = createGlobalStyle`
 
   #map {
     z-index: 0;
-    width: 30rem;
+    width: 100%;
     height: 30rem;
   }
 `;
