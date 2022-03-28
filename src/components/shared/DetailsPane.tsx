@@ -52,7 +52,7 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
               {currentPlace.hasOwnProperty('opening_hours') && (
                 <>
                   <p>
-                    {currentPlace.opening_hours.isOpen()
+                    {currentPlace.opening_hours.open_now
                       ? 'Open Now'
                       : 'Closed'}
                   </p>
