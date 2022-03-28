@@ -6,22 +6,40 @@
       "noise": {
         "overall": 77.5,
         "scores": [
-          { "score": 88, "comment": "" },
-          { "score": 67, "comment": "" }
+          {
+            "score": 88,
+            "comment": "It is quiet here, I find it to be a really nice studying environment."
+          },
+          {
+            "score": 67,
+            "comment": "Sometimes it is so quiet, I feel like I might be disrupting others."
+          }
         ]
       },
       "social": {
         "overall": 93.5,
         "scores": [
-          { "score": 99, "comment": "" },
-          { "score": 88, "comment": "" }
+          {
+            "score": 99,
+            "comment": "I'm an introvert so love that it's so quiet I'm never hassled by other people."
+          },
+          {
+            "score": 88,
+            "comment": "I hang out here with my work pals in total silence. It's bliss. We get a lot done here."
+          }
         ]
       },
       "coworking": {
         "overall": 80,
         "scores": [
-          { "score": 87, "comment": "" },
-          { "score": 73, "comment": "" }
+          {
+            "score": 87,
+            "comment": "I get so much done here because none of my co-workers dare interrupt me."
+          },
+          {
+            "score": 73,
+            "comment": "It's alright if you are happy to work quietly and IM your friends. Can't talk though, it's so quiet!"
+          }
         ]
       },
       "internet": {
@@ -54,43 +72,73 @@
       "noise": {
         "overall": 82,
         "scores": [
-          { "score": 86, "comment": "" },
-          { "score": 78, "comment": "" }
+          {
+            "score": 86,
+            "comment": "Great vibe and a happening little cafe. Sometimes noisy, but never too loud."
+          },
+          {
+            "score": 78,
+            "comment": "I like it here and the music is great but sometimes it might be a little hard to concerntrate on you have some tricky concepts to cover.."
+          }
         ]
       },
       "social": {
         "overall": 75,
         "scores": [
-          { "score": 60, "comment": "" },
-          { "score": 90, "comment": "" }
+          {
+            "score": 60,
+            "comment": "They keep on calling me Gary. My name is Jerry."
+          },
+          {
+            "score": 90,
+            "comment": "Friendly staff and there's often someone to talk to if you feel like taking a break from the task at hand."
+          }
         ]
       },
       "coworking": {
         "overall": 64.5,
         "scores": [
-          { "score": 67, "comment": "" },
-          { "score": 62, "comment": "" }
+          {
+            "score": 67,
+            "comment": "Great place to have a quick meeting but the atmosphere might be a little too casual to get a good amount of co-working done."
+          },
+          {
+            "score": 62,
+            "comment": "Found it hard to focus on work with others, but great place for a quick catch up with collegues before continuing the day's tasks."
+          }
         ]
       },
       "internet": {
         "overall": 80,
         "scores": [
-          { "score": 77, "comment": "" },
-          { "score": 83, "comment": "" }
+          {
+            "score": 77,
+            "comment": "The wi-fi was a little patchy and I had to resort to using my own connection at times."
+          },
+          { "score": 83, "comment": "Very funny wi-fi password." }
         ]
       },
       "power": {
         "overall": 82,
         "scores": [
-          { "score": 64, "comment": "" },
-          { "score": 100, "comment": "" }
+          {
+            "score": 64,
+            "comment": "There was a lot of grime on the power point, I avoided it."
+          },
+          {
+            "score": 100,
+            "comment": "Had to look around for a power point but there are a few about."
+          }
         ]
       },
       "a11y": {
         "overall": 79,
         "scores": [
-          { "score": 86, "comment": "" },
-          { "score": 72, "comment": "" }
+          { "score": 86, "comment": "No troubles here!" },
+          {
+            "score": 72,
+            "comment": "Small bump and narrow doorway but staff were very accomodating when I arrived in my wheelchair."
+          }
         ]
       }
     }
@@ -150,43 +198,79 @@
       "noise": {
         "overall": 71,
         "scores": [
-          { "score": 64, "comment": "" },
-          { "score": 78, "comment": "" }
+          {
+            "score": 64,
+            "comment": "Some traffic noise from the streets nearby, but still a peaceful outdoor area."
+          },
+          {
+            "score": 78,
+            "comment": "A nice quiet place to enjoy the sunshine."
+          }
         ]
       },
       "social": {
         "overall": 83.5,
         "scores": [
-          { "score": 95, "comment": "" },
-          { "score": 72, "comment": "" }
+          {
+            "score": 95,
+            "comment": "A nice open place where you can meet other workers without worrying if you might be disturbing someone."
+          },
+          {
+            "score": 72,
+            "comment": "Can be a little noisy at times with other groups and families. Luckily it is a large open area and you can find your own space.."
+          }
         ]
       },
       "coworking": {
         "overall": 86.5,
         "scores": [
-          { "score": 88, "comment": "" },
-          { "score": 85, "comment": "" }
+          {
+            "score": 88,
+            "comment": "Don't have to worry about interrupting the quiet enjoyment of others, great spot for a client meeting in the sun."
+          },
+          {
+            "score": 85,
+            "comment": "Great place to have a chat with other workers out in the open air."
+          }
         ]
       },
       "internet": {
         "overall": 89,
         "scores": [
-          { "score": 86, "comment": "" },
-          { "score": 92, "comment": "" }
+          {
+            "score": 86,
+            "comment": "No internet available here but plenty of reception for mobile broadband."
+          },
+          {
+            "score": 92,
+            "comment": "Great reception for mobile broadband out here in the open."
+          }
         ]
       },
       "power": {
         "overall": 89,
         "scores": [
-          { "score": 97, "comment": "" },
-          { "score": 81, "comment": "" }
+          {
+            "score": 97,
+            "comment": "You can find outlets here and there if yo have a thirsty laptop."
+          },
+          {
+            "score": 81,
+            "comment": "Got an outlet just in time to charge for that important call."
+          }
         ]
       },
       "a11y": {
         "overall": 93,
         "scores": [
-          { "score": 97, "comment": "" },
-          { "score": 89, "comment": "" }
+          {
+            "score": 97,
+            "comment": "Great amount of open space that is wheelchair accessible"
+          },
+          {
+            "score": 89,
+            "comment": "I can get to most areas with no trouble, but it would be great id there was more access to the tiered seating areas."
+          }
         ]
       }
     }
