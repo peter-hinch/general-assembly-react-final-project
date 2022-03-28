@@ -27,6 +27,14 @@ const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
         </a>
       </div>
       <DetailsPane currentPlace={currentPlace} />
+      <div id="rating-details" className="rating-bar">
+        <div className="rating-lead">
+          <h4>Rating Details</h4>
+        </div>
+        <a href="#" className="rating-link">
+          Rate this spot
+        </a>
+      </div>
       <RatingDetails ratings={spotRatingDetails} />
       <pre style={{ textAlign: 'left' }}>
         {JSON.stringify(spotRatingDetails, null, 2)}
