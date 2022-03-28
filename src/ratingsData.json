@@ -45,22 +45,37 @@
       "internet": {
         "overall": 79.5,
         "scores": [
-          { "score": 61, "comment": "" },
-          { "score": 98, "comment": "" }
+          { "score": 61, "comment": "Couldn't connect, patchy signal." },
+          {
+            "score": 98,
+            "comment": "The wi-fi is great. I don't know what that other guy is talking about."
+          }
         ]
       },
       "power": {
         "overall": 73.5,
         "scores": [
-          { "score": 82, "comment": "" },
-          { "score": 65, "comment": "" }
+          {
+            "score": 82,
+            "comment": "There are power outlets at some desks. Try to get in early!"
+          },
+          {
+            "score": 65,
+            "comment": "Someone stuck a biro refill in the power outlet at my desk. All the others were taken."
+          }
         ]
       },
       "a11y": {
         "overall": 72,
         "scores": [
-          { "score": 68, "comment": "" },
-          { "score": 76, "comment": "" }
+          {
+            "score": 68,
+            "comment": "Had trouble finding access to the lifts."
+          },
+          {
+            "score": 76,
+            "comment": "Pretty good overall but some of the ramps were a little rickety."
+          }
         ]
       }
     }
@@ -150,43 +165,73 @@
       "noise": {
         "overall": 78.5,
         "scores": [
-          { "score": 94, "comment": "" },
-          { "score": 63, "comment": "" }
+          {
+            "score": 94,
+            "comment": "Great music to work to, you won't need to bring headphones."
+          },
+          {
+            "score": 63,
+            "comment": "Too noisy! Also, I asked them for some Jimmy Barnes and they wouldn't play it."
+          }
         ]
       },
       "social": {
         "overall": 65.5,
         "scores": [
-          { "score": 66, "comment": "" },
-          { "score": 65, "comment": "" }
+          {
+            "score": 66,
+            "comment": "More of a bar than a quiet workplace. People are friendly but I'll admit I feel a little out of place."
+          },
+          {
+            "score": 65,
+            "comment": "Someone came through asking for money, which made me feel a little bit worried for my laptop."
+          }
         ]
       },
       "coworking": {
         "overall": 63,
         "scores": [
-          { "score": 65, "comment": "" },
-          { "score": 61, "comment": "" }
+          {
+            "score": 65,
+            "comment": "Great for a small meeting of 2-3 people but any more would become crowded."
+          },
+          {
+            "score": 61,
+            "comment": "Gary from marketing is not allowed in any more. We need to find a new digs."
+          }
         ]
       },
       "internet": {
         "overall": 86,
         "scores": [
-          { "score": 77, "comment": "" },
-          { "score": 95, "comment": "" }
+          {
+            "score": 77,
+            "comment": "I got the password but can't tell the Os from 0s."
+          },
+          {
+            "score": 95,
+            "comment": "The wi-fi is great here. No purchase necessary to get the password, either."
+          }
         ]
       },
       "power": {
         "overall": 69,
         "scores": [
-          { "score": 77, "comment": "" },
-          { "score": 61, "comment": "" }
+          {
+            "score": 77,
+            "comment": "Unplugged the tabletop arcade game and got told off, wouldn't recommend others do this."
+          },
+          { "score": 61, "comment": "Couldn't find any power points here." }
         ]
       },
       "a11y": {
         "overall": 93.5,
         "scores": [
-          { "score": 88, "comment": "" },
-          { "score": 99, "comment": "" }
+          { "score": 88, "comment": "No complaints!" },
+          {
+            "score": 99,
+            "comment": "Great access to most tables and couches. Helpful staff and patrons will push a couch or two aside to clear some extra space."
+          }
         ]
       }
     }
