@@ -1,16 +1,29 @@
-function RatingDetails({ ratings }) {
-  console.log(ratings);
+import RatingCategoryScores from './RatingCategoryScores';
+
+const RatingDetails = ({ ratingsObject }) => {
+  console.log(ratingsObject);
+
+  const ratings = ratingsObject.ratings;
 
   return (
     <>
-      <h5>Noise - {ratings.ratings.noise.overall}</h5>
-      <h5>Social - {ratings.ratings.social.overall}</h5>
-      <h5>Coworking - {ratings.ratings.coworking.overall}</h5>
-      <h5>Internet - {ratings.ratings.internet.overall}</h5>
-      <h5>Power - {ratings.ratings.power.overall}</h5>
-      <h5>Accessibility - {ratings.ratings.a11y.overall}</h5>
+      <RatingCategoryScores title={'Noise'} categoryScores={ratings.noise} />
+      <RatingCategoryScores title={'Social'} categoryScores={ratings.social} />
+      <RatingCategoryScores
+        title={'Coworking'}
+        categoryScores={ratings.coworking}
+      />
+      <RatingCategoryScores
+        title={'Internet'}
+        categoryScores={ratings.internet}
+      />
+      <RatingCategoryScores title={'Power'} categoryScores={ratings.power} />
+      <RatingCategoryScores
+        title={'Accessibility'}
+        categoryScores={ratings.a11y}
+      />
     </>
   );
-}
+};
 
 export default RatingDetails;
