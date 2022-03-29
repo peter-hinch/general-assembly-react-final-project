@@ -20,4 +20,4 @@ Full requirements for the final project are outlined ![here](https://git.general
 
 ### Deployment
 
-- [ ] Host the app on Heroku
+- [x] Host the app on Heroku
