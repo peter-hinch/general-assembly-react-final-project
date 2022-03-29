@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import StarRating from '../components/shared/StarRating';
 import DetailsPane from './../components/shared/DetailsPane';
 import RatingDetails from '../components/shared/RatingDetails';
+import RatingForm from '../components/shared/RatingForm';
 
 const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
   const { placeid } = useParams();
@@ -41,6 +42,7 @@ const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
           <h4>Your Rating</h4>
         </div>
       </div>
+      <RatingForm />
     </div>
   );
 };
