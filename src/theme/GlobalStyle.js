@@ -352,6 +352,40 @@ const GlobalStyle = createGlobalStyle`
     scroll-margin-top: calc(var(--header-min-height) + 1rem);
   }
 
+  main ul.user-score-list {
+    display: flex;   
+    overflow-x: auto;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  main li.user-score {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.75rem;
+    width: 18rem;
+    height: 6rem;
+    background: var(--color-tertiary-90);
+    border-radius: 0.25rem;
+  }
+
+  main li.user-score h6 {
+    position: absolute;
+    top: 0.75rem;
+    left: -0.5rem;
+    margin: 0;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    width: 1rem;
+    color: var(--color-white);
+    background: var(--color-tertiary-40);
+    border-radius: 0.25rem 0.25rem 1.5rem 0.25rem;
+  }
+  
+  main li.user-score p {
+    margin: 0.4rem 0 0 2rem;
+  }
+
   footer::before {
     position: absolute;
     z-index: -1;
