@@ -31,15 +31,16 @@ const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
         <div className="rating-lead">
           <h4>Rating Details</h4>
         </div>
-        <a href="#" className="rating-link">
+        <a href="#rating-your-say" className="rating-link">
           Rate this spot
         </a>
       </div>
-      <RatingDetails ratings={spotRatingDetails} />
-      <pre style={{ textAlign: 'left' }}>
-        {JSON.stringify(spotRatingDetails, null, 2)}
-      </pre>
-      <small>{placeid}</small>
+      <RatingDetails ratingsObject={spotRatingDetails} />
+      <div id="rating-your-say" className="rating-bar">
+        <div className="rating-lead">
+          <h4>Your Rating</h4>
+        </div>
+      </div>
     </div>
   );
 };
