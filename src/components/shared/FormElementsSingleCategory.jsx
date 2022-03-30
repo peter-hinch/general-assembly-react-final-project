@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
 const FormElementsSingleCategory = ({ category }) => {
-  const [inputRating, setInputRating] = useState(50);
-  const [inputRange, setInputRange] = useState(50);
+  const [categoryScore, setCategoryScore] = useState({
+    score: 50,
+    comment: ''
+  });
 
-  const handleInputRatingChange = (event) => {
-    setInputRating(event.target.value);
+  const handleInputChange = (value) => {
+    setCategoryScore({ ...categoryScore, ...value });
   };
 
   return (
@@ -18,12 +20,16 @@ const FormElementsSingleCategory = ({ category }) => {
         min="1"
         max="100"
         step="1"
-        value={inputRating}
-        onChange={(event) => handleInputRatingChange(event)}
+        value={categoryScore.score}
+        onChange={(event) => handleInputChange({ score: event.target.value })}
       />
-      <span>{inputRating}</span>
+      <span>{categoryScore.score}</span>
       <label for="comment">Comment</label>
-      <textarea id="comment" />
+      <textarea
+        id="comment"
+        value={categoryScore.comment}
+        onChange={(event) => handleInputChange({ comment: event.target.value })}
+      />
     </>
   );
 };
