@@ -1,7 +1,7 @@
 import FormElementsSingleCategory from './FormElementsSingleCategory';
 
 const RatingForm = ({ userScores, handleScoreChange, handleScoresSubmit }) => {
-  const scoreComponentsMap = Object.keys(userScores).map((score) => (
+  const scoreComponentsMap = userScores.map((score) => (
     <FormElementsSingleCategory
       key={score.category}
       categoryScore={score}

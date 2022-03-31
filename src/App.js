@@ -56,10 +56,16 @@ const App = () => {
   };
 
   const handleScoreChange = (category, value) => {
-    let newUserScores = {};
-
-    console.log('category: ', category, 'value: ', value);
-    // setUserScores({ ...categoryScore, ...value });
+    let newUserScores = userScores.map((score) => {
+      if (score.category === category) {
+        return {
+          ...score,
+          ...value
+        };
+      }
+      return score;
+    });
+    setUserScores(newUserScores);
   };
 
   const handleScoresSubmit = (event) => {
