@@ -13,11 +13,14 @@ const PlaceDisplay = ({
 }) => {
   const { placeid } = useParams();
 
-  // Filter the ratingsData array to only the result that applies to this spot.
-  // After the filter there should only be one result, assign the object at
-  // index 0 to the new object 'spotRatingDetails'.
+  // Ensure that ratings data exists before attempting to assign the data to an
+  // object. If no data exists return null values for spotRating and
+  // spotRatingDetails.
   let spotRatingDetails, spotRating;
   if (
+    // Filter the ratingsData array to only the result that applies to this spot.
+    // After the filter there should only be one result, assign the object at
+    // index 0 to the new object 'spotRatingDetails'.
     ratingsData.filter((rating) => rating.placeId === currentPlace.place_id)
       .length > 0
   ) {
@@ -35,6 +38,7 @@ const PlaceDisplay = ({
       <div id="spot-rating" className="rating-bar">
         <div className="rating-lead">
           {spotRating !== null ? (
+            // Only display a rating for locations with rating information.
             <>
               <h4>Spot Rating</h4>
               <StarRating rating={spotRating} />
@@ -46,12 +50,14 @@ const PlaceDisplay = ({
           )}
         </div>
         {spotRating !== null ? (
+          // Link to more ratings if rating information is present.
           <>
             <a href="#rating-details" className="rating-link">
               More about this spot
             </a>
           </>
         ) : (
+          // Otherwise provide a link to the ratings form.
           <>
             <a href="#rating-your-say" className="rating-link">
               Rate this spot
