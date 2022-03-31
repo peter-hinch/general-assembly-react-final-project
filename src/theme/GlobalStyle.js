@@ -489,6 +489,7 @@ const GlobalStyle = createGlobalStyle`
     z-index: 0;
     width: 100%;
     height: 30rem;
+    border-radius: 0.25rem;
   }
 `;
 
