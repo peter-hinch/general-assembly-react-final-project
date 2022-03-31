@@ -1,18 +1,7 @@
-import { useState } from 'react';
-
-const FormElementsSingleCategory = ({ category }) => {
-  const [categoryScore, setCategoryScore] = useState({
-    score: 50,
-    comment: ''
-  });
-
-  const handleInputChange = (value) => {
-    setCategoryScore({ ...categoryScore, ...value });
-  };
-
+const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
     <>
-      <h5>{category}</h5>
+      <h5>{categoryScore.category}</h5>
       <div className="add-rating-category">
         <label htmlFor="rating">Rating</label>
         <input
@@ -22,7 +11,11 @@ const FormElementsSingleCategory = ({ category }) => {
           max="100"
           step="1"
           value={categoryScore.score}
-          onChange={(event) => handleInputChange({ score: event.target.value })}
+          onChange={(event) =>
+            handleScoreChange(categoryScore.category, {
+              score: event.target.value
+            })
+          }
         />
         <span>{categoryScore.score}</span>
         <label htmlFor="comment">Comment</label>
@@ -30,7 +23,9 @@ const FormElementsSingleCategory = ({ category }) => {
           id="comment"
           value={categoryScore.comment}
           onChange={(event) =>
-            handleInputChange({ comment: event.target.value })
+            handleScoreChange(categoryScore.category, {
+              comment: event.target.value
+            })
           }
         />
       </div>

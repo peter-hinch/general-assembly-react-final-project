@@ -1,17 +1,20 @@
 import FormElementsSingleCategory from './FormElementsSingleCategory';
 
-const RatingForm = ({ userScores, handleRatingSubmit }) => {
+const RatingForm = ({ userScores, handleScoreChange, handleScoresSubmit }) => {
+  const scoreComponentsMap = Object.keys(userScores).map((score) => (
+    <FormElementsSingleCategory
+      key={score.category}
+      categoryScore={score}
+      handleScoreChange={handleScoreChange}
+    />
+  ));
+
   return (
     <form>
-      <FormElementsSingleCategory category="Noise" />
-      <FormElementsSingleCategory category="Social" />
-      <FormElementsSingleCategory category="Coworking" />
-      <FormElementsSingleCategory category="Internet" />
-      <FormElementsSingleCategory category="Power" />
-      <FormElementsSingleCategory category="Accessibility" />
+      {scoreComponentsMap}
       <button
         className="add-rating-submit"
-        onClick={(event) => handleRatingSubmit(event)}
+        onClick={(event) => handleScoresSubmit(event)}
       >
         Submit Rating
       </button>
