@@ -265,7 +265,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0.75rem -0.75rem;
+    margin: 0.75rem -0.75rem 1.75rem;
     padding: 0.75rem;
     color: var(--color-neutral-variant-30);
     background: var(--color-neutral-variant-90);

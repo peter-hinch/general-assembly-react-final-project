@@ -16,33 +16,63 @@ const PlaceDisplay = ({
   // Filter the ratingsData array to only the result that applies to this spot.
   // After the filter there should only be one result, assign the object at
   // index 0 to the new object 'spotRatingDetails'.
-  const spotRatingDetails = ratingsData.filter(
-    (rating) => rating.placeId === currentPlace.place_id
-  )[0];
-
-  const spotRating = spotRatingDetails.ratings.overall;
+  let spotRatingDetails, spotRating;
+  if (
+    ratingsData.filter((rating) => rating.placeId === currentPlace.place_id)
+      .length > 0
+  ) {
+    spotRatingDetails = ratingsData.filter(
+      (rating) => rating.placeId === currentPlace.place_id
+    )[0];
+    spotRating = spotRatingDetails.ratings.overall;
+  } else {
+    spotRatingDetails = null;
+    spotRating = null;
+  }
 
   return (
     <div>
       <div id="spot-rating" className="rating-bar">
         <div className="rating-lead">
-          <h4>Spot Rating</h4>
-          <StarRating rating={spotRating} />
+          {spotRating !== null ? (
+            <>
+              <h4>Spot Rating</h4>
+              <StarRating rating={spotRating} />
+            </>
+          ) : (
+            <>
+              <h4>No ratings yet..</h4>
+            </>
+          )}
         </div>
-        <a href="#rating-details" className="rating-link">
-          More about this spot
-        </a>
+        {spotRating !== null ? (
+          <>
+            <a href="#rating-details" className="rating-link">
+              More about this spot
+            </a>
+          </>
+        ) : (
+          <>
+            <a href="#rating-your-say" className="rating-link">
+              Rate this spot
+            </a>
+          </>
+        )}
       </div>
       <DetailsPane currentPlace={currentPlace} />
-      <div id="rating-details" className="rating-bar">
-        <div className="rating-lead">
-          <h4>Rating Details</h4>
-        </div>
-        <a href="#rating-your-say" className="rating-link">
-          Rate this spot
-        </a>
-      </div>
-      <RatingDetails ratingsObject={spotRatingDetails} />
+      {spotRatingDetails !== null && (
+        <>
+          <div id="rating-details" className="rating-bar">
+            <div className="rating-lead">
+              <h4>Rating Details</h4>
+            </div>
+            <a href="#rating-your-say" className="rating-link">
+              Rate this spot
+            </a>
+          </div>
+          <RatingDetails ratingsObject={spotRatingDetails} />
+        </>
+      )}
       <div id="rating-your-say" className="rating-bar">
         <div className="rating-lead">
           <h4>Your Rating</h4>
