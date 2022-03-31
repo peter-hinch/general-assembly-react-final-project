@@ -81,7 +81,7 @@ const PlaceDisplay = ({
       )}
       <div id="rating-your-say" className="rating-bar">
         <div className="rating-lead">
-          <h4>Your Rating</h4>
+          <h4>What did you think?</h4>
         </div>
       </div>
       <RatingForm
