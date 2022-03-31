@@ -8,8 +8,6 @@ import Home from './pages/Home';
 import Footer from './components/layout/Footer';
 import FirestoreEx from './pages/FirestoreEx';
 import MapView from './pages/MapView';
-import PlacesEx from './pages/PlacesEx';
-import StylingEx from './pages/StylingEx';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import PlaceDisplay from './pages/PlaceDisplay';
@@ -55,6 +53,8 @@ const App = () => {
     // TODO - add code to populate 'placesApiData' where applicable.
   };
 
+  // Determine which category in the userScores array needs to be updated and
+  // replace with the new form data at that location.
   const handleScoreChange = (category, value) => {
     let newUserScores = userScores.map((score) => {
       if (score.category === category) {
@@ -68,12 +68,13 @@ const App = () => {
     setUserScores(newUserScores);
   };
 
+  // Determine which element in the ratingsData array needs to be appended to
+  // and add the new ratings in their appropriate locations. New overall rating
+  // values must also be calculated at this stage.
   const handleScoresSubmit = (event) => {
     event.preventDefault();
     console.log('Rating Submit Button Press');
   };
-
-  const addUserRating = () => {};
 
   return (
     <>
@@ -95,11 +96,6 @@ const App = () => {
               element={<MapView ratingsData={ratingsData} />}
             />
             <Route
-              path="/places"
-              exact
-              element={<PlacesEx onChange={() => null} />}
-            />
-            <Route
               path="/spot/:placeid"
               exact
               element={
@@ -115,7 +111,6 @@ const App = () => {
             <Route path="/terms" exact element={<TermsOfService />} />
             <Route path="/privacy" exact element={<PrivacyPolicy />} />
             <Route path="/firestore" exact element={<FirestoreEx />} />
-            <Route path="/styling" exact element={<StylingEx />} />
           </Routes>
         </AnimatePresence>
       </main>
