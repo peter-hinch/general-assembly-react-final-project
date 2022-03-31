@@ -20,13 +20,7 @@ const Footer = () => {
             <NavLink to="/privacy">Privacy Policy</NavLink>
           </li>
           <li className="footer-link">
-            <NavLink to="/places">Places Example</NavLink>
-          </li>
-          <li className="footer-link">
             <NavLink to="/firestore">Firestore Example</NavLink>
-          </li>
-          <li className="footer-link">
-            <NavLink to="/styling">Styling Example</NavLink>
           </li>
         </ul>
       </nav>
