@@ -48,7 +48,7 @@ const PlaceDisplay = ({
         </div>
       </div>
       <RatingForm
-        userRating={userScores}
+        userScores={userScores}
         handleRatingSubmit={handleRatingSubmit}
       />
     </div>

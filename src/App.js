@@ -83,7 +83,7 @@ const App = () => {
                 <PlaceDisplay
                   currentPlace={currentPlace}
                   ratingsData={ratingsData}
-                  userRating={userScores}
+                  userScores={userScores}
                   placesApiData={placesApiData}
                   handleRatingSubmit={handleRatingSubmit}
                 />
