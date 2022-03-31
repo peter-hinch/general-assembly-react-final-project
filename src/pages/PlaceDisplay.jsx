@@ -4,12 +4,17 @@ import DetailsPane from './../components/shared/DetailsPane';
 import RatingDetails from '../components/shared/RatingDetails';
 import RatingForm from '../components/shared/RatingForm';
 
-const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
+const PlaceDisplay = ({
+  currentPlace,
+  ratingsData,
+  userScores,
+  handleRatingSubmit
+}) => {
   const { placeid } = useParams();
 
   // Filter the ratingsData array to only the result that applies to this spot.
-  // After the filter there should only be one result, assign index 0 to the
-  // spotRatingDetails object.
+  // After the filter there should only be one result, assign the object at
+  // index 0 to the new object 'spotRatingDetails'.
   const spotRatingDetails = ratingsData.filter(
     (rating) => rating.placeId === currentPlace.place_id
   )[0];
@@ -42,7 +47,10 @@ const PlaceDisplay = ({ currentPlace, ratingsData, placesApiData }) => {
           <h4>Your Rating</h4>
         </div>
       </div>
-      <RatingForm />
+      <RatingForm
+        userRating={userScores}
+        handleRatingSubmit={handleRatingSubmit}
+      />
     </div>
   );
 };

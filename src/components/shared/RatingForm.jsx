@@ -1,6 +1,6 @@
 import FormElementsSingleCategory from './FormElementsSingleCategory';
 
-const RatingForm = () => {
+const RatingForm = ({ userScores, handleRatingSubmit }) => {
   return (
     <form>
       <FormElementsSingleCategory category="Noise" />
@@ -9,6 +9,12 @@ const RatingForm = () => {
       <FormElementsSingleCategory category="Internet" />
       <FormElementsSingleCategory category="Power" />
       <FormElementsSingleCategory category="Accessibility" />
+      <button
+        className="add-rating-submit"
+        onClick={(event) => handleRatingSubmit(event)}
+      >
+        Submit Rating
+      </button>
     </form>
   );
 };

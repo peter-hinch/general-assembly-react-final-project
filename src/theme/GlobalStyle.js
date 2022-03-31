@@ -386,6 +386,22 @@ const GlobalStyle = createGlobalStyle`
     margin: 0.4rem 0 0 2rem;
   }
 
+  main .add-rating-category {
+    padding: 0.5rem;
+    background: var(--color-tertiary-90);
+    border-radius: 0.25rem;
+  }
+
+  main .add-rating-submit {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    color: var(--color-white);
+    background: var(--color-primary-40);
+    border: 0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+  }
+
   footer::before {
     position: absolute;
     z-index: -1;
