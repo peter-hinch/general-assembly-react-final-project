@@ -9,6 +9,7 @@ const PlaceDisplay = ({
   ratingsData,
   userScores,
   handleScoreChange,
+  handleFormReset,
   handleScoresSubmit
 }) => {
   const { placeid } = useParams();
@@ -87,6 +88,7 @@ const PlaceDisplay = ({
       <RatingForm
         userScores={userScores}
         handleScoreChange={handleScoreChange}
+        handleFormReset={handleFormReset}
         handleScoresSubmit={handleScoresSubmit}
       />
     </div>

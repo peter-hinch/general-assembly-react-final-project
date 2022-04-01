@@ -1,6 +1,11 @@
 import FormElementsSingleCategory from './FormElementsSingleCategory';
 
-const RatingForm = ({ userScores, handleScoreChange, handleScoresSubmit }) => {
+const RatingForm = ({
+  userScores,
+  handleScoreChange,
+  handleFormReset,
+  handleScoresSubmit
+}) => {
   const scoreComponentsMap = userScores.map((score) => (
     <FormElementsSingleCategory
       key={score.category}
@@ -10,14 +15,22 @@ const RatingForm = ({ userScores, handleScoreChange, handleScoresSubmit }) => {
   ));
 
   return (
-    <form>
+    <form className="add-ratings">
       {scoreComponentsMap}
-      <button
-        className="add-rating-submit"
-        onClick={(event) => handleScoresSubmit(event)}
-      >
-        Submit Rating
-      </button>
+      <div className="ratings-buttons">
+        <button
+          className="add-rating-reset"
+          onClick={(event) => handleFormReset(event)}
+        >
+          Reset Form
+        </button>
+        <button
+          className="add-rating-submit"
+          onClick={(event) => handleScoresSubmit(event)}
+        >
+          Submit Rating
+        </button>
+      </div>
     </form>
   );
 };

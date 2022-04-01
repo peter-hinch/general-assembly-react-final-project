@@ -15,6 +15,17 @@ import PlaceDisplay from './pages/PlaceDisplay';
 // Load the example dataset from local file.
 const seedRatingsData = require('./ratingsData.json');
 
+// Define what the empty user scores form should look like. This is also used
+// on form reset.
+const emptyUserScores = [
+  { category: 'Noise', score: 50, comment: '' },
+  { category: 'Social', score: 50, comment: '' },
+  { category: 'Coworking', score: 50, comment: '' },
+  { category: 'Internet', score: 50, comment: '' },
+  { category: 'Power', score: 50, comment: '' },
+  { category: 'Accessibility', score: 50, comment: '' }
+];
+
 const App = () => {
   // A condition of use for infomation returned from the Google Places API is
   // that it is not stored or cached. Therefore the information returned from
@@ -27,14 +38,7 @@ const App = () => {
   const [ratingsData, setRatingsData] = useState(seedRatingsData);
   const [currentPlace, setCurrentPlace] = useState({});
   // Provide an object containing form data for user ratings:
-  const [userScores, setUserScores] = useState([
-    { category: 'Noise', score: 50, comment: '' },
-    { category: 'Social', score: 50, comment: '' },
-    { category: 'Coworking', score: 50, comment: '' },
-    { category: 'Internet', score: 50, comment: '' },
-    { category: 'Power', score: 50, comment: '' },
-    { category: 'Accessibility', score: 50, comment: '' }
-  ]);
+  const [userScores, setUserScores] = useState(emptyUserScores);
 
   // useLocation allows the application to keep track of its current location.
   // in this case it provides the necessary information for framer-motion to
@@ -66,6 +70,11 @@ const App = () => {
       return score;
     });
     setUserScores(newUserScores);
+  };
+
+  const handleFormReset = (event) => {
+    event.preventDefault();
+    console.log('FORM RESET!');
   };
 
   // Determine which element in the ratingsData array needs to be appended to
@@ -104,6 +113,7 @@ const App = () => {
                   ratingsData={ratingsData}
                   userScores={userScores}
                   handleScoreChange={handleScoreChange}
+                  handleFormReset={handleFormReset}
                   handleScoresSubmit={handleScoresSubmit}
                 />
               }
