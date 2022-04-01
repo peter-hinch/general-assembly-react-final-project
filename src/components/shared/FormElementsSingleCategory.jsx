@@ -17,7 +17,7 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
             })
           }
         />
-        <span className="rating-value">{categoryScore.score}</span>
+        <h6 className="rating-value">{categoryScore.score}</h6>
         <label htmlFor="comment">Comment</label>
         <textarea
           id="comment"
