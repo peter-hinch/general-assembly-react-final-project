@@ -347,7 +347,8 @@ const GlobalStyle = createGlobalStyle`
     height: 1.125rem;
   }
 
-  main #rating-details {
+  main #rating-details,
+  main #rating-your-say {
     margin-top: 1rem;
     scroll-margin-top: calc(var(--header-min-height) + 1rem);
   }
@@ -386,20 +387,62 @@ const GlobalStyle = createGlobalStyle`
     margin: 0.4rem 0 0 2rem;
   }
 
-  main .add-rating-category {
+  main form.add-ratings {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main .add-rating-mini-form {
+    position: relative;
     padding: 0.5rem;
+    width: 18rem;
     background: var(--color-tertiary-90);
     border-radius: 0.25rem;
   }
 
-  main .add-rating-submit {
+  main .add-rating-mini-form .rating-value {
+    position: absolute;
+    top: 0.75rem;
+    left: -0.5rem;
+    margin: 0;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    width: 1rem;
+    color: var(--color-white);
+    background: var(--color-tertiary-40);
+    border-radius: 0.25rem 0.25rem 1.5rem 0.25rem;
+  }
+
+  main .add-rating-mini-form label {
+    display: block;
+  }
+
+  main .add-rating-mini-form textarea {
+    resize: none;
+    border: none;
+    border-radius: 0.25rem;
+  }
+
+  main form.add-ratings .ratings-buttons {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  main form.add-ratings button {
     margin: 1rem 0;
     padding: 0.75rem;
-    color: var(--color-white);
-    background: var(--color-primary-40);
     border: 0;
     border-radius: 0.75rem;
     cursor: pointer;
+  }
+
+  main form.add-ratings button.add-rating-reset {
+    color: var(--color-neutral-variant-95);
+    background: var(--color-neutral-variant-50);
+  }
+
+  main form.add-ratings button.add-rating-submit {
+    color: var(--color-white);
+    background: var(--color-primary-40);
   }
 
   footer::before {

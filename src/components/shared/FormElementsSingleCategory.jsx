@@ -1,8 +1,8 @@
 const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
-    <>
+    <div>
       <h5>{categoryScore.category}</h5>
-      <div className="add-rating-category">
+      <div className="add-rating-mini-form">
         <label htmlFor="rating">Rating</label>
         <input
           id="rating"
@@ -17,7 +17,7 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
             })
           }
         />
-        <span>{categoryScore.score}</span>
+        <span className="rating-value">{categoryScore.score}</span>
         <label htmlFor="comment">Comment</label>
         <textarea
           id="comment"
@@ -29,7 +29,7 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
           }
         />
       </div>
-    </>
+    </div>
   );
 };
 
