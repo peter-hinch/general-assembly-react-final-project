@@ -74,7 +74,7 @@ const App = () => {
 
   const handleFormReset = (event) => {
     event.preventDefault();
-    console.log('FORM RESET!');
+    setUserScores(emptyUserScores);
   };
 
   // Determine which element in the ratingsData array needs to be appended to
