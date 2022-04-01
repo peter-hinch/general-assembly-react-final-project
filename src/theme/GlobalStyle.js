@@ -462,14 +462,9 @@ const GlobalStyle = createGlobalStyle`
     appearance: none;
     margin-top: -8px; /* Centers thumb on the track */
     background-color: #008c6b;
-    border-radius: 0.25rem;
+    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
     height: 1.5rem;
     width: 1rem;
-  }
-
-  input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid #008c6b;
-    outline-offset: 0.125rem;
   }
 
   /* Firefox styles */
@@ -484,14 +479,9 @@ const GlobalStyle = createGlobalStyle`
   input[type="range"]::-moz-range-thumb {
     background-color: #008c6b;
     border: none; /* Removes extra border that FF applies */
-    border-radius: 0.25rem;
+    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
     height: 1.5rem;
     width: 1rem;
-  }
-
-  input[type="range"]:focus::-moz-range-thumb{
-    outline: 3px solid #008c6b;
-    outline-offset: 0.125rem;
   }
 
   /* End custom range input styling */
@@ -616,7 +606,7 @@ const GlobalStyle = createGlobalStyle`
   #map {
     z-index: 0;
     width: 100%;
-    height: 30rem;
+    height: 50.75rem;
     border-radius: 0.25rem;
   }
 `;
