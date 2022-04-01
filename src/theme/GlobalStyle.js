@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
     --color-error-20: #800000;
     --color-error-30: #9f0011;
     --color-error-40: #bf1726;
-    --color-error-40: #e03d3d;
+    --color-error-50: #e03d3d;
     --color-error-60: #ed6a60;
     --color-error-70: #f79186;
     --color-error-80: #feb6ad;
@@ -362,11 +362,12 @@ const GlobalStyle = createGlobalStyle`
 
   main li.user-score {
     position: relative;
+    box-sizing: border-box;
     flex-shrink: 0;
     margin: 0.5rem 1rem 0.5rem 0.5rem;
-    padding: 0.75rem;
-    width: 18rem;
-    height: 6rem;
+    padding: 1.15rem 0.75rem 0.75rem 2.75rem;
+    width: 20rem;
+    height: 6.25rem;
     background: var(--color-tertiary-90);
     border-radius: 0.25rem;
   }
@@ -384,7 +385,11 @@ const GlobalStyle = createGlobalStyle`
   }
   
   main li.user-score p {
-    margin: 0.4rem 0 0 2rem;
+    margin: 0;
+    height: 4.5rem;
+    white-space: normal;
+    overflow: hidden;
+    color: var(--color-tertiary-10);
   }
 
   main form.add-ratings {
@@ -394,8 +399,12 @@ const GlobalStyle = createGlobalStyle`
 
   main .add-rating-mini-form {
     position: relative;
-    padding: 0.5rem;
-    width: 18rem;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 1.35rem 0.75rem 0.75rem 2.75rem;
+    width: 20rem;
+    min-height: 6rem;
     background: var(--color-tertiary-90);
     border-radius: 0.25rem;
   }
@@ -414,24 +423,100 @@ const GlobalStyle = createGlobalStyle`
 
   main .add-rating-mini-form label {
     display: block;
+    color: var(--color-tertiary-10);
   }
 
+  main .add-rating-mini-form input[type="range"] {
+    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+  }
+
+  /* Begin custom range input styling */
+  /* Reference: https://range-input-css.netlify.app/ */
+
+  /* Baseline, reset styles */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Removes default focus */
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  /* Chrome, Safari, Opera and Edge Chromium styles */
+  /* Slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #b7dfd0;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+  }
+
+  /* Slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -8px; /* Centers thumb on the track */
+    background-color: #008c6b;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    width: 1rem;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #008c6b;
+    outline-offset: 0.125rem;
+  }
+
+  /* Firefox styles */
+  /* Slider track */
+  input[type="range"]::-moz-range-track {
+    background-color: #b7dfd0;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+  }
+
+  /* Slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: #008c6b;
+    border: none; /* Removes extra border that FF applies */
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    width: 1rem;
+  }
+
+  input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #008c6b;
+    outline-offset: 0.125rem;
+  }
+
+  /* End custom range input styling */
+
   main .add-rating-mini-form textarea {
+    margin-top: 0.25rem;
+    width: calc(100% - 0.25rem);
     resize: none;
+    color: var(--color-neutral-10);
     border: none;
     border-radius: 0.25rem;
   }
 
   main form.add-ratings .ratings-buttons {
+    display: flex;
+    justify-content: flex-end;
     flex-shrink: 0;
     width: 100%;
   }
 
   main form.add-ratings button {
-    margin: 1rem 0;
-    padding: 0.75rem;
+    margin: 1rem 0 1rem 1rem;
+    padding: 0.75rem 1.5rem;
     border: 0;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     cursor: pointer;
   }
 
