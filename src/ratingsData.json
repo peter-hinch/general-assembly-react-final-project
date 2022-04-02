@@ -2,9 +2,9 @@
   {
     "placeId": "ChIJ6RxLlctC1moReA6DqUtnh_E",
     "ratings": {
-      "overall": 79.333,
+      "spot_average": 79.333,
       "noise": {
-        "overall": 77.5,
+        "category_average": 77.5,
         "scores": [
           {
             "score": 88,
@@ -17,7 +17,7 @@
         ]
       },
       "social": {
-        "overall": 93.5,
+        "category_average": 93.5,
         "scores": [
           {
             "score": 99,
@@ -30,7 +30,7 @@
         ]
       },
       "coworking": {
-        "overall": 80,
+        "category_average": 80,
         "scores": [
           {
             "score": 87,
@@ -43,7 +43,7 @@
         ]
       },
       "internet": {
-        "overall": 79.5,
+        "category_average": 79.5,
         "scores": [
           { "score": 61, "comment": "Couldn't connect, patchy signal." },
           {
@@ -53,7 +53,7 @@
         ]
       },
       "power": {
-        "overall": 73.5,
+        "category_average": 73.5,
         "scores": [
           {
             "score": 82,
@@ -66,7 +66,7 @@
         ]
       },
       "a11y": {
-        "overall": 72,
+        "category_average": 72,
         "scores": [
           {
             "score": 68,
@@ -83,9 +83,9 @@
   {
     "placeId": "ChIJMWQmaTpo1moRImVSbVM5cUE",
     "ratings": {
-      "overall": 77.083,
+      "spot_average": 77.083,
       "noise": {
-        "overall": 82,
+        "category_average": 82,
         "scores": [
           {
             "score": 86,
@@ -98,7 +98,7 @@
         ]
       },
       "social": {
-        "overall": 75,
+        "category_average": 75,
         "scores": [
           {
             "score": 60,
@@ -111,7 +111,7 @@
         ]
       },
       "coworking": {
-        "overall": 64.5,
+        "category_average": 64.5,
         "scores": [
           {
             "score": 67,
@@ -124,7 +124,7 @@
         ]
       },
       "internet": {
-        "overall": 80,
+        "category_average": 80,
         "scores": [
           {
             "score": 77,
@@ -134,7 +134,7 @@
         ]
       },
       "power": {
-        "overall": 82,
+        "category_average": 82,
         "scores": [
           {
             "score": 64,
@@ -147,7 +147,7 @@
         ]
       },
       "a11y": {
-        "overall": 79,
+        "category_average": 79,
         "scores": [
           { "score": 86, "comment": "No troubles here!" },
           {
@@ -161,9 +161,9 @@
   {
     "placeId": "ChIJW1fHRd9C1moRBzTQktK3f_U",
     "ratings": {
-      "overall": 75.916,
+      "spot_average": 75.916,
       "noise": {
-        "overall": 78.5,
+        "category_average": 78.5,
         "scores": [
           {
             "score": 94,
@@ -176,7 +176,7 @@
         ]
       },
       "social": {
-        "overall": 65.5,
+        "category_average": 65.5,
         "scores": [
           {
             "score": 66,
@@ -189,7 +189,7 @@
         ]
       },
       "coworking": {
-        "overall": 63,
+        "category_average": 63,
         "scores": [
           {
             "score": 65,
@@ -202,7 +202,7 @@
         ]
       },
       "internet": {
-        "overall": 86,
+        "category_average": 86,
         "scores": [
           {
             "score": 77,
@@ -215,7 +215,7 @@
         ]
       },
       "power": {
-        "overall": 69,
+        "category_average": 69,
         "scores": [
           {
             "score": 77,
@@ -225,7 +225,7 @@
         ]
       },
       "a11y": {
-        "overall": 93.5,
+        "category_average": 93.5,
         "scores": [
           { "score": 88, "comment": "No complaints!" },
           {
@@ -239,9 +239,9 @@
   {
     "placeId": "ChIJv1vMr6Np1moR4sPYRio1eAs",
     "ratings": {
-      "overall": 85.333,
+      "spot_average": 85.333,
       "noise": {
-        "overall": 71,
+        "category_average": 71,
         "scores": [
           {
             "score": 64,
@@ -254,7 +254,7 @@
         ]
       },
       "social": {
-        "overall": 83.5,
+        "category_average": 83.5,
         "scores": [
           {
             "score": 95,
@@ -267,7 +267,7 @@
         ]
       },
       "coworking": {
-        "overall": 86.5,
+        "category_average": 86.5,
         "scores": [
           {
             "score": 88,
@@ -280,7 +280,7 @@
         ]
       },
       "internet": {
-        "overall": 89,
+        "category_average": 89,
         "scores": [
           {
             "score": 86,
@@ -293,7 +293,7 @@
         ]
       },
       "power": {
-        "overall": 89,
+        "category_average": 89,
         "scores": [
           {
             "score": 97,
@@ -306,7 +306,7 @@
         ]
       },
       "a11y": {
-        "overall": 93,
+        "category_average": 93,
         "scores": [
           {
             "score": 97,

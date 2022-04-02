@@ -9,7 +9,7 @@ const RatingCategoryScores = ({ title, categoryScores }) => {
   return (
     <>
       <h5 className="category-score">
-        {title} - {categoryScores.overall}
+        {title} - {categoryScores.category_average}
       </h5>
       <ul className="user-score-list">{scoreCommentsList}</ul>
     </>
