@@ -27,34 +27,43 @@ const emptyUserScores = [
 
 // Calculate the category average and return an array containing the new values.
 const calculateCategoryAverageScores = (spotRatingData, formData) => {
-  const newCategoryAverages = spotRatingData.categories.map(
-    (category, index) => {
-      // Check that the current category matches the category of like index in
-      // formData array. If the category names match, calculate the new average.
-      if (category.name === formData[index].name) {
-        // New average can be calculated using the formula:
-        // newAverage = oldAverage + ((newValue - oldAverage) / newSize)
-        // Reference: https://math.stackexchange.com/questions/22348/how-to-add-and-subtract-values-from-an-average
-        let average =
-          category.categoryAverage +
-          (formData[index].score - category.categoryAverage) /
-            (category.scores.length + 1);
-        return {
-          name: formData[index].name,
-          categoryAverage: parseFloat(average.toFixed(3))
-        };
-      } else {
-        return {};
-      }
+  const categoryAverages = spotRatingData.categories.map((category, index) => {
+    // Check that the current category matches the category of like index in
+    // formData array. If the category names match, calculate the new average.
+    if (category.name === formData[index].name) {
+      // New average can be calculated using the formula:
+      // newAverage = oldAverage + ((newValue - oldAverage) / newSize)
+      // Reference: https://math.stackexchange.com/questions/22348/how-to-add-and-subtract-values-from-an-average
+      let average =
+        category.categoryAverage +
+        (formData[index].score - category.categoryAverage) /
+          (category.scores.length + 1);
+      return {
+        name: formData[index].name,
+        categoryAverage: parseFloat(average.toFixed(3))
+      };
+    } else {
+      return {};
     }
-  );
-  return newCategoryAverages;
+  });
+  return categoryAverages;
 };
 
 // Calculate the spot average and return the new rating value.
 const calculateSpotAverageScore = (spotRatingData) => {
-  console.log('spotRatingData', spotRatingData);
-  return 50;
+  const categoriesArray = spotRatingData.categories;
+  let spotAverage = categoriesArray.reduce(
+    (average, category, index, array) => {
+      average += category.categoryAverage;
+      if (index === array.length - 1) {
+        return parseFloat((average / array.length).toFixed(3));
+      } else {
+        return average;
+      }
+    },
+    0
+  );
+  return spotAverage;
 };
 
 const App = () => {
@@ -126,10 +135,16 @@ const App = () => {
 
     // Calulate the new categoryAverage scores using the current rating for
     // this location along with the new information submitted in the form.
-    console.log(calculateCategoryAverageScores(newRatingData, userScores));
+    console.log(
+      'calculateCategoryAverageScores',
+      calculateCategoryAverageScores(newRatingData, userScores)
+    );
 
     // Update categoryAverage before calculating spotAverage.
-    console.log(calculateSpotAverageScore(newRatingData));
+    console.log(
+      'calculateSpotAverageScore',
+      calculateSpotAverageScore(newRatingData)
+    );
     console.log('Rating Submit Button Press');
   };
 
