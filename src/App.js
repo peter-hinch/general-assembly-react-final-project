@@ -49,7 +49,7 @@ const calculateCategoryAverageScores = (spotRatingData, formData) => {
   return categoryAverages;
 };
 
-// Calculate the spot average and return the new rating value.
+// Calculate the spotAverage and return the new rating value.
 const calculateSpotAverageScore = (spotRatingData) => {
   const categoriesArray = spotRatingData.categories;
   let spotAverage = categoriesArray.reduce(
@@ -135,16 +135,37 @@ const App = () => {
 
     // Calulate the new categoryAverage scores using the current rating for
     // this location along with the new information submitted in the form.
-    console.log(
-      'calculateCategoryAverageScores',
-      calculateCategoryAverageScores(newRatingData, userScores)
+    const newCategoryAverageScores = calculateCategoryAverageScores(
+      newRatingData,
+      userScores
     );
+    // TODO - add the newly calculated averages to the categories in the
+    // candidate object.
+    console.log('newCategoryAverageScores', newCategoryAverageScores);
+    console.log('newRatingData.categories', newRatingData.categories);
 
-    // Update categoryAverage before calculating spotAverage.
-    console.log(
-      'calculateSpotAverageScore',
-      calculateSpotAverageScore(newRatingData)
+    // Add the new categoryAverage scores to the newRatingData object.
+    const newScoresArray = newRatingData.categories.map(
+      (category, index) =>
+        (category.scores = [
+          ...category.scores,
+          {
+            score: userScores[index].score,
+            comment: userScores[index].comment
+          }
+        ])
     );
+    // TODO add newScoresArray to the newRatingData object.
+
+    console.log(newScoresArray);
+
+    // Append the new scores and comments to the scores array in the
+    // newRatingData object.
+
+    // Calculate the new spotAverage score and add it to the newRatingData object.
+    const newSpotAverageScore = calculateSpotAverageScore(newRatingData);
+    newRatingData.spotAverage = newSpotAverageScore;
+
     console.log('Rating Submit Button Press');
   };
 
