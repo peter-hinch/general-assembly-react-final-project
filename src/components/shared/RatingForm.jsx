@@ -6,17 +6,17 @@ const RatingForm = ({
   handleFormReset,
   handleScoresSubmit
 }) => {
-  const scoreComponentsMap = userScores.map((score) => (
+  const formCategoriesMap = userScores.map((category) => (
     <FormElementsSingleCategory
-      key={score.category}
-      categoryScore={score}
+      key={category.name}
+      categoryScore={category}
       handleScoreChange={handleScoreChange}
     />
   ));
 
   return (
     <form className="add-ratings">
-      {scoreComponentsMap}
+      {formCategoriesMap}
       <div className="ratings-buttons">
         <button
           className="add-rating-reset"

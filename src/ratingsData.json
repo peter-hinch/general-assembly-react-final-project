@@ -1,9 +1,10 @@
 [
   {
     "placeId": "ChIJ6RxLlctC1moReA6DqUtnh_E",
-    "ratings": {
-      "spot_average": 79.333,
-      "noise": {
+    "spot_average": 79.333,
+    "categories": [
+      {
+        "name": "Noise",
         "category_average": 77.5,
         "scores": [
           {
@@ -16,7 +17,8 @@
           }
         ]
       },
-      "social": {
+      {
+        "name": "Social",
         "category_average": 93.5,
         "scores": [
           {
@@ -29,7 +31,8 @@
           }
         ]
       },
-      "coworking": {
+      {
+        "name": "Coworking",
         "category_average": 80,
         "scores": [
           {
@@ -42,7 +45,8 @@
           }
         ]
       },
-      "internet": {
+      {
+        "name": "Internet",
         "category_average": 79.5,
         "scores": [
           { "score": 61, "comment": "Couldn't connect, patchy signal." },
@@ -52,7 +56,8 @@
           }
         ]
       },
-      "power": {
+      {
+        "name": "Power",
         "category_average": 73.5,
         "scores": [
           {
@@ -65,7 +70,8 @@
           }
         ]
       },
-      "a11y": {
+      {
+        "name": "Accessibility",
         "category_average": 72,
         "scores": [
           {
@@ -78,13 +84,14 @@
           }
         ]
       }
-    }
+    ]
   },
   {
     "placeId": "ChIJMWQmaTpo1moRImVSbVM5cUE",
-    "ratings": {
-      "spot_average": 77.083,
-      "noise": {
+    "spot_average": 77.083,
+    "categories": [
+      {
+        "name": "Noise",
         "category_average": 82,
         "scores": [
           {
@@ -97,7 +104,8 @@
           }
         ]
       },
-      "social": {
+      {
+        "name": "Social",
         "category_average": 75,
         "scores": [
           {
@@ -110,7 +118,8 @@
           }
         ]
       },
-      "coworking": {
+      {
+        "name": "Coworking",
         "category_average": 64.5,
         "scores": [
           {
@@ -123,7 +132,8 @@
           }
         ]
       },
-      "internet": {
+      {
+        "name": "Internet",
         "category_average": 80,
         "scores": [
           {
@@ -133,7 +143,8 @@
           { "score": 83, "comment": "Very funny wi-fi password." }
         ]
       },
-      "power": {
+      {
+        "name": "Power",
         "category_average": 82,
         "scores": [
           {
@@ -146,7 +157,8 @@
           }
         ]
       },
-      "a11y": {
+      {
+        "name": "Accessibility",
         "category_average": 79,
         "scores": [
           { "score": 86, "comment": "No troubles here!" },
@@ -156,13 +168,14 @@
           }
         ]
       }
-    }
+    ]
   },
   {
     "placeId": "ChIJW1fHRd9C1moRBzTQktK3f_U",
-    "ratings": {
-      "spot_average": 75.916,
-      "noise": {
+    "spot_average": 75.916,
+    "categories": [
+      {
+        "name": "Noise",
         "category_average": 78.5,
         "scores": [
           {
@@ -175,7 +188,8 @@
           }
         ]
       },
-      "social": {
+      {
+        "name": "Social",
         "category_average": 65.5,
         "scores": [
           {
@@ -188,7 +202,8 @@
           }
         ]
       },
-      "coworking": {
+      {
+        "name": "Coworking",
         "category_average": 63,
         "scores": [
           {
@@ -201,7 +216,8 @@
           }
         ]
       },
-      "internet": {
+      {
+        "name": "Internet",
         "category_average": 86,
         "scores": [
           {
@@ -214,7 +230,8 @@
           }
         ]
       },
-      "power": {
+      {
+        "name": "Power",
         "category_average": 69,
         "scores": [
           {
@@ -224,7 +241,8 @@
           { "score": 61, "comment": "Couldn't find any power points here." }
         ]
       },
-      "a11y": {
+      {
+        "name": "Accessibility",
         "category_average": 93.5,
         "scores": [
           { "score": 88, "comment": "No complaints!" },
@@ -234,13 +252,14 @@
           }
         ]
       }
-    }
+    ]
   },
   {
     "placeId": "ChIJv1vMr6Np1moR4sPYRio1eAs",
-    "ratings": {
-      "spot_average": 85.333,
-      "noise": {
+    "spot_average": 85.333,
+    "categories": [
+      {
+        "name": "Noise",
         "category_average": 71,
         "scores": [
           {
@@ -253,7 +272,8 @@
           }
         ]
       },
-      "social": {
+      {
+        "name": "Social",
         "category_average": 83.5,
         "scores": [
           {
@@ -266,7 +286,8 @@
           }
         ]
       },
-      "coworking": {
+      {
+        "name": "Coworking",
         "category_average": 86.5,
         "scores": [
           {
@@ -279,7 +300,8 @@
           }
         ]
       },
-      "internet": {
+      {
+        "name": "Internet",
         "category_average": 89,
         "scores": [
           {
@@ -292,7 +314,8 @@
           }
         ]
       },
-      "power": {
+      {
+        "name": "Power",
         "category_average": 89,
         "scores": [
           {
@@ -305,7 +328,8 @@
           }
         ]
       },
-      "a11y": {
+      {
+        "name": "Accessibility",
         "category_average": 93,
         "scores": [
           {
@@ -318,6 +342,6 @@
           }
         ]
       }
-    }
+    ]
   }
 ]

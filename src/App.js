@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import placeIdLookup from './placeIdLookup';
 import Header from './components/layout/Header';
 import Home from './pages/Home';
 import Footer from './components/layout/Footer';
@@ -18,13 +17,26 @@ const seedRatingsData = require('./ratingsData.json');
 // Define what the empty user scores form should look like. This is also used
 // on form reset.
 const emptyUserScores = [
-  { category: 'Noise', score: 50, comment: '' },
-  { category: 'Social', score: 50, comment: '' },
-  { category: 'Coworking', score: 50, comment: '' },
-  { category: 'Internet', score: 50, comment: '' },
-  { category: 'Power', score: 50, comment: '' },
-  { category: 'Accessibility', score: 50, comment: '' }
+  { name: 'Noise', score: 50, comment: '' },
+  { name: 'Social', score: 50, comment: '' },
+  { name: 'Coworking', score: 50, comment: '' },
+  { name: 'Internet', score: 50, comment: '' },
+  { name: 'Power', score: 50, comment: '' },
+  { name: 'Accessibility', score: 50, comment: '' }
 ];
+
+// Calculate the category average and return the new rating value.
+const calculateCategoryAverageScores = (spotRatingData, formData) => {
+  console.log('spotRatingData', spotRatingData);
+  console.log('formData', formData);
+  return 50;
+};
+
+// Calculate the spot average and return the new rating value.
+const calculateSpotAverageScore = (spotRatingData) => {
+  console.log('spotRatingData', spotRatingData);
+  return 50;
+};
 
 const App = () => {
   // A condition of use for infomation returned from the Google Places API is
@@ -64,7 +76,7 @@ const App = () => {
   // replace with the new form data at that location.
   const handleScoreChange = (category, value) => {
     let newUserScores = userScores.map((score) => {
-      if (score.category === category) {
+      if (score.name === category) {
         return {
           ...score,
           ...value
@@ -75,16 +87,30 @@ const App = () => {
     setUserScores(newUserScores);
   };
 
+  // Replace all current form elements with the 'emptyUserScores' object.
   const handleFormReset = (event) => {
     event.preventDefault();
     setUserScores(emptyUserScores);
   };
 
   // Determine which element in the ratingsData array needs to be appended to
-  // and add the new ratings in their appropriate locations. New overall rating
-  // values must also be calculated at this stage.
+  // and add the new ratings in their appropriate locations. New average rating
+  // values are calculated at this stage.
   const handleScoresSubmit = (event) => {
     event.preventDefault();
+    // Define which placeId the scores will be attributed to.
+    let placeId = currentPlace.place_id;
+    // Find the relevant rating in ratingsData.
+    let newRatingData = ratingsData.filter(
+      (rating) => rating.placeId === placeId
+    );
+
+    // Calulate the new category_average scores using the current rating for
+    // this location along with the new information submitted in the form.
+    console.log(calculateCategoryAverageScores(newRatingData, userScores));
+
+    // Update category_average before calculating spot_average.
+    console.log(calculateSpotAverageScore(newRatingData));
     console.log('Rating Submit Button Press');
   };
 

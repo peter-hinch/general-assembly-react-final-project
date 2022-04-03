@@ -1,7 +1,7 @@
 const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
     <div>
-      <h5>{categoryScore.category}</h5>
+      <h5>{categoryScore.name}</h5>
       <div className="add-rating-mini-form">
         <label htmlFor="rating">Rating</label>
         <input
@@ -12,7 +12,7 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
           step="1"
           value={categoryScore.score}
           onChange={(event) =>
-            handleScoreChange(categoryScore.category, {
+            handleScoreChange(categoryScore.name, {
               score: event.target.value
             })
           }
@@ -23,7 +23,7 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
           id="comment"
           value={categoryScore.comment}
           onChange={(event) =>
-            handleScoreChange(categoryScore.category, {
+            handleScoreChange(categoryScore.name, {
               comment: event.target.value
             })
           }
