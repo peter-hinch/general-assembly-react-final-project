@@ -25,11 +25,30 @@ const emptyUserScores = [
   { name: 'Accessibility', score: 50, comment: '' }
 ];
 
-// Calculate the category average and return the new rating value.
+// Calculate the category average and return an array containing the new values.
 const calculateCategoryAverageScores = (spotRatingData, formData) => {
-  console.log('spotRatingData', spotRatingData);
-  console.log('formData', formData);
-  return 50;
+  const newCategoryAverages = spotRatingData.categories.map(
+    (category, index) => {
+      // Check that the current category matches the category of like index in
+      // formData array. If the category names match, calculate the new average.
+      if (category.name === formData[index].name) {
+        // New average can be calculated using the formula:
+        // newAverage = oldAverage + ((newValue - oldAverage) / newSize)
+        // Reference: https://math.stackexchange.com/questions/22348/how-to-add-and-subtract-values-from-an-average
+        let average =
+          category.categoryAverage +
+          (formData[index].score - category.categoryAverage) /
+            (category.scores.length + 1);
+        return {
+          name: formData[index].name,
+          categoryAverage: parseFloat(average.toFixed(3))
+        };
+      } else {
+        return {};
+      }
+    }
+  );
+  return newCategoryAverages;
 };
 
 // Calculate the spot average and return the new rating value.
@@ -103,13 +122,13 @@ const App = () => {
     // Find the relevant rating in ratingsData.
     let newRatingData = ratingsData.filter(
       (rating) => rating.placeId === placeId
-    );
+    )[0];
 
-    // Calulate the new category_average scores using the current rating for
+    // Calulate the new categoryAverage scores using the current rating for
     // this location along with the new information submitted in the form.
     console.log(calculateCategoryAverageScores(newRatingData, userScores));
 
-    // Update category_average before calculating spot_average.
+    // Update categoryAverage before calculating spotAverage.
     console.log(calculateSpotAverageScore(newRatingData));
     console.log('Rating Submit Button Press');
   };

@@ -28,7 +28,7 @@ const PlaceDisplay = ({
     spotRatingDetails = ratingsData.filter(
       (rating) => rating.placeId === currentPlace.place_id
     )[0];
-    spotRating = spotRatingDetails.spot_average;
+    spotRating = spotRatingDetails.spotAverage;
     console.log(spotRatingDetails);
   } else {
     spotRatingDetails = null;
