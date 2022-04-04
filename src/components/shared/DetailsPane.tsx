@@ -50,20 +50,13 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
             <div className="opening-hours">
               <h4>Opening Hours</h4>
               {currentPlace.hasOwnProperty('opening_hours') && (
-                <>
-                  {/* <p>
-                    {currentPlace.opening_hours.open_now
-                      ? 'Open Now'
-                      : 'Closed'}
-                  </p> */}
-                  <ul>
-                    {currentPlace.opening_hours.weekday_text.map(
-                      (weekday: any, index: number) => (
-                        <li key={index}>{weekday}</li>
-                      )
-                    )}
-                  </ul>
-                </>
+                <ul>
+                  {currentPlace.opening_hours.weekday_text.map(
+                    (weekday: any, index: number) => (
+                      <li key={index}>{weekday}</li>
+                    )
+                  )}
+                </ul>
               )}
             </div>
           </div>
