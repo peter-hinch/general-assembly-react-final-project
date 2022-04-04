@@ -2,7 +2,7 @@ import RatingCategoryScores from './RatingCategoryScores';
 
 const RatingDetails = ({ ratingsObject }) => {
   const categoryScoresMap = ratingsObject.categories.map((category) => (
-    <RatingCategoryScores categoryObject={category} />
+    <RatingCategoryScores key={category.title} categoryObject={category} />
   ));
 
   return <>{categoryScoresMap}</>;
