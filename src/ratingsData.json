@@ -1,6 +1,5 @@
-[
-  {
-    "placeId": "ChIJ6RxLlctC1moReA6DqUtnh_E",
+{
+  "ChIJ6RxLlctC1moReA6DqUtnh_E": {
     "spotAverage": 79.333,
     "categories": [
       {
@@ -86,8 +85,7 @@
       }
     ]
   },
-  {
-    "placeId": "ChIJMWQmaTpo1moRImVSbVM5cUE",
+  "ChIJMWQmaTpo1moRImVSbVM5cUE": {
     "spotAverage": 77.083,
     "categories": [
       {
@@ -170,8 +168,7 @@
       }
     ]
   },
-  {
-    "placeId": "ChIJW1fHRd9C1moRBzTQktK3f_U",
+  "ChIJW1fHRd9C1moRBzTQktK3f_U": {
     "spotAverage": 75.916,
     "categories": [
       {
@@ -254,8 +251,7 @@
       }
     ]
   },
-  {
-    "placeId": "ChIJv1vMr6Np1moR4sPYRio1eAs",
+  "ChIJv1vMr6Np1moR4sPYRio1eAs": {
     "spotAverage": 85.333,
     "categories": [
       {
@@ -344,4 +340,4 @@
       }
     ]
   }
-]
+}
