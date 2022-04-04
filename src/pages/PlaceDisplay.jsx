@@ -77,7 +77,10 @@ const PlaceDisplay = ({
               Rate this spot
             </a>
           </div>
-          <RatingDetails ratingsObject={spotRatingDetails} />
+          <RatingDetails
+            key={spotRatingDetails.placeId}
+            ratingsObject={spotRatingDetails}
+          />
         </>
       )}
       <div id="rating-your-say" className="rating-bar">
