@@ -12,22 +12,13 @@ const PlaceDisplay = ({
   handleFormReset,
   handleScoresSubmit
 }) => {
-  const { placeid } = useParams();
-
+  const { placeId } = useParams();
   // Ensure that ratings data exists before attempting to assign the data to an
   // object. If no data exists return null values for spotRating and
   // spotRatingDetails.
   let spotRatingDetails, spotRating;
-  if (
-    // Filter the ratingsData array to only the result that applies to this spot.
-    // After the filter there should only be one result, assign the object at
-    // index 0 to the new object 'spotRatingDetails'.
-    ratingsData.filter((rating) => rating.placeId === currentPlace.place_id)
-      .length > 0
-  ) {
-    spotRatingDetails = ratingsData.filter(
-      (rating) => rating.placeId === currentPlace.place_id
-    )[0];
+  if (ratingsData.hasOwnProperty(placeId)) {
+    spotRatingDetails = ratingsData[placeId];
     spotRating = spotRatingDetails.spotAverage;
   } else {
     spotRatingDetails = null;
