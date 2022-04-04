@@ -123,15 +123,48 @@ const App = () => {
 
   // Determine which element in the ratingsData array needs to be appended to
   // and add the new ratings in their appropriate locations. New average rating
-  // values are calculated at this stage.
+  // values are also calculated at this stage.
   const handleScoresSubmit = (event) => {
     event.preventDefault();
     // Define which placeId the scores will be attributed to.
     let placeId = currentPlace.place_id;
     // Find the relevant rating in ratingsData.
-    let newRatingData = {
-      ...ratingsData.filter((rating) => rating.placeId === placeId)[0]
-    };
+    let newRatingData;
+    if (ratingsData.hasOwnProperty(placeId)) {
+      console.log('record exists');
+      // Create a copy of ALL LEVELS of ratingsData[placeId] .
+      newRatingData = {
+        ...ratingsData[placeId],
+        categories: [
+          ...ratingsData[placeId].categories.map((category) => ({
+            title: category.title,
+            categoryAverage: category.categoryAverage,
+            scores: [
+              ...category.scores.map((score) => ({
+                score: score.score,
+                comment: score.comment
+              }))
+            ]
+          }))
+        ]
+      };
+    } else {
+      console.log('record does not exist');
+      // If there are no ratings data yet at this placeId, initialise an empty
+      // ratings object. This allows the calculation of average scores to
+      // function correctly.
+      newRatingData = {
+        spotAverage: 0,
+        categories: [
+          { title: 'Noise', categoryAverage: 0, scores: [] },
+          { title: 'Social', categoryAverage: 0, scores: [] },
+          { title: 'Coworking', categoryAverage: 0, scores: [] },
+          { title: 'Internet', categoryAverage: 0, scores: [] },
+          { title: 'Power', categoryAverage: 0, scores: [] },
+          { title: 'Accessibility', categoryAverage: 0, scores: [] }
+        ]
+      };
+    }
 
     // Calulate the new categoryAverage scores using the current rating for
     // this location along with the new information submitted in the form.
@@ -139,39 +172,38 @@ const App = () => {
       newRatingData,
       userScores
     );
-    // TODO - add the newly calculated averages to the categories in the
-    // candidate object.
     console.log('newCategoryAverageScores', newCategoryAverageScores);
 
-    // Add submitted userScores into newRatingData.categories
-    newRatingData.categories = newRatingData.categories.map(
-      (category, index) => {
-        category.title = category.title;
-        category.categoryAverage =
-          newCategoryAverageScores[index].categoryAverage;
-        category.scores = [
-          ...category.scores,
-          {
-            score: parseFloat(userScores[index].score),
-            comment: userScores[index].comment
-          }
-        ];
-        return {
-          title: category.title,
-          categoryAverage: category.categoryAverage,
-          scores: category.scores
-        };
-      }
-    );
+    // Create a new object containing the updated user scores.
+    newRatingData.categories.map((category, index) => {
+      category.categoryAverage =
+        newCategoryAverageScores[index].categoryAverage;
+      category.scores = [
+        ...category.scores,
+        {
+          score: parseFloat(userScores[index].score),
+          comment: userScores[index].comment
+        }
+      ];
+      return {
+        title: category.title,
+        categoryAverage: category.categoryAverage,
+        scores: category.scores
+      };
+    });
 
-    // TODO add newScoresArray to the newRatingData object.
+    // Now that the new scores and categoryAverage values have been added,
+    // calculate the new spotAverage score and add it to the newRatingData
+    // object.
+    newRatingData.spotAverage = calculateSpotAverageScore(newRatingData);
 
-    // Calculate the new spotAverage score and add it to the newRatingData object.
-    const newSpotAverageScore = calculateSpotAverageScore(newRatingData);
-    newRatingData.spotAverage = newSpotAverageScore;
-
-    console.log('newRatingData', newRatingData);
-    console.log('Rating Submit Button Press');
+    // Insert newRatingData object back into the ratingsData object.
+    setRatingsData({
+      ...ratingsData,
+      [placeId]: newRatingData
+    });
+    // Empty the form fields for the next review.
+    setUserScores(emptyUserScores);
   };
 
   return (
@@ -194,7 +226,7 @@ const App = () => {
               element={<MapView ratingsData={ratingsData} />}
             />
             <Route
-              path="/spot/:placeid"
+              path="/spot/:placeId"
               exact
               element={
                 <PlaceDisplay
