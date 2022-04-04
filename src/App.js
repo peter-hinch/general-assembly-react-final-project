@@ -17,20 +17,20 @@ const seedRatingsData = require('./ratingsData.json');
 // Define what the empty user scores form should look like. This is also used
 // on form reset.
 const emptyUserScores = [
-  { name: 'Noise', score: 50, comment: '' },
-  { name: 'Social', score: 50, comment: '' },
-  { name: 'Coworking', score: 50, comment: '' },
-  { name: 'Internet', score: 50, comment: '' },
-  { name: 'Power', score: 50, comment: '' },
-  { name: 'Accessibility', score: 50, comment: '' }
+  { title: 'Noise', score: 50, comment: '' },
+  { title: 'Social', score: 50, comment: '' },
+  { title: 'Coworking', score: 50, comment: '' },
+  { title: 'Internet', score: 50, comment: '' },
+  { title: 'Power', score: 50, comment: '' },
+  { title: 'Accessibility', score: 50, comment: '' }
 ];
 
 // Calculate the category average and return an array containing the new values.
 const calculateCategoryAverageScores = (spotRatingData, formData) => {
   const categoryAverages = spotRatingData.categories.map((category, index) => {
     // Check that the current category matches the category of like index in
-    // formData array. If the category names match, calculate the new average.
-    if (category.name === formData[index].name) {
+    // formData array. If the category titles match, calculate the new average.
+    if (category.title === formData[index].title) {
       // New average can be calculated using the formula:
       // newAverage = oldAverage + ((newValue - oldAverage) / newSize)
       // Reference: https://math.stackexchange.com/questions/22348/how-to-add-and-subtract-values-from-an-average
@@ -39,7 +39,7 @@ const calculateCategoryAverageScores = (spotRatingData, formData) => {
         (formData[index].score - category.categoryAverage) /
           (category.scores.length + 1);
       return {
-        name: formData[index].name,
+        title: formData[index].title,
         categoryAverage: parseFloat(average.toFixed(3))
       };
     } else {
@@ -104,7 +104,7 @@ const App = () => {
   // replace with the new form data at that location.
   const handleScoreChange = (category, value) => {
     let newUserScores = userScores.map((score) => {
-      if (score.name === category) {
+      if (score.title === category) {
         return {
           ...score,
           ...value
@@ -129,9 +129,9 @@ const App = () => {
     // Define which placeId the scores will be attributed to.
     let placeId = currentPlace.place_id;
     // Find the relevant rating in ratingsData.
-    let newRatingData = ratingsData.filter(
-      (rating) => rating.placeId === placeId
-    )[0];
+    let newRatingData = {
+      ...ratingsData.filter((rating) => rating.placeId === placeId)[0]
+    };
 
     // Calulate the new categoryAverage scores using the current rating for
     // this location along with the new information submitted in the form.
@@ -142,30 +142,35 @@ const App = () => {
     // TODO - add the newly calculated averages to the categories in the
     // candidate object.
     console.log('newCategoryAverageScores', newCategoryAverageScores);
-    console.log('newRatingData.categories', newRatingData.categories);
 
-    // Add the new categoryAverage scores to the newRatingData object.
-    const newScoresArray = newRatingData.categories.map(
-      (category, index) =>
-        (category.scores = [
+    // Add submitted userScores into newRatingData.categories
+    newRatingData.categories = newRatingData.categories.map(
+      (category, index) => {
+        category.title = category.title;
+        category.categoryAverage =
+          newCategoryAverageScores[index].categoryAverage;
+        category.scores = [
           ...category.scores,
           {
-            score: userScores[index].score,
+            score: parseFloat(userScores[index].score),
             comment: userScores[index].comment
           }
-        ])
+        ];
+        return {
+          title: category.title,
+          categoryAverage: category.categoryAverage,
+          scores: category.scores
+        };
+      }
     );
+
     // TODO add newScoresArray to the newRatingData object.
-
-    console.log(newScoresArray);
-
-    // Append the new scores and comments to the scores array in the
-    // newRatingData object.
 
     // Calculate the new spotAverage score and add it to the newRatingData object.
     const newSpotAverageScore = calculateSpotAverageScore(newRatingData);
     newRatingData.spotAverage = newSpotAverageScore;
 
+    console.log('newRatingData', newRatingData);
     console.log('Rating Submit Button Press');
   };
 

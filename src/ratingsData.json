@@ -4,7 +4,7 @@
     "spotAverage": 79.333,
     "categories": [
       {
-        "name": "Noise",
+        "title": "Noise",
         "categoryAverage": 77.5,
         "scores": [
           {
@@ -18,7 +18,7 @@
         ]
       },
       {
-        "name": "Social",
+        "title": "Social",
         "categoryAverage": 93.5,
         "scores": [
           {
@@ -32,7 +32,7 @@
         ]
       },
       {
-        "name": "Coworking",
+        "title": "Coworking",
         "categoryAverage": 80,
         "scores": [
           {
@@ -46,7 +46,7 @@
         ]
       },
       {
-        "name": "Internet",
+        "title": "Internet",
         "categoryAverage": 79.5,
         "scores": [
           { "score": 61, "comment": "Couldn't connect, patchy signal." },
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "name": "Power",
+        "title": "Power",
         "categoryAverage": 73.5,
         "scores": [
           {
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "name": "Accessibility",
+        "title": "Accessibility",
         "categoryAverage": 72,
         "scores": [
           {
@@ -91,7 +91,7 @@
     "spotAverage": 77.083,
     "categories": [
       {
-        "name": "Noise",
+        "title": "Noise",
         "categoryAverage": 82,
         "scores": [
           {
@@ -105,12 +105,12 @@
         ]
       },
       {
-        "name": "Social",
+        "title": "Social",
         "categoryAverage": 75,
         "scores": [
           {
             "score": 60,
-            "comment": "They keep on calling me Gary. My name is Jerry."
+            "comment": "They keep on calling me Gary. My title is Jerry."
           },
           {
             "score": 90,
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "name": "Coworking",
+        "title": "Coworking",
         "categoryAverage": 64.5,
         "scores": [
           {
@@ -133,7 +133,7 @@
         ]
       },
       {
-        "name": "Internet",
+        "title": "Internet",
         "categoryAverage": 80,
         "scores": [
           {
@@ -144,7 +144,7 @@
         ]
       },
       {
-        "name": "Power",
+        "title": "Power",
         "categoryAverage": 82,
         "scores": [
           {
@@ -158,7 +158,7 @@
         ]
       },
       {
-        "name": "Accessibility",
+        "title": "Accessibility",
         "categoryAverage": 79,
         "scores": [
           { "score": 86, "comment": "No troubles here!" },
@@ -175,7 +175,7 @@
     "spotAverage": 75.916,
     "categories": [
       {
-        "name": "Noise",
+        "title": "Noise",
         "categoryAverage": 78.5,
         "scores": [
           {
@@ -189,7 +189,7 @@
         ]
       },
       {
-        "name": "Social",
+        "title": "Social",
         "categoryAverage": 65.5,
         "scores": [
           {
@@ -203,7 +203,7 @@
         ]
       },
       {
-        "name": "Coworking",
+        "title": "Coworking",
         "categoryAverage": 63,
         "scores": [
           {
@@ -217,7 +217,7 @@
         ]
       },
       {
-        "name": "Internet",
+        "title": "Internet",
         "categoryAverage": 86,
         "scores": [
           {
@@ -231,7 +231,7 @@
         ]
       },
       {
-        "name": "Power",
+        "title": "Power",
         "categoryAverage": 69,
         "scores": [
           {
@@ -242,7 +242,7 @@
         ]
       },
       {
-        "name": "Accessibility",
+        "title": "Accessibility",
         "categoryAverage": 93.5,
         "scores": [
           { "score": 88, "comment": "No complaints!" },
@@ -259,7 +259,7 @@
     "spotAverage": 85.333,
     "categories": [
       {
-        "name": "Noise",
+        "title": "Noise",
         "categoryAverage": 71,
         "scores": [
           {
@@ -273,7 +273,7 @@
         ]
       },
       {
-        "name": "Social",
+        "title": "Social",
         "categoryAverage": 83.5,
         "scores": [
           {
@@ -287,7 +287,7 @@
         ]
       },
       {
-        "name": "Coworking",
+        "title": "Coworking",
         "categoryAverage": 86.5,
         "scores": [
           {
@@ -301,7 +301,7 @@
         ]
       },
       {
-        "name": "Internet",
+        "title": "Internet",
         "categoryAverage": 89,
         "scores": [
           {
@@ -315,7 +315,7 @@
         ]
       },
       {
-        "name": "Power",
+        "title": "Power",
         "categoryAverage": 89,
         "scores": [
           {
@@ -329,7 +329,7 @@
         ]
       },
       {
-        "name": "Accessibility",
+        "title": "Accessibility",
         "categoryAverage": 93,
         "scores": [
           {

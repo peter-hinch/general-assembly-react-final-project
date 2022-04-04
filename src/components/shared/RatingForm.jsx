@@ -8,7 +8,7 @@ const RatingForm = ({
 }) => {
   const formCategoriesMap = userScores.map((category) => (
     <FormElementsSingleCategory
-      key={category.name}
+      key={category.title}
       categoryScore={category}
       handleScoreChange={handleScoreChange}
     />
