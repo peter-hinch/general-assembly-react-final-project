@@ -1,14 +1,23 @@
 declare module '*.png';
 
-interface Place {
-  placeId: string;
-  ratings: PlaceRatings;
+interface RatingsData {
+  [key: string]: PlaceRating;
 }
 
-interface PlaceRatings {
-  quiet: number;
-  friendly: number;
-  wifi: number;
+interface PlaceRating {
+  spotAverage: number;
+  categories: Array<Category>;
+}
+
+interface Category {
+  title: string;
+  categoryAverage: number;
+  scores: Array<Score>;
+}
+
+interface Score {
+  score: number;
+  comment: string;
 }
 
 interface PlacesApiResponse {

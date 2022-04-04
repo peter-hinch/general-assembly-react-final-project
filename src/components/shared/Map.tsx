@@ -28,7 +28,7 @@ const Map = ({
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
-  ratingsData: any;
+  ratingsData: RatingsData;
 }) => {
   const ref = React.useRef();
 
@@ -51,7 +51,7 @@ const Map = ({
   // geocoder API is used to find marker locations from the place_id saved
   // alongside the application's ratings information.
   const generateMarkerArray = (
-    ratingsData: Array<Place>,
+    ratingsData: RatingsData,
     map: google.maps.Map
   ) => {
     const geocoder = new google.maps.Geocoder();
