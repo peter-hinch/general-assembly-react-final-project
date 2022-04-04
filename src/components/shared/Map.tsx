@@ -24,13 +24,11 @@ import * as React from 'react';
 const Map = ({
   center,
   zoom,
-  ratingsData,
-  handleSelection
+  ratingsData
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
   ratingsData: any;
-  handleSelection: Function;
 }) => {
   const ref = React.useRef();
 
@@ -96,7 +94,6 @@ const Map = ({
   ) => {
     google.maps.event.addListener(marker, 'click', (event: any) => {
       const placeId = key;
-      // handleSelection(placeId);
       const content = `
         ${placeId}
       `;

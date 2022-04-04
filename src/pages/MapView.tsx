@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
 import { transition, pageVariants } from './../theme/GlobalVariants';
 import Map from '../components/shared/Map';
-import DetailsPane from '../components/shared/DetailsPane';
 
 /**
  * Copyright 2021 Google LLC
@@ -31,21 +30,9 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-const MapView = ({
-  ratingsData,
-  currentPlace
-}: {
-  ratingsData: any;
-  currentPlace: PlacesApiResponse;
-}) => {
+const MapView = ({ ratingsData }: { ratingsData: any }) => {
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
-
-  const handleSelection = (placeId: string) => {
-    let currentPlaceInfo = ratingsData.filter(
-      (place: Place) => place.placeId === placeId
-    )[0];
-  };
 
   return (
     <motion.div
@@ -60,14 +47,8 @@ const MapView = ({
         apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
         render={render}
       >
-        <Map
-          center={center}
-          zoom={zoom}
-          ratingsData={ratingsData}
-          handleSelection={handleSelection}
-        />
+        <Map center={center} zoom={zoom} ratingsData={ratingsData} />
       </Wrapper>
-      {/* <DetailsPane currentPlace={currentPlace} /> */}
     </motion.div>
   );
 };
