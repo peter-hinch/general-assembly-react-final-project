@@ -51,11 +51,11 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
               <h4>Opening Hours</h4>
               {currentPlace.hasOwnProperty('opening_hours') && (
                 <>
-                  <p>
+                  {/* <p>
                     {currentPlace.opening_hours.open_now
                       ? 'Open Now'
                       : 'Closed'}
-                  </p>
+                  </p> */}
                   <ul>
                     {currentPlace.opening_hours.weekday_text.map(
                       (weekday: any, index: number) => (
