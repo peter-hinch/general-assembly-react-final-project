@@ -553,7 +553,7 @@ const GlobalStyle = createGlobalStyle`
   footer nav .footer-links {
     display: flex;
     flex-flow: column wrap;
-    align-content: space-between;
+    align-content: space-around;
     column-gap: 1.5rem;
     margin-top: 0;
     padding-left: 0;

@@ -19,9 +19,6 @@ const Footer = () => {
           <li className="footer-link">
             <NavLink to="/privacy">Privacy Policy</NavLink>
           </li>
-          <li className="footer-link">
-            <NavLink to="/firestore">Firestore Example</NavLink>
-          </li>
         </ul>
       </nav>
       <div className="copyright-info">

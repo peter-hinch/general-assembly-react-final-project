@@ -5,7 +5,6 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 import Header from './components/layout/Header';
 import Home from './pages/Home';
 import Footer from './components/layout/Footer';
-import FirestoreEx from './pages/FirestoreEx';
 import MapView from './pages/MapView';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -241,7 +240,6 @@ const App = () => {
             />
             <Route path="/terms" exact element={<TermsOfService />} />
             <Route path="/privacy" exact element={<PrivacyPolicy />} />
-            <Route path="/firestore" exact element={<FirestoreEx />} />
           </Routes>
         </AnimatePresence>
       </main>
