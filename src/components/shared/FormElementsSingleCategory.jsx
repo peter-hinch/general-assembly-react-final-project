@@ -1,6 +1,6 @@
 const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
-    <div>
+    <div className="add-rating-category">
       <h5>{categoryScore.title}</h5>
       <div className="add-rating-mini-form">
         <label htmlFor="rating">Rating</label>

@@ -395,15 +395,18 @@ const GlobalStyle = createGlobalStyle`
   main form.add-ratings {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  main .add-rating-category {
+    box-sizing: border-box;
+    width: calc(50% - 0.5rem);
   }
 
   main .add-rating-mini-form {
     position: relative;
-    box-sizing: border-box;
     flex-shrink: 0;
-    margin: 0.5rem 1rem 0.5rem 0.5rem;
     padding: 1.35rem 0.75rem 0.75rem 2.75rem;
-    width: 20rem;
     min-height: 6rem;
     background: var(--color-tertiary-90);
     border-radius: 0.25rem;
