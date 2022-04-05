@@ -68,6 +68,8 @@ const Map = ({
               position: results[0].geometry.location,
               animation: google.maps.Animation.DROP
             });
+            // Add request to placesService to populate additional information
+            // for map markers.
             placesService.getDetails(
               { placeId: key, fields: ['name'] },
               (results, status) => {
@@ -98,10 +100,11 @@ const Map = ({
     map: google.maps.Map,
     infoWindow: google.maps.InfoWindow
   ) => {
-    console.log(placeResults);
     google.maps.event.addListener(marker, 'click', (event: any) => {
       const content = `
-        ${placeResults.name}
+        <div class="map-marker">
+          <h5>${placeResults.name}</h5>
+        </div>
       `;
       const position = event.latLng;
       infoWindow.setContent(content);

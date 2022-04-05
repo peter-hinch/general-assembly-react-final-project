@@ -612,6 +612,10 @@ const GlobalStyle = createGlobalStyle`
     height: 50.75rem;
     border-radius: 0.25rem;
   }
+
+  #map .map-marker h5 {
+    margin: 0;
+  }
 `;
 
 export default GlobalStyle;
