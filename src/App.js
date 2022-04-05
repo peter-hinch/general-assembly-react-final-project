@@ -101,10 +101,10 @@ const App = () => {
   };
 
   const handleNewPlacesApiData = (addressObject) => {
-    // setPlacesApiData((currentPlacesApiData) => [
-    //   ...currentPlacesApiData,
-    //   ...addressObject
-    // ]);
+    setPlacesApiData((currentPlacesApiData) => [
+      ...currentPlacesApiData,
+      addressObject
+    ]);
   };
 
   // Determine which category in the userScores array needs to be updated and
