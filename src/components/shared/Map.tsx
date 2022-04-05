@@ -56,20 +56,26 @@ const Map = ({
   ) => {
     const geocoder = new google.maps.Geocoder();
     const infoWindow = new google.maps.InfoWindow();
+    const placesService = new google.maps.places.PlacesService(map);
 
     Object.keys(ratingsData).forEach((key) => {
       geocoder
         .geocode({ placeId: key })
         .then(({ results }) => {
           if (results[0]) {
-            console.log(results[0]);
-            let marker;
-            marker = new google.maps.Marker({
+            const marker = new google.maps.Marker({
               map,
               position: results[0].geometry.location,
               animation: google.maps.Animation.DROP
             });
-            addMarkerListener(key, marker, map, infoWindow);
+            placesService.getDetails(
+              { placeId: key, fields: ['name'] },
+              (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  addMarkerListener(results, marker, map, infoWindow);
+                }
+              }
+            );
             return marker;
           } else {
             console.log(`no geocoder results returned for key ${key}.`);
@@ -87,15 +93,15 @@ const Map = ({
   // Function to add a listener to markers on the map as they are generated in
   // the generateMarkerArray function.
   const addMarkerListener = (
-    key: string,
+    placeResults: any,
     marker: google.maps.Marker,
     map: google.maps.Map,
     infoWindow: google.maps.InfoWindow
   ) => {
+    console.log(placeResults);
     google.maps.event.addListener(marker, 'click', (event: any) => {
-      const placeId = key;
       const content = `
-        ${placeId}
+        ${placeResults.name}
       `;
       const position = event.latLng;
       infoWindow.setContent(content);
