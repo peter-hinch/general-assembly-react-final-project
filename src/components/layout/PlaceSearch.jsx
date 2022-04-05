@@ -8,7 +8,6 @@ const PlaceSearch = ({ currentPlace, handleCurrentPlace }) => {
 
   // Using the Google Places Autocomplete API from the following example.
   // Reference: https://betterprogramming.pub/the-best-practice-with-google-place-autocomplete-api-on-react-939211e8b4ce
-
   let autoComplete;
 
   const loadScript = (url, callback) => {
@@ -65,7 +64,6 @@ const PlaceSearch = ({ currentPlace, handleCurrentPlace }) => {
     const addressObject = autoComplete.getPlace();
     const queryInput = addressObject.name;
     updateQuery(queryInput);
-    console.log(addressObject);
     handleCurrentPlace(addressObject);
     navigate(`/spot/${addressObject.place_id}`);
   }
