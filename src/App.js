@@ -97,6 +97,14 @@ const App = () => {
     // rating, it will be done below to minimise queries needed in the map section
     // of the application.
     // TODO - add code to populate 'placesApiData' where applicable.
+    handleNewPlacesApiData(addressObject);
+  };
+
+  const handleNewPlacesApiData = (addressObject) => {
+    // setPlacesApiData((currentPlacesApiData) => [
+    //   ...currentPlacesApiData,
+    //   ...addressObject
+    // ]);
   };
 
   // Determine which category in the userScores array needs to be updated and
