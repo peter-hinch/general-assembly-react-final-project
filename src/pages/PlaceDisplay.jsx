@@ -8,11 +8,21 @@ const PlaceDisplay = ({
   currentPlace,
   ratingsData,
   userScores,
+  placesApiData,
+  handleCurrentPlace,
   handleScoreChange,
   handleFormReset,
   handleScoresSubmit
 }) => {
+  // Pass in the place_id from the url to this page.
   const { placeId } = useParams();
+
+  // Check whether the placeId passed in with the url matches the place_id of
+  // the currentPlace. If not, attempt to set the currentPlace using an item
+  // from placesApiData.
+  console.log(placeId);
+  // console.log(currentPlace.place_id);
+
   // Ensure that ratings data exists before attempting to assign the data to an
   // object. If no data exists return null values for spotRating and
   // spotRatingDetails.
