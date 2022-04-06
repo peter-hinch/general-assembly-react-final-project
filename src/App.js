@@ -96,15 +96,23 @@ const App = () => {
     // If it is possible to associate the addressObject data with an existing
     // rating, it will be done below to minimise queries needed in the map section
     // of the application.
-    // TODO - add code to populate 'placesApiData' where applicable.
     handleNewPlacesApiData(addressObject);
   };
 
+  // Check if the placesApiData state contains the addressObject passed in. If
+  // not, add it to the array.
   const handleNewPlacesApiData = (addressObject) => {
-    setPlacesApiData((currentPlacesApiData) => [
-      ...currentPlacesApiData,
-      addressObject
-    ]);
+    setPlacesApiData((currentPlacesApiData) => {
+      const recordExists = currentPlacesApiData
+        .map((place) => place.place_id)
+        .includes(addressObject.place_id);
+
+      if (recordExists) {
+        return currentPlacesApiData;
+      } else {
+        return [...currentPlacesApiData, addressObject];
+      }
+    });
   };
 
   // Determine which category in the userScores array needs to be updated and
