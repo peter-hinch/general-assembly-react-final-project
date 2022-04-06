@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import imgAboriginalFlag from './../../../assets/aboriginal-flag.svg';
 
 const StyledFooter = styled.footer`
   box-sizing: border-box;
@@ -55,4 +56,40 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export { StyledFooter, StyledNav, StyledUl, StyledNavLink };
+const StyledCopyrightInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  min-height: 3.75rem;
+`;
+
+const StyledAcknowledgeCountry = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 -1.5rem -1.5rem;
+  padding: 1.5rem 3rem;
+  min-height: 5rem;
+  color: var(--color-neutral-variant-80);
+  background: var(--color-neutral-variant-30);
+  border-radius: 0 0 3rem 3rem;
+`;
+
+const StyledAboriginalFlag = styled.div`
+  min-width: 2.5rem;
+  min-height: 1.5rem;
+  margin-right: 1rem;
+  background: url(${imgAboriginalFlag});
+`;
+
+export {
+  StyledFooter,
+  StyledNav,
+  StyledUl,
+  StyledNavLink,
+  StyledCopyrightInfo,
+  StyledAcknowledgeCountry,
+  StyledAboriginalFlag
+};

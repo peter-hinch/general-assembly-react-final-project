@@ -22,17 +22,17 @@ const Footer = () => {
           </li>
         </s.StyledUl>
       </s.StyledNav>
-      <div className="copyright-info">
+      <s.StyledCopyrightInfo>
         <small>&copy;{year} Peter Hinch, All rights reserved.</small>
-      </div>
-      <div className="acknowledge-country">
-        <div className="flag"></div>
+      </s.StyledCopyrightInfo>
+      <s.StyledAcknowledgeCountry>
+        <s.StyledAboriginalFlag></s.StyledAboriginalFlag>
         <small>
           We acknowledge the Traditional Custodians of the land on which
           RemoteSpot is based - The Wurundjeri people of the Kulin Nation, and
           pay our respects to elders past, present and emerging.
         </small>
-      </div>
+      </s.StyledAcknowledgeCountry>
     </s.StyledFooter>
   );
 };

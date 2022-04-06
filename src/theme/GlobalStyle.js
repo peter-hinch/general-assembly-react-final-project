@@ -574,15 +574,15 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-secondary-20);
   } */
 
-  footer .copyright-info {
+  /* footer .copyright-info {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.75rem;
     min-height: 3.75rem;
-  }
+  } */
 
-  footer .acknowledge-country {
+  /* footer .acknowledge-country {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -593,18 +593,18 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-neutral-variant-80);
     background: var(--color-neutral-variant-30);
     border-radius: 0 0 3rem 3rem;
-  }
+  } */
 
-  footer .acknowledge-country .flag {
+  /* footer .acknowledge-country .flag {
     min-width: 2.5rem;
     min-height: 1.5rem;
     margin-right: 1rem;
     background: url(${imgAboriginalFlag});
-  }
+  } */
 
-  footer .acknowledge-country p {
+  /* footer .acknowledge-country p {
     margin: 0;
-  }
+  } */
 
   #map {
     z-index: 0;
