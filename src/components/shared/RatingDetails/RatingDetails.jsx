@@ -1,4 +1,4 @@
-import RatingCategoryScores from './RatingCategoryScores';
+import RatingCategoryScores from '../RatingCategoryScores/RatingCategoryScores';
 
 const RatingDetails = ({ ratingsObject }) => {
   const categoryScoresMap = ratingsObject.categories.map((category) => (

@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import Header from './components/layout/Header';
-import Home from './pages/Home';
-import Footer from './components/layout/Footer';
-import MapView from './pages/MapView';
-import TermsOfService from './pages/TermsOfService';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import PlaceDisplay from './pages/PlaceDisplay';
+import Header from './components/layout/Header/Header';
+import Home from './pages/Home/Home';
+import Footer from './components/layout/Footer/Footer';
+import MapView from './pages/MapView/MapView';
+import TermsOfService from './pages/TermsOfService/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import PlaceDisplay from './pages/PlaceDisplay/PlaceDisplay';
 
 // Load the example dataset from local file.
 const seedRatingsData = require('./ratingsData.json');

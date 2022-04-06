@@ -1,4 +1,4 @@
-import FormElementsSingleCategory from './FormElementsSingleCategory';
+import FormElementsSingleCategory from '../FormElementSingleCategory/FormElementsSingleCategory';
 
 const RatingForm = ({
   userScores,

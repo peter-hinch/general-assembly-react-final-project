@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { transition, pageVariants } from './../theme/GlobalVariants';
+import { transition, pageVariants } from '../../theme/GlobalVariants';
 
 const Home = () => {
   return (

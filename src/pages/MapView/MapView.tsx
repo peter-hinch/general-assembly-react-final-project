@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
-import { transition, pageVariants } from './../theme/GlobalVariants';
-import Map from '../components/shared/Map';
+import { transition, pageVariants } from '../../theme/GlobalVariants';
+import Map from '../../components/shared/Map/Map';
 
 /**
  * Copyright 2021 Google LLC

@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import StarRating from '../components/shared/StarRating';
-import DetailsPane from './../components/shared/DetailsPane';
-import RatingDetails from '../components/shared/RatingDetails';
-import RatingForm from '../components/shared/RatingForm';
+import StarRating from '../../components/shared/StarRating/StarRating';
+import DetailsPane from '../../components/shared/DetailsPane/DetailsPane';
+import RatingDetails from '../../components/shared/RatingDetails/RatingDetails';
+import RatingForm from '../../components/shared/RatingForm/RatingForm';
 
 const PlaceDisplay = ({
   currentPlace,

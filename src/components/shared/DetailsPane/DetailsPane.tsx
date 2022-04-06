@@ -1,5 +1,5 @@
 import * as React from 'react';
-import imgPoweredByGoogle from './../../assets/powered-by-google.png';
+import imgPoweredByGoogle from './../../../assets/powered-by-google.png';
 
 const parseAttributes = (attributions: any) => {
   // Regular expression for extracting url and name from provided HTML object.

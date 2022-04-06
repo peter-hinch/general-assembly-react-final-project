@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import PlaceSearch from './PlaceSearch';
+import PlaceSearch from '../PlaceSearch/PlaceSearch';
 
 const Header = ({ currentPlace, handleCurrentPlace }) => {
   return (
