@@ -246,6 +246,7 @@ const App = () => {
               element={
                 <PlaceDisplay
                   currentPlace={currentPlace}
+                  placesApiData={placesApiData}
                   ratingsData={ratingsData}
                   userScores={userScores}
                   handleScoreChange={handleScoreChange}
