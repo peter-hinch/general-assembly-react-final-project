@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import * as s from './PlaceDisplay.styles';
 import StarRating from '../../components/shared/StarRating/StarRating';
 import DetailsPane from '../../components/shared/DetailsPane/DetailsPane';
 import RatingDetails from '../../components/shared/RatingDetails/RatingDetails';

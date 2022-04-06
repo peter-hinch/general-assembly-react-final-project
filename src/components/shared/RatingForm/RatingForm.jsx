@@ -1,3 +1,4 @@
+import * as s from './RatingForm.styles';
 import FormElementsSingleCategory from '../FormElementSingleCategory/FormElementsSingleCategory';
 
 const RatingForm = ({

@@ -1,3 +1,4 @@
+import * as s from './RatingDetails.styles';
 import RatingCategoryScores from '../RatingCategoryScores/RatingCategoryScores';
 
 const RatingDetails = ({ ratingsObject }) => {

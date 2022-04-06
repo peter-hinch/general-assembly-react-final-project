@@ -1,3 +1,5 @@
+import * as s from './FormElementSingleCategory.styles';
+
 const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
     <div className="add-rating-category">

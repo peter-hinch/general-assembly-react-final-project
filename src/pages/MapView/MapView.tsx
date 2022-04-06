@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
+import * as s from './MapView.styles';
 import { transition, pageVariants } from '../../theme/GlobalVariants';
 import Map from '../../components/shared/Map/Map';
 

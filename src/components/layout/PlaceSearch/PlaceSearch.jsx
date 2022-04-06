@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as s from './PlaceSearch.styles';
 
 const PlaceSearch = ({ currentPlace, handleCurrentPlace }) => {
   const [queryInput, setQueryInput] = useState('');

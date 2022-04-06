@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as s from './DetailsPane.styles';
 import imgPoweredByGoogle from './../../../assets/powered-by-google.png';
 
 const parseAttributes = (attributions: any) => {

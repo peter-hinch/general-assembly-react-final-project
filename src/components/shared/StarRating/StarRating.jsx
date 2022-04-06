@@ -1,3 +1,5 @@
+import * as s from './StarRating.styles';
+
 function StarRating({ rating }) {
   const ratingToStars = () => {
     // TODO - let's start with basic, will likely need a refactor

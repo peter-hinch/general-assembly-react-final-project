@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as s from './Map.styles';
 
 /**
  * Copyright 2021 Google LLC

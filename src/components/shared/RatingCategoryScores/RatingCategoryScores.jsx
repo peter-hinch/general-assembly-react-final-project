@@ -1,3 +1,5 @@
+import * as s from './RatingCategoryScores.styles';
+
 const RatingCategoryScores = ({ categoryObject }) => {
   const scoreCommentsList = categoryObject.scores.map((item, index) => (
     <li key={index} className="user-score">
