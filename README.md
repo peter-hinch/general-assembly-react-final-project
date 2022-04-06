@@ -12,7 +12,7 @@
 
 #### Choose at least one of the following
 
-- [ ] Apply React styling (e.g. Styled components, Material UI)
+- [x] Apply React styling (e.g. Styled components, Material UI)
 - [x] Apply React animations (e.g. Framer Motion)
 - [x] Incorporate static type checking (e.g. Flow, TypeScript)
 
