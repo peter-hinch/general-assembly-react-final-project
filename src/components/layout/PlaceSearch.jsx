@@ -52,7 +52,7 @@ const PlaceSearch = ({ currentPlace, handleCurrentPlace }) => {
       'photos',
       'formatted_address',
       'formatted_phone_number',
-      'opening_hours',
+      'opening_hours.weekday_text',
       'url'
     ]);
     autoComplete.addListener('place_changed', () =>
