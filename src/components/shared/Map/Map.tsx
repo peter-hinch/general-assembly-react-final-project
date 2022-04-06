@@ -131,7 +131,7 @@ const Map = ({
     });
   };
 
-  return <div ref={ref} id="map" />;
+  return <s.StyledMap ref={ref} id="map" />;
 };
 
 export default Map;

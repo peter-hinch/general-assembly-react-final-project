@@ -176,12 +176,6 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: var(--shadow-on-secondary);
   }
 
-  /* footer.container {
-    box-sizing: border-box;
-    align-self: center;
-    width: calc(57rem - 1.5rem);
-  } */
-
   header {
     box-sizing: border-box;
     position: sticky;
@@ -523,95 +517,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--color-primary-40);
   }
 
-  /* footer::before {
-    position: absolute;
-    z-index: -1;
-    top: -0.75rem;
-    left: -0.75rem;
-    width: calc(100% + 1.5rem);
-    height: calc(100% + 1.5rem);
-    content: '';
-    color: var(--color-secondary-10);
-    background: var(--color-secondary-80);
-    border-radius: 1.5rem 1.5rem 3.75rem 3.75rem;
-    box-shadow: var(--inset-on-secondary);
-  } */
-
-  /* footer {
-    position: relative;
-    margin: 1rem 0 4.5rem;
-    padding: 1.5rem;
-    background: var(--color-secondary-90);
-    border-radius: 0.75rem 0.75rem 3rem 3rem;
-    box-shadow: var(--shadow-on-secondary);
-  } */
-
-  /* footer nav {
-    margin-bottom: 0.75rem;
-  } */
-
-  /* footer nav .footer-links {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: space-around;
-    column-gap: 1.5rem;
-    margin-top: 0;
-    padding-left: 0;
-    height: 3rem;
-    list-style-type: none;
-  } */
-
-  /* footer nav .footer-link a {
-    color: var(--color-secondary-40);
-  } */
-
-  /* footer nav .footer-link a:hover {
-    text-decoration: underline;
-    color: var(--color-secondary-30);
-  } */
-
-  /* footer nav .footer-link a.active {
-    color: var(--color-secondary-20);
-  } */
-
-  /* footer .copyright-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-    min-height: 3.75rem;
-  } */
-
-  /* footer .acknowledge-country {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 -1.5rem -1.5rem;
-    padding: 1.5rem 3rem;
-    min-height: 5rem;
-    color: var(--color-neutral-variant-80);
-    background: var(--color-neutral-variant-30);
-    border-radius: 0 0 3rem 3rem;
-  } */
-
-  /* footer .acknowledge-country .flag {
-    min-width: 2.5rem;
-    min-height: 1.5rem;
-    margin-right: 1rem;
-    background: url(${imgAboriginalFlag});
-  } */
-
-  /* footer .acknowledge-country p {
-    margin: 0;
-  } */
-
-  #map {
-    z-index: 0;
-    width: 100%;
-    height: 50.75rem;
-    border-radius: 0.25rem;
-  }
+  /* Global Styles for map markers rendered as a content string. */
 
   #map .map-marker h5 {
     margin: 0;
