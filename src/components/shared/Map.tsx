@@ -73,10 +73,24 @@ const Map = ({
             // Add request to placesService to populate additional information
             // for map markers.
             placesService.getDetails(
-              { placeId: key, fields: ['name'] },
+              {
+                placeId: key,
+                fields: [
+                  'place_id',
+                  'geometry',
+                  'name',
+                  'website',
+                  'photos',
+                  'formatted_address',
+                  'formatted_phone_number',
+                  'opening_hours.weekday_text',
+                  'url'
+                ]
+              },
               (results, status) => {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                   addMarkerListener(results, marker, map, infoWindow);
+                  handleNewPlacesApiData(results);
                 }
               }
             );
