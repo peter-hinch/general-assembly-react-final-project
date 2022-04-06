@@ -24,11 +24,13 @@ import * as React from 'react';
 const Map = ({
   center,
   zoom,
-  ratingsData
+  ratingsData,
+  handleNewPlacesApiData
 }: {
   center: google.maps.LatLngLiteral;
   zoom: number;
   ratingsData: RatingsData;
+  handleNewPlacesApiData: any;
 }) => {
   const ref = React.useRef();
 

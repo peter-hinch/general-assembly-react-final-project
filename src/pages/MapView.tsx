@@ -30,7 +30,13 @@ const render = (status: Status): React.ReactElement => {
   if (status === Status.FAILURE) return <h3>{status} ...</h3>;
 };
 
-const MapView = ({ ratingsData }: { ratingsData: any }) => {
+const MapView = ({
+  ratingsData,
+  handleNewPlacesApiData
+}: {
+  ratingsData: RatingsData;
+  handleNewPlacesApiData: any;
+}) => {
   const center = { lat: -37.840935, lng: 144.946457 };
   const zoom = 12;
 
@@ -47,7 +53,12 @@ const MapView = ({ ratingsData }: { ratingsData: any }) => {
         apiKey={process.env.REACT_APP_MAPS_PLACES_API_KEY}
         render={render}
       >
-        <Map center={center} zoom={zoom} ratingsData={ratingsData} />
+        <Map
+          center={center}
+          zoom={zoom}
+          ratingsData={ratingsData}
+          handleNewPlacesApiData={handleNewPlacesApiData}
+        />
       </Wrapper>
     </motion.div>
   );

@@ -238,7 +238,12 @@ const App = () => {
             <Route
               path="/map"
               exact
-              element={<MapView ratingsData={ratingsData} />}
+              element={
+                <MapView
+                  ratingsData={ratingsData}
+                  handleNewPlacesApiData={handleNewPlacesApiData}
+                />
+              }
             />
             <Route
               path="/spot/:placeId"
