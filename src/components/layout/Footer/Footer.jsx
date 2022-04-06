@@ -5,23 +5,23 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="container">
-      <nav>
-        <ul className="footer-links">
+    <s.StyledFooter className="container">
+      <s.StyledNav>
+        <s.StyledUl>
           <li className="footer-link">
-            <NavLink to="/">Home</NavLink>
+            <s.StyledNavLink to="/">Home</s.StyledNavLink>
           </li>
           <li className="footer-link">
-            <NavLink to="/map">Map</NavLink>
+            <s.StyledNavLink to="/map">Map</s.StyledNavLink>
           </li>
           <li className="footer-link">
-            <NavLink to="/terms">Terms of Service</NavLink>
+            <s.StyledNavLink to="/terms">Terms of Service</s.StyledNavLink>
           </li>
           <li className="footer-link">
-            <NavLink to="/privacy">Privacy Policy</NavLink>
+            <s.StyledNavLink to="/privacy">Privacy Policy</s.StyledNavLink>
           </li>
-        </ul>
-      </nav>
+        </s.StyledUl>
+      </s.StyledNav>
       <div className="copyright-info">
         <small>&copy;{year} Peter Hinch, All rights reserved.</small>
       </div>
@@ -33,7 +33,7 @@ const Footer = () => {
           pay our respects to elders past, present and emerging.
         </small>
       </div>
-    </footer>
+    </s.StyledFooter>
   );
 };
 
