@@ -15,7 +15,11 @@ const parseAttributes = (attributions: any) => {
     // Use the regex to obtain two groups and assign them to the array 'components'.
     let components = string.match(regex);
     // Return a link in JSX format.
-    return <a href={components[1]}>Image: {components[2]}</a>;
+    return (
+      <s.StyledPlaceImageLink href={components[1]}>
+        Image: {components[2]}
+      </s.StyledPlaceImageLink>
+    );
   }
 };
 
@@ -23,21 +27,21 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
   return (
     <>
       {Object.keys(currentPlace).length !== 0 && (
-        <div className="details-pane">
+        <s.StyledDetailsPane>
           <h2>{currentPlace.name}</h2>
-          <div className="contact-info">
-            <span>{currentPlace.formatted_address}</span>
-            <span>{currentPlace.formatted_phone_number}</span>
-            <span>
+          <s.StyledContactInfo>
+            <s.StyledSpan>{currentPlace.formatted_address}</s.StyledSpan>
+            <s.StyledSpan>{currentPlace.formatted_phone_number}</s.StyledSpan>
+            <s.StyledSpan>
               <a href={currentPlace.website}>Website</a>
-            </span>
-          </div>
-          <div className="additional-info">
+            </s.StyledSpan>
+          </s.StyledContactInfo>
+          <s.StyledAdditionalInfo>
             {currentPlace.hasOwnProperty('photos') && (
               /* When using images returned by the Places API, if an attribution
               exists for that image it must be displayed with the result. */
-              <div className="place-images">
-                <img
+              <s.StyledPlaceImages>
+                <s.StyledPlaceImage
                   src={currentPlace.photos[0].getUrl()}
                   alt={currentPlace.name}
                 />
@@ -46,32 +50,35 @@ const DetailsPane = ({ currentPlace }: { currentPlace: PlacesApiResponse }) => {
                     {parseAttributes(currentPlace.photos[0].html_attributions)}
                   </em>
                 </small>
-              </div>
+              </s.StyledPlaceImages>
             )}
-            <div className="opening-hours">
+            <s.StyledOpeningHours>
               <h4>Opening Hours</h4>
               {currentPlace.hasOwnProperty('opening_hours') && (
-                <ul>
+                <s.StyledOpeningHoursUl>
                   {currentPlace.opening_hours.weekday_text.map(
                     (weekday: any, index: number) => (
                       <li key={index}>{weekday}</li>
                     )
                   )}
-                </ul>
+                </s.StyledOpeningHoursUl>
               )}
-            </div>
-          </div>
+            </s.StyledOpeningHours>
+          </s.StyledAdditionalInfo>
           {/* Results returned by the Google Places API must have a link to the 
           Google Business Profile for that result. */}
-          <div className="google-attribution">
+          <s.StyledGoogleAttribution>
             <small>
-              <a href={currentPlace.url}>
+              <s.StyledGoogleAttributionLink href={currentPlace.url}>
                 Google Business Profile for {currentPlace.name}
-              </a>
+              </s.StyledGoogleAttributionLink>
             </small>
-            <img src={imgPoweredByGoogle} alt="powered by Google" />
-          </div>
-        </div>
+            <s.StyledGoogleAttributionImage
+              src={imgPoweredByGoogle}
+              alt="powered by Google"
+            />
+          </s.StyledGoogleAttribution>
+        </s.StyledDetailsPane>
       )}
     </>
   );
