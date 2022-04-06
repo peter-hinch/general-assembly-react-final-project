@@ -152,9 +152,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  header,
-  main,
-  footer {
+  main {
     flex-shrink: 0;
   }
 
@@ -174,27 +172,6 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 1.5rem;
     background: var(--color-neutral-99);
     box-shadow: var(--shadow-on-secondary);
-  }
-
-  header {
-    box-sizing: border-box;
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    padding: 1rem 1.75rem;
-    min-height: var(--header-min-height);
-    background: var(--color-tertiary-40);
-    box-shadow: var(--shadow-on-secondary);
-  }
-
-  header nav .nav-links {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  header nav .nav-links a {
-    color: var(--color-white);
   }
 
   header nav .nav-home,

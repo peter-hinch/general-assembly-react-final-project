@@ -4,14 +4,14 @@ import PlaceSearch from '../PlaceSearch/PlaceSearch';
 
 const Header = ({ currentPlace, handleCurrentPlace }) => {
   return (
-    <header>
+    <s.StyledHeader>
       <div className="container">
         <nav>
-          <ul className="nav-links">
+          <s.StyledNavLinksUl>
             <li className="nav-home">
-              <NavLink to="/">
+              <s.StyledNavNavLink to="/">
                 <h1>RemoteSpot</h1>
-              </NavLink>
+              </s.StyledNavNavLink>
             </li>
             <li className="nav-search">
               <PlaceSearch
@@ -20,12 +20,12 @@ const Header = ({ currentPlace, handleCurrentPlace }) => {
               />
             </li>
             <li className="nav-link">
-              <NavLink to="/map">Map</NavLink>
+              <s.StyledNavNavLink to="/map">Map</s.StyledNavNavLink>
             </li>
-          </ul>
+          </s.StyledNavLinksUl>
         </nav>
       </div>
-    </header>
+    </s.StyledHeader>
   );
 };
 
