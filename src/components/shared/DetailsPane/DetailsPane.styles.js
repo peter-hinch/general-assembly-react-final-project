@@ -86,8 +86,6 @@ const StyledGoogleAttributionImage = styled.img`
   height: 1.125rem;
 `;
 
-const Styled = styled.div``;
-
 export {
   StyledDetailsPane,
   StyledContactInfo,
