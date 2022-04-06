@@ -22,6 +22,7 @@
 
 ### Future Additions
 
+- Responsive Design
 - User accounts
 - Store ratngs data in a live database
 - More comprehensive ratings data (not just score and a comment)
