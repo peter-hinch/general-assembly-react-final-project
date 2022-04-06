@@ -5,6 +5,7 @@ import imgAboriginalFlag from './../../../assets/aboriginal-flag.svg';
 const StyledFooter = styled.footer`
   box-sizing: border-box;
   position: relative;
+  flex-shrink: 0;
   align-self: center;
   margin: 1rem 0 4.5rem;
   padding: 1.5rem;
