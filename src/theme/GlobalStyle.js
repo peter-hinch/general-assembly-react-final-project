@@ -154,6 +154,9 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     flex-shrink: 0;
+    min-height: calc(100vh - var(--header-min-height) - 2rem);
+    flex-grow: 1;
+    margin-bottom: -2.5rem;
   }
 
   header .container {
@@ -172,36 +175,6 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 1.5rem;
     background: var(--color-neutral-99);
     box-shadow: var(--shadow-on-secondary);
-  }
-
-  header nav .nav-home,
-  header nav .nav-search,
-  header nav .nav-link {
-    display: inline-block;
-    padding-right: 1rem;
-  }
-
-  header nav .nav-search input[type="text"] {
-    position: relative;
-    bottom: 0.25rem;
-    width: 10rem;
-    height: 1.75rem;
-    padding: 0 0.75rem;
-    border: 0;
-    border-radius: 1.5rem;
-  }
-
-  header nav .nav-home h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.75rem;
-    line-height: 1.75rem;
-  }
-
-  main {
-    min-height: calc(100vh - var(--header-min-height) - 2rem);
-    flex-grow: 1;
-    margin-bottom: -2.5rem;
   }
 
   main .rating-bar {

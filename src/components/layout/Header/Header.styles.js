@@ -19,8 +19,26 @@ const StyledNavLinksUl = styled.ul`
   list-style-type: none;
 `;
 
+const StyledNavLinksLi = styled.li`
+  display: inline-block;
+  padding-right: 1rem;
+`;
+
+const StyledNavLinksH1 = styled.h1`
+  margin: 0;
+  padding: 0;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+`;
+
 const StyledNavNavLink = styled(NavLink)`
   color: var(--color-white);
 `;
 
-export { StyledHeader, StyledNavLinksUl, StyledNavNavLink };
+export {
+  StyledHeader,
+  StyledNavLinksUl,
+  StyledNavLinksLi,
+  StyledNavNavLink,
+  StyledNavLinksH1
+};

@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import * as s from './Header.styles';
 import PlaceSearch from '../PlaceSearch/PlaceSearch';
 
@@ -8,20 +7,20 @@ const Header = ({ currentPlace, handleCurrentPlace }) => {
       <div className="container">
         <nav>
           <s.StyledNavLinksUl>
-            <li className="nav-home">
+            <s.StyledNavLinksLi className="nav-home">
               <s.StyledNavNavLink to="/">
-                <h1>RemoteSpot</h1>
+                <s.StyledNavLinksH1>RemoteSpot</s.StyledNavLinksH1>
               </s.StyledNavNavLink>
-            </li>
-            <li className="nav-search">
+            </s.StyledNavLinksLi>
+            <s.StyledNavLinksLi className="nav-search">
               <PlaceSearch
                 currentPlace={currentPlace}
                 handleCurrentPlace={handleCurrentPlace}
               />
-            </li>
-            <li className="nav-link">
+            </s.StyledNavLinksLi>
+            <s.StyledNavLinksLi className="nav-link">
               <s.StyledNavNavLink to="/map">Map</s.StyledNavNavLink>
-            </li>
+            </s.StyledNavLinksLi>
           </s.StyledNavLinksUl>
         </nav>
       </div>

@@ -71,7 +71,7 @@ const PlaceSearch = ({ currentPlace, handleCurrentPlace }) => {
 
   return (
     <form>
-      <input
+      <s.StyledInput
         type="text"
         placeholder="search"
         ref={autoCompleteRef}
