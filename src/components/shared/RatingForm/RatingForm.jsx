@@ -16,23 +16,24 @@ const RatingForm = ({
   ));
 
   return (
-    <form className="add-ratings">
+    <s.StyledRatingForm>
       {formCategoriesMap}
-      <div className="ratings-buttons">
-        <button
+      <s.StyledRatingFormButtonsDiv>
+        <s.StyledRatingFormButton
           className="add-rating-reset"
           onClick={(event) => handleFormReset(event)}
         >
           Reset Form
-        </button>
-        <button
+        </s.StyledRatingFormButton>
+        <s.StyledRatingFormButton
+          type="primary"
           className="add-rating-submit"
           onClick={(event) => handleScoresSubmit(event)}
         >
           Submit Rating
-        </button>
-      </div>
-    </form>
+        </s.StyledRatingFormButton>
+      </s.StyledRatingFormButtonsDiv>
+    </s.StyledRatingForm>
   );
 };
 

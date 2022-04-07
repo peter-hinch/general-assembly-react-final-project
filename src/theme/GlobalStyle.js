@@ -169,12 +169,6 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: var(--shadow-on-secondary);
   }
 
-  main form.add-ratings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   main .add-rating-category {
     box-sizing: border-box;
     width: calc(50% - 0.5rem);
@@ -273,31 +267,6 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-neutral-10);
     border: none;
     border-radius: 0.25rem;
-  }
-
-  main form.add-ratings .ratings-buttons {
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 0;
-    width: 100%;
-  }
-
-  main form.add-ratings button {
-    margin: 1rem 0 1rem 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 0;
-    border-radius: 0.25rem;
-    cursor: pointer;
-  }
-
-  main form.add-ratings button.add-rating-reset {
-    color: var(--color-neutral-variant-95);
-    background: var(--color-neutral-variant-50);
-  }
-
-  main form.add-ratings button.add-rating-submit {
-    color: var(--color-white);
-    background: var(--color-primary-40);
   }
 
   /* Global Styles for map markers rendered as a content string. */
