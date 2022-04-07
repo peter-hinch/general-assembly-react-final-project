@@ -13,6 +13,13 @@ const StyledHeader = styled.header`
   box-shadow: var(--shadow-on-secondary);
 `;
 
+const StyledHeaderContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: 57rem;
+`;
+
 const StyledNavLinksUl = styled.ul`
   margin: 0;
   padding: 0;
@@ -37,6 +44,7 @@ const StyledNavNavLink = styled(NavLink)`
 
 export {
   StyledHeader,
+  StyledHeaderContainer,
   StyledNavLinksUl,
   StyledNavLinksLi,
   StyledNavNavLink,

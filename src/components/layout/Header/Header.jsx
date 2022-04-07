@@ -4,7 +4,7 @@ import PlaceSearch from '../PlaceSearch/PlaceSearch';
 const Header = ({ currentPlace, handleCurrentPlace }) => {
   return (
     <s.StyledHeader>
-      <div className="container">
+      <s.StyledHeaderContainer>
         <nav>
           <s.StyledNavLinksUl>
             <s.StyledNavLinksLi className="nav-home">
@@ -23,7 +23,7 @@ const Header = ({ currentPlace, handleCurrentPlace }) => {
             </s.StyledNavLinksLi>
           </s.StyledNavLinksUl>
         </nav>
-      </div>
+      </s.StyledHeaderContainer>
     </s.StyledHeader>
   );
 };
