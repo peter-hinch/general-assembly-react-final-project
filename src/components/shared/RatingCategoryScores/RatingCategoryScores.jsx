@@ -2,10 +2,10 @@ import * as s from './RatingCategoryScores.styles';
 
 const RatingCategoryScores = ({ categoryObject }) => {
   const scoreCommentsList = categoryObject.scores.map((item, index) => (
-    <li key={index} className="user-score">
-      <h6>{item.score}</h6>
-      <p>{item.comment}</p>
-    </li>
+    <s.StyledUserScoresLi key={index}>
+      <s.StyledUserScoresH6>{item.score}</s.StyledUserScoresH6>
+      <s.StyledUserScoresP>{item.comment}</s.StyledUserScoresP>
+    </s.StyledUserScoresLi>
   ));
 
   return (
@@ -13,7 +13,7 @@ const RatingCategoryScores = ({ categoryObject }) => {
       <h5 className="category-score">
         {categoryObject.title} - {categoryObject.categoryAverage}
       </h5>
-      <ul className="user-score-list">{scoreCommentsList}</ul>
+      <s.StyledUserScoresUl>{scoreCommentsList}</s.StyledUserScoresUl>
     </>
   );
 };
