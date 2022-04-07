@@ -2,11 +2,13 @@ import * as s from './FormElementSingleCategory.styles';
 
 const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
   return (
-    <div className="add-rating-category">
+    <s.StyledRatingCategory>
       <h5>{categoryScore.title}</h5>
-      <div className="add-rating-mini-form">
-        <label htmlFor="rating">Rating</label>
-        <input
+      <s.StyledRatingMiniForm>
+        <s.StyledRatingMiniFormLabel htmlFor="rating">
+          Rating
+        </s.StyledRatingMiniFormLabel>
+        <s.StyledRatingMiniFormRange
           id="rating"
           type="range"
           min="1"
@@ -19,9 +21,13 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
             })
           }
         />
-        <h6 className="rating-value">{categoryScore.score}</h6>
-        <label htmlFor="comment">Comment</label>
-        <textarea
+        <s.StyledRatingMiniFormValue>
+          {categoryScore.score}
+        </s.StyledRatingMiniFormValue>
+        <s.StyledRatingMiniFormLabel htmlFor="comment">
+          Comment
+        </s.StyledRatingMiniFormLabel>
+        <s.StyledRatingMiniFormTextarea
           id="comment"
           value={categoryScore.comment}
           onChange={(event) =>
@@ -30,8 +36,8 @@ const FormElementsSingleCategory = ({ categoryScore, handleScoreChange }) => {
             })
           }
         />
-      </div>
-    </div>
+      </s.StyledRatingMiniForm>
+    </s.StyledRatingCategory>
   );
 };
 
