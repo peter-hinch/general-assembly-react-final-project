@@ -16,7 +16,7 @@ function StarRating({ rating }) {
     }
   };
 
-  return <div className="star-rating">{ratingToStars()}</div>;
+  return <s.StyledStarRating>{ratingToStars()}</s.StyledStarRating>;
 }
 
 export default StarRating;
