@@ -38,58 +38,58 @@ const PlaceDisplay = ({
 
   return (
     <div>
-      <div id="spot-rating" className="rating-bar">
+      <s.StyledRatingBar id="spot-rating">
         <div className="rating-lead">
           {spotRating !== null ? (
             // Only display a rating for locations with rating information.
             <>
-              <h4>Spot Rating</h4>
+              <s.StyledRatingBarH4>Spot Rating</s.StyledRatingBarH4>
               <StarRating rating={spotRating} />
             </>
           ) : (
             <>
-              <h4>No ratings yet..</h4>
+              <s.StyledRatingBarH4>No ratings yet..</s.StyledRatingBarH4>
             </>
           )}
         </div>
         {spotRating !== null ? (
           // Link to more ratings if rating information is present.
           <>
-            <a href="#rating-details" className="rating-link">
+            <s.StyledRatingBarLink href="#rating-details">
               More about this spot
-            </a>
+            </s.StyledRatingBarLink>
           </>
         ) : (
           // Otherwise provide a link to the ratings form.
           <>
-            <a href="#rating-your-say" className="rating-link">
+            <s.StyledRatingBarLink href="#rating-your-say">
               Rate this spot
-            </a>
+            </s.StyledRatingBarLink>
           </>
         )}
-      </div>
+      </s.StyledRatingBar>
       <DetailsPane currentPlace={currentPlace} />
       {spotRatingDetails !== null && (
         <>
-          <div id="rating-details" className="rating-bar">
+          <s.StyledRatingBar top={true} id="rating-details">
             <div className="rating-lead">
-              <h4>Rating Details</h4>
+              <s.StyledRatingBarH4>Rating Details</s.StyledRatingBarH4>
             </div>
-            <a href="#rating-your-say" className="rating-link">
+            <s.StyledRatingBarLink href="#rating-your-say">
               Rate this spot
-            </a>
-          </div>
+            </s.StyledRatingBarLink>
+          </s.StyledRatingBar>
           <RatingDetails
             key={spotRatingDetails.placeId}
             ratingsObject={spotRatingDetails}
           />
         </>
       )}
-      <div id="rating-your-say" className="rating-bar">
+      <s.StyledRatingBar id="rating-your-say">
         <div className="rating-lead">
-          <h4>What did you think?</h4>
+          <s.StyledRatingBarH4>What did you think?</s.StyledRatingBarH4>
         </div>
-      </div>
+      </s.StyledRatingBar>
       <RatingForm
         userScores={userScores}
         handleScoreChange={handleScoreChange}

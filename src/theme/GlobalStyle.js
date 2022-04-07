@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import imgAboriginalFlag from './../assets/aboriginal-flag.svg';
 
 const GlobalStyle = createGlobalStyle`
   /* Define CSS variables for theme colours */
@@ -159,13 +158,6 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: -2.5rem;
   }
 
-  header .container {
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0 0.75rem;
-    width: 57rem;
-  }
-
   main.container {
     box-sizing: border-box;
     align-self: center;
@@ -175,40 +167,6 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 1.5rem;
     background: var(--color-neutral-99);
     box-shadow: var(--shadow-on-secondary);
-  }
-
-  main .rating-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: -0.75rem -0.75rem 0.75rem;
-    padding: 0.125rem 0.75rem;
-    color: var(--color-white);
-    background: var(--color-tertiary-40);
-    border-radius: 0.75rem;
-  }
-
-  main .rating-bar .rating-lead h4 {
-    display: inline;
-    margin: 0 1.5rem 0 0;
-  }
-
-  main .rating-bar .rating-lead .star-rating {
-    display: inline;
-  }
-
-  main .rating-bar a.rating-link {
-    color: var(--white);
-  }  
-
-  main .rating-bar a.rating-link:hover {
-    text-decoration: underline;
-  } 
-
-  main #rating-details,
-  main #rating-your-say {
-    margin-top: 1rem;
-    scroll-margin-top: calc(var(--header-min-height) + 1rem);
   }
 
   main ul.user-score-list {
