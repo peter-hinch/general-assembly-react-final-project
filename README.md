@@ -22,9 +22,9 @@
 
 ### Future Additions
 
-- Responsive Design
-- More enticing front page
-- User accounts
-- Store ratngs data in a live database
-- More comprehensive ratings data (not just score and a comment)
-- Allow users to contribute to only a subset of the ratings categories
+- [ ] Responsive Design
+- [ ] More enticing front page
+- [ ] User accounts
+- [ ] Store ratngs data in a live database
+- [ ] More comprehensive ratings data (not just score and a comment)
+- [ ] Allow users to contribute to only a subset of the ratings categories
