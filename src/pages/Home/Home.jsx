@@ -12,8 +12,15 @@ const Home = () => {
       exit="exit"
       transition={transition}
     >
-      <h1>Welcome to RemoteSpot</h1>
-      <h2>Find your new favourite remote work space.</h2>
+      <s.StyledHeroImage>
+        <s.StyledHeroHeaders>
+          <h1>Welcome to RemoteSpot</h1>
+          <h2>Find your new favourite remote work space.</h2>
+        </s.StyledHeroHeaders>
+      </s.StyledHeroImage>
+      <s.StyledImageAttribution href="https://unsplash.com/photos/LCcFI_26diA">
+        Image: Brooke Cagle (Unsplash)
+      </s.StyledImageAttribution>
     </motion.div>
   );
 };
