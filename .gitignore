@@ -27,3 +27,6 @@ yarn-error.log*
 
 #working folder
 /working
+
+#Github social preview thumbnail
+thumbnail.png
